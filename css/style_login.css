@@ -1,0 +1,98 @@
+body {
+    background-image: url("../img/fondo.jpg");
+    background-attachment: fixed;
+}
+
+h1 {
+    color: black;
+}
+
+.formulario {
+    background: white;
+    padding: 20px;
+    border-left-width: thin;
+    border-left-color: #CCC;
+    border-left: solid 1px;
+}
+
+.form-control {
+    background: whitesmoke;
+    border: 0.5px solid black;
+    transition: 00.5s ease-in;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border: 0.5px solid black;
+    background: white;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: black;
+}
+
+.ingresar {
+    width: 5px;
+    background: rgb(73, 73, 238);
+    color: white;
+    transition: 0.5s ease-in;
+    font-size: 16px;
+    width: 100%;
+}
+
+.ingresar:hover {
+    color: red;
+}
+
+.olvide {
+    color: blue;
+}
+
+.olvide:hover {
+    color: red;
+}
+
+.crear {
+    color: white;
+    font-size: 19px;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgb(49, 212, 49);
+    width: 80%;
+}
+
+.padre {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+
+.row {
+    justify-content: space-around;
+    background: white;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position-y: center;
+    background-position-x: center;
+    background-position-x: right;
+    padding: 5px;
+    margin: 5px;
+    width: 60%;
+    border-radius: 15px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.o {
+    margin: 10px;
+}
