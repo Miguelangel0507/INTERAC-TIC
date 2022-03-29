@@ -1,0 +1,17 @@
+//ingresar carpeta
+cd nombre_carpeta
+
+//sale carpeta
+cd..
+
+//sale a la raiz
+cd /
+
+// agrega los archivos existente
+git add . 
+
+// se cargan al commit con comentario
+git commit -m "comentario"
+
+// se manda al git hub
+git push --set-upstream origin master
