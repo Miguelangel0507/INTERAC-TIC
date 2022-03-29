@@ -97,7 +97,7 @@ formulario__btn.addEventListener("click", (e) => {
     //const terminos = document.getElementById("terminos");
 
     if (campos.nombre && campos.nombre_personaje && campos.correo && campos.password) {
-        fetch("../php/registrar_usuario.php", {
+        fetch("php/registrar_usuario.php", {
             method: "POST",
             body: new FormData(formulario_usuario)
         });
