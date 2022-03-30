@@ -8,33 +8,29 @@ if(isset($_POST)){
     $query = $pdo->prepare("SELECT * FROM usuarios WHERE username='$username'");
     $query->execute();
     $usuario = $query->fetch(PDO::FETCH_ASSOC);
+    if(password_verify($contraseña, $usuario["contraseña"])){
+        if($usuario["estado"] == 1 ){
+            if($usuario["rol_usuario"]  == 1){
+                header("location: ../usuario/usuario.html");
+            }else{
+                header("location: ../administrador/administrador.html");
+            }
+        }else{
+            header("location: ../index.html");
+        }
+    }else{
+        header("location: ../index.html");
+    } 
+
+    
+    
+    /*
     echo $usuario["contraseña"];
     echo "<br>";
-    echo $contraseña;
-    echo "<br>";
-    $passwordHas = $usuario["contraseña"];
-    echo $passwordHas;
-    echo "<br>";
-    if(password_verify( $contraseña, $passwordHas)){
-        echo "entro";
+    if(password_verify($contraseña, $usuario["contraseña"] )){
+        echo "sirve";
     }
-
-    
-    //$resultado= password_verify( $contraseña, $usuario["contraseña"] );
-    //echo'<script type="text/javascript">
-      //  alert("'.$resultado.'");
-        //</script>';
-    
-
-    //$query= $pdo->prepare("SELECT * FROM usuarios WHERE username='$username' AND contraseña='$contraseña'");
-    //$busqueda = $query->FETCH(PDO::FETCH_ASSOC);
-    //echo'<script type="text/javascript">
-        //alert("'.$usuario["username"]. $usuario["contraseña"].'");
-        //</script>';
-
-    //$query_login=$conexion->query("SELECT * FROM usuarios WHERE username='$username' AND contraseña='$contraseña'");
-    
-    /*if(password_verify($contraseña, $usuario["contraseña"])){
+    if(password_verify($contraseña, $usuario["contraseña"])){
         if($usuario["estado"] == 1 ){
             if($usuario["rol_usuario"]  == 1){
                 header("location: usuario/usuario.html");
