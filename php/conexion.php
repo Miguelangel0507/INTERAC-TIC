@@ -1,5 +1,4 @@
 <?php
-
 //Se realiza la conexion a la base de datos
 $servidor = "mysql:dbname=interactic;host=localhost";
 $user = "root";

@@ -97,6 +97,7 @@ formulario__btn.addEventListener("click", (e) => {
     //const terminos = document.getElementById("terminos");
 
     if (campos.nombre && campos.nombre_personaje && campos.correo && campos.password) {
+        //se envia el formulario a la direccion URL para el registro del usuarios
         fetch("php/registrar_usuario.php", {
             method: "POST",
             body: new FormData(formulario_usuario)
