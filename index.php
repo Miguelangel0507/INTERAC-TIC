@@ -19,15 +19,15 @@
                 <img src="img/descarga.png" alt="logo " />
             </div>
             <div class="formulario">
-                <form action="index.php" method="post" id="form_login">
+                <form action="" method="post" id="form_login">
                     <div class="form-group text-center pt-3">
                         <h1>Iniciar sesion</h1>
                     </div>
                     <div class="form-group mx-sm-4 pt-3">
-                        <input type="text" class="form-control" name="username" id="username" placeholder="ingrese su usuario " />
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su usuario "  aria-label="Username" aria-describedby="basic-addon1" />
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
-                        <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="ingrese su contraseña " />
+                        <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña " />
                     </div>
                     <div class="form-group mx-sm-4 pb-2">
                         
@@ -51,27 +51,19 @@
                     if ($usuario) {
                         //se compara la contraseña ingresada con la guardada en el registro
                         if (password_verify($contraseña, $usuario["contraseña"])) {
-                            echo "<script>alert('contraseña correcta')</script>";
                             //se valida el estado del usuario
                             if ($usuario["estado"] == 1) {
-                                echo "<script>alert('estado activo')</script>";
                                 //se valida el rol del usuario y se direcciona segun su rol
                                 if ($usuario["rol_usuario"]  == 1) {
-                                    //echo "ok_usuario";
-                                    echo "<script>alert('su rol es usuario')</script>";
-                                    //header("location: ../usuario/usuario.html");
+                                    header("location: usuario/usuario.html");
                                 } else {
-                                    echo "<script>alert('su rol es administrador')</script>";
-                                    //echo "ok_administrador";
-                                    //he    ader("location: ../administrador/administrador.html");
+                                    header("location: administrador/administrador.html");
                                 }
                             } else {
-                                echo "<script>alert('estado inactivo')</script>";
-                                //echo "error";
-                                //header("location: ../index.html");
+                                echo "<div class='alert alert-primary' role='alert'><i class='fas fa-exclamation-triangle'></i>Su estado es inactivo</div>";
                             }
                         } else {
-                            echo "<div class='alert alert-primary' role='alert'>verfica tu usuario y contraseña</div>";
+                            echo "<div class='alert alert-primary' role='alert'><i class='fas fa-exclamation-triangle'></i>verfica tu usuario y contraseña</div>";
                             //header("location: ../index.html");
                         }
                     } else {

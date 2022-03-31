@@ -15,15 +15,17 @@ h1 {
     border-left: solid 1px;
 }
 
-.form-control {
+
+/*.form-control {
     background: whitesmoke;
     border: 0.5px solid black;
     transition: 00.5s ease-in;
     outline: none;
     box-shadow: none;
-}
+}*/
 
-.form-control:focus {
+
+/*.form-control:focus {
     border: 0.5px solid black;
     background: white;
     box-shadow: none;
@@ -32,7 +34,7 @@ h1 {
 
 .form-control::placeholder {
     color: black;
-}
+}*/
 
 .ingresar {
     width: 5px;

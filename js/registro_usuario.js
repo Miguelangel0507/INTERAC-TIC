@@ -117,8 +117,8 @@ formulario__btn.addEventListener("click", (e) => {
         });
         return;
     } else {
+        document.getElementById('formulario__mensaje2').classList.add("formulario__mensaje-activo2");
 
-        document.getElementById('formulario__mensaje').classList.add("formulario__mensaje-activo");
 
     }
 });
