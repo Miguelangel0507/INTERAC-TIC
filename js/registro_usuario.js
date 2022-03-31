@@ -102,6 +102,8 @@ formulario__btn.addEventListener("click", (e) => {
             method: "POST",
             body: new FormData(formulario_usuario)
         });
+
+        //se crea nueva rama ensayo
         formulario_usuario.reset();
         document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
 
@@ -122,5 +124,5 @@ formulario__btn.addEventListener("click", (e) => {
 });
 
 function update() {
-    document.location.href = "index.html";
+    document.location.href = "index.php";
 }
