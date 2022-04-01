@@ -31,11 +31,38 @@
     <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="wordfind.js"></script>
     <script type="text/javascript" src="wordfindgame.js"></script>
-    <script>
-        var words = ["calor", "camilo", "jorge"];
+    <?php
+        require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
+        $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //se hace la consulta a la tabla usuarios mediante el username
+        $query = $pdo->prepare("SELECT municipios_risaralda FROM categoriasopa");
+        $query->execute();
+        $palabras = array();
+        $usuario = $query->fetchAll();
+        for(    $i = 0; $i < 10; $i++) {
+        array_push($palabras, $usuario[$i]["municipios_risaralda"]);
+        }
+        //"<script>
+        //var words = ['calor', 'camilo', 'jorge'];
 
         // iniciar juego
-        var gamePuzzle = wordfindgame.create(words, "#puzzle", "#words");
+        //var gamePuzzle = wordfindgame.create(json_encode($palabras), '#puzzle', '#words');
+
+        // cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
+        //var puzzle = wordfind.newPuzzle(words, {
+         //   height: 18,
+         //   width: 18,
+         //   fillBlanks: false,
+        //});
+        //wordfind.print(puzzle);
+    //</script>";
+        
+?>
+    <script>
+        //var words = ["calor", "camilo", "jorge"];
+
+        // iniciar juego
+        var gamePuzzle = wordfindgame.create(<?php echo json_encode($palabras);?>, "#puzzle", "#words");
 
         // cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
         var puzzle = wordfind.newPuzzle(words, {
