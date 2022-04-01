@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>contador</title> 
+<script type="text/javascript">
+var contar = 0 //valor inicial. 
+window.onload = function() { 
+document.getElementById("imagen").style.display = "none"; //ocultar imagen
+cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás 
+}
+function despegar() { 
+     function cuentaAtras() { 
+         document.getElementById("imagen").style.display = "none"; //imagen invisible si se comienza de nuevo
+         contar -=1; //variar el número de la cuenta
+         cuenta.innerHTML = contar; //escribir el número
+         if (contar <= 0) { //cuando llegamos a 0...
+            clearInterval(ignicion) //parar la cuenta atrás.
+               //visualizar la imagen.
+            document.getElementById("imagen").style.display = "block" 
+            }
+     } 
+     cuentaAtras() //llamada a la función de cuenta atrás
+         //repetir la función cuenta atrás cada segundo
+     ignicion = setInterval(cuentaAtras,1000);
+}
+</script>
+</head>
+<body>
+<h1 align="center">Pulsa para iniciar la cuenta atrás.</h1>
+<p><form action="#" name="laCuenta">
+<p align="center"><input type="button" name="comenzar" 
+   value="Empezar la cuenta atrás." onclick="contar=10,despegar()" /> ...
+</p>
+</form>
+<h1 align="center" id="cuenta"></h1>
+<p id="imagen" align="center"><img src="img/images.png" 
+   alt="Ignición" name="cohete"></p>
+
+
+
+   
+    <!--<div style="text-align: center">Tiempo que llevas jugando</div>
+
+      <div style="margin: 0px auto; text-align: center; width: 150px" id="tiempos">
+        <img
+          src="http://lh5.ggpht.com/_0eC4K-qZ7AM/TO1RS7xsylI/AAAAAAAAMX4/_uQfIddo6OA/2.gif"
+        /><img
+          src="http://lh3.ggpht.com/_0eC4K-qZ7AM/TO1RTOyFacI/AAAAAAAAMX8/i-DnYANb0kE/3.gif"
+        /><img
+          src="http://lh3.ggpht.com/_0eC4K-qZ7AM/TO1RTUc4nVI/AAAAAAAAMYA/bj0mqGH8xLM/4.gif"
+        /><img
+          src="http://lh3.ggpht.com/_0eC4K-qZ7AM/TO1RTuO79eI/AAAAAAAAMYE/-Y2w89jmaig/5.gif"
+        />
+      </div>
+    -->
+</body>
+</html>
