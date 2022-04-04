@@ -6,19 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>juego sopa</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet"  href="/INTERAC-TIC/usuario/sopadeletras/style.css"/>
 </head>
 
 <body>
-    <!--lo nuevo-->
+    <h1>Sopa de letras</h1>
 
-    <h1 align="center">Pulsa para iniciar la cuenta atrás.</h1>
+    
+    <!--lo nuevo-->
+    <h2 align="center">Pulsa para iniciar la cuenta atrás.</h2>
     <p></p>
-    <form action="#" name="laCuenta">
+    <!--<form action="#" name="laCuenta">-->
         <p align="center">
-            <input id="mk" type="button" name="comenzar" value="Empezar la cuenta atrás." onclick="contar=7,despegar()" /> ...
+            <input id="mk" type="button" name="comenzar" value="Empezar la cuenta atrás." onclick="contar=1000,despegar()" /> ...
         </p>
-    </form>
+    <!--</form>-->
+    <!--<form action="" >-->
+        <label for="">puntos:</label>
+        <p id="puntos">0</p>
+    <!--</form>  -->      
     <h1 align="center" id="cuenta"></h1>
 
     <p>apurate y Juega</p>
@@ -32,6 +38,7 @@
     <script type="text/javascript" src="wordfind.js"></script>
     <script type="text/javascript" src="wordfindgame.js"></script>
     <?php
+    
         require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
         $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //se hace la consulta a la tabla usuarios mediante el username

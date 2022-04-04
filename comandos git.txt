@@ -1,3 +1,6 @@
+//clonar git existente en github
+git clone "url..."
+
 //ingresar carpeta
 cd nombre_carpeta
 

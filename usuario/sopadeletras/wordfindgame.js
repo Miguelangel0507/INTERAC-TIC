@@ -9,6 +9,9 @@
 (function(document, $, wordfind) {
 
     'use strict';
+    let puntos = 0;
+    const contador = 10;
+    let punt = document.getElementById("puntos");
 
     /**
      * An example game using the puzzles created from wordfind.js. Click and drag
@@ -207,6 +210,8 @@
 
                 if (wordList[i] === curWord) {
                     $('.selected').addClass('found');
+                    puntos += contador;
+                    punt.innerHTML = puntos;
                     wordList.splice(i, 1);
                     $('.' + curWord).addClass('wordFound');
                 }

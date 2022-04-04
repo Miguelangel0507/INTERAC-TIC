@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,13 @@
 </head>
 
 <body>
-    <label for="">eres usuario</label>
+    <h2>bienvenido:
+        <?php echo $_SESSION['id_usuario']?>
+    </h2>
+
+    <br>
+    <a href="./sopadeletras/ensayo.php">sopa de letras</a>
+
 </body>
 
 </html>

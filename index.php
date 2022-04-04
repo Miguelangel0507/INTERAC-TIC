@@ -55,7 +55,8 @@
                             if ($usuario["estado"] == 1) {
                                 //se valida el rol del usuario y se direcciona segun su rol
                                 if ($usuario["rol_usuario"]  == 1) {
-                                    header("location: usuario/usuario.html");
+                                    $_SESSION['id_usuario'] = $usuario["id_username"];
+                                    header("location: usuario");
                                 } else {
                                     header("location: administrador/administrador.html");
                                 }
