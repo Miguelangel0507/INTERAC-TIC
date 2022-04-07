@@ -15,7 +15,7 @@ session_start();
 
 <body>
     <h1>Sopa de letras</h1>
-    <form action="" method="POST" id="eleccion">
+    <form action="datos2.php" method="POST" id="eleccion">
         <label>¿Que nivel deseas jugar?</label><br>
         <input type="button" id="boton1" value="Nivel 1" >
         <input type="button" id="boton2" value="Nivel 2" >
