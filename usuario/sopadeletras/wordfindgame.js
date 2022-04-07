@@ -214,20 +214,16 @@
                     punt.innerHTML = puntos;
                     wordList.splice(i, 1);
                     $('.' + curWord).addClass('wordFound');
+                    llamar();
                 }
-
                 if (wordList.length === 0) {
                     $('.puzzleSquare').addClass('complete');
+                    registrar();
+                    //llamar(puntos);
                 }
-
-
             }
 
-
             // purba disabled
-
-
-
             // reset the turn
             $('.selected').removeClass('selected');
             startSquare = null;
@@ -333,5 +329,8 @@
      * Allow game to be used within the browser
      */
     window.wordfindgame = WordFindGame();
+
+
+
 
 }(document, jQuery, wordfind));

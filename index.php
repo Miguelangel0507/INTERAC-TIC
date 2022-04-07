@@ -65,7 +65,6 @@
                             }
                         } else {
                             echo "<div class='alert alert-primary' role='alert'><i class='fas fa-exclamation-triangle'></i>verfica tu usuario y contraseña</div>";
-                            //header("location: ../index.html");
                         }
                     } else {
                         echo "<div class='alert alert-primary' role='alert'>verfica tu usuario y contraseña</div>";

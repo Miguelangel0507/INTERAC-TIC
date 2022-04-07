@@ -17,7 +17,8 @@ function validarJugador() {
         }
     })
 }
-/*boton1.addEventListener("click", () => {
+
+boton1.addEventListener("click", () => {
     mostrar_sopa("municipios_risaralda")
 });
 
@@ -30,7 +31,6 @@ boton3.addEventListener("click", () => {
 });
 
 function mostrar_sopa(desicion) {
-    alert(desicion)
     let desicion_nivel = new FormData()
     desicion_nivel.append('desicion1', desicion);
     fetch("datos.php", {
@@ -38,25 +38,7 @@ function mostrar_sopa(desicion) {
         body: desicion_nivel
     }).then(response => response.text()).then(response => {
         if (response) {
-            var gamePuzzle = wordfindgame.create(response,
-                "#puzzle", "#words");
-            //cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
-            var puzzle = wordfind.newPuzzle(words, {
-                height: 18,
-                width: 18,
-                fillBlanks: false,
-            });
-            wordfind.print(puzzle);
+            location.href = "sopadeletras";
         }
-
-        document.getElementById("boton1").disabled = true;
-        document.getElementById("boton2").disabled = true;
-        document.getElementById("boton3").disabled = true;
-        document.getElementById("contenido").style.display = "block";
     })
-
-    document.getElementById("boton1").disabled = true;
-    document.getElementById("boton2").disabled = true;
-    document.getElementById("boton3").disabled = true;
-    document.getElementById("contenido").style.display = "block";
-}*/
+}

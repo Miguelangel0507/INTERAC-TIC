@@ -5,7 +5,7 @@
  * For all details and documentation:
  *     http://github.com/bunkat/wordfind
  */
-
+var cont_puntos = 0;
 (function() {
 
     'use strict';
@@ -461,7 +461,9 @@
 
 //tiempo del juego
 var contar = 10 //valor inicial. 
+
 window.onload = function() {
+
     document.getElementById("puzzle").style.display = "none"; //ocultar imagen
     cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás 
 
@@ -487,7 +489,17 @@ function despegar() {
     ignicion = setInterval(cuentaAtras, 1000);
 }
 
+function llamar() {
+    cont_puntos += 10;
+    alert(cont_puntos);
+}
+
+function registrar() {
+    alert("Ganaste y tus puntos son" + cont_puntos)
+}
+
 function parar() {
     document.getElementById("mk").disabled = true
     $('.puzzleSquare').addClass('complete');
+    registrar();
 }

@@ -14,7 +14,6 @@ if($_POST){
         }
         
         $_SESSION['array'] = $palabras;
-        echo json_encode($palabras);
+        echo true;
 }
 ?>
-    

@@ -44,22 +44,60 @@ session_start();
 
         <div id="words"></div>
         <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="wordfind.js"></script>
-        <script type="text/javascript" src="wordfindgame.js"></script>
         
-        <!--<script>
-             //iniciar juego
-            var gamePuzzle = wordfindgame.create(<?php //echo json_encode($_SESSION["array"]); ?>, "#puzzle", "#words");
-                //cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
-            var puzzle = wordfind.newPuzzle(words, {
-                height: 18,
-               width: 18,
-               fillBlanks: false,
+        
+        <script>
+            boton1.addEventListener("click", () => {
+                mostrar_sopa("municipios_risaralda")
             });
-            wordfind.print(puzzle);
-        </script>-->
+
+            boton2.addEventListener("click", () => {
+                mostrar_sopa("tecnologias_tic")
+            });
+
+            boton3.addEventListener("click", () => {
+                mostrar_sopa("sitios_turisticos");
+            });
+
+            function mostrar_sopa(desicion) {
+                alert(desicion);
+                let desicion_nivel = new FormData()
+                desicion_nivel.append('desicion1', desicion);
+                alert(desicion_nivel)
+                fetch("datos2.php", {
+                    method: "POST",
+                    body: desicion_nivel
+                }).then(response => response.text()).then(response => {
+
+
+                    if (response) {
+                        alert(response);
+                    var gamePuzzle = wordfindgame.create(response,"#puzzle", "#words");
+                    //cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
+                    var puzzle = wordfind.newPuzzle(words, {
+                    height: 18,
+                    width: 18,
+                    fillBlanks: false,
+                    });
+                    wordfind.print(puzzle);
+                    }
+
+                    document.getElementById("boton1").disabled = true;
+                    document.getElementById("boton2").disabled = true;
+                    document.getElementById("boton3").disabled = true;
+                    document.getElementById("contenido").style.display = "block";
+                })
+
+                document.getElementById("boton1").disabled = true;
+                document.getElementById("boton2").disabled = true;
+                document.getElementById("boton3").disabled = true;
+                document.getElementById("contenido").style.display = "block";
+            };
+        </script>
         <a href="../index.php">salir</a>
         <input type="button" value="Salir" id="salir">
+        <script type="text/javascript" src="wordfind.js"></script>
+        <script type="text/javascript" src="wordfindgame.js"></script>
         <script>
             salir.addEventListener("click", () => {
                 alert("Salir script");
