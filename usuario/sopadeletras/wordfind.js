@@ -474,7 +474,6 @@ function despegar() {
     function cuentaAtras() {
         document.getElementById("puzzle").style.visibility = "visible"; //imagen invisible si se comienza de nuevo
         document.getElementById("words").style.visibility = "visible";
-        document.getElementById("cont_words").style.visibility = "visible";
         contar -= 1; //variar el número de la cuenta
         cuenta.innerHTML = contar; //escribir el número
         if (contar <= 0) { //cuando llegamos a 0...
@@ -501,10 +500,39 @@ function registrar() {
         method: "POST",
         body: puntos_nivel
     }).then(response => response.text()).then(response => {
-        if (response == true) {
-            alert("salio")
-            location.href = "../";
-        }
+        (async() => {
+            if (response == "gano") {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Felicitaciones Ganaste',
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "../";
+                    } else {
+                        location.href = "../";
+                    }
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡Perdiste!',
+                    text: 'debes sacar mas de 80 puntos',
+                    confirmButtonText: 'Salir?',
+                    timer: 5000,
+                    timerProgressBar: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "../";
+                    } else {
+                        location.href = "../";
+                    }
+                })
+            }
+
+        })()
     })
 }
 
@@ -512,4 +540,5 @@ function parar() {
     document.getElementById("mk").disabled = true
     $('.puzzleSquare').addClass('complete');
     registrar();
+
 }

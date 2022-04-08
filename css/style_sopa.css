@@ -42,7 +42,6 @@ h1 {
 
 .contenedor_central {
     display: flex;
-    justify-content: center;
     width: 80%;
 }
 

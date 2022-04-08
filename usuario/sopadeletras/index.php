@@ -27,7 +27,7 @@ session_start();
                         <h2 align="center" id="cuenta">000</h2>
                     </div>
                     <div>
-                    <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=1000,despegar()" />
+                    <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=4,despegar()" />
                     </div>
                 </div>
             </div>
