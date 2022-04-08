@@ -14,6 +14,7 @@ if($_POST){
         }
         
         $_SESSION['array'] = $palabras;
+        $_SESSION['decision'] = $decision;
         echo true;
 }
 ?>

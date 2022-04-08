@@ -1,0 +1,212 @@
+h1 {
+    color: black;
+}
+
+.padre {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+
+.tiempo h2 {
+    margin: 2% 0;
+}
+
+#puzzle,
+#words,
+#cont_words {
+    visibility: hidden;
+}
+
+#puzzle div button {
+    border-right: 3px #eee solid;
+}
+
+#cont_words {
+    margin: 15px 0;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont_puntos {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#mk {
+    margin: 7% 0;
+}
+
+.contenedor_central {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.tiempo {
+    display: flex;
+}
+
+.encabezado {
+    width: 80%
+}
+
+.row {
+    background: white;
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    border-radius: 15px;
+}
+
+.o {
+    margin: 10px;
+}
+
+body {
+    background-image: url("../img/fondoSopa.gif");
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-position: center;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contenido {
+    display: none;
+}
+
+.puzzle {
+    justify-content: center;
+}
+
+.puzzle {
+    justify-items: center;
+}
+
+
+/**
+  * Styles for the puzzle
+  */
+
+#puzzle {
+    border: 3px #999 solid;
+    padding: 2px;
+    float: left;
+    margin: 10px 20px;
+}
+
+#puzzle div {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* style for each square in the puzzle */
+
+#puzzle .puzzleSquare {
+    height: 30px;
+    width: 30px;
+    text-transform: uppercase;
+    background-color: white;
+    border: 0;
+    font: 1em sans-serif;
+    border-bottom: 1px #eee solid;
+    border-right: 1px #eee solid;
+}
+
+#puzzle .puzzleSquare1:disabled {
+    background-color: wheat;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+
+/* indicates when a square has been selected */
+
+#puzzle .selected {
+    background-color: orange;
+}
+
+#puzzle .selected1:disabled {
+    background-color: orange;
+}
+
+
+/* indicates that the square is part of a word that has been found */
+
+#puzzle .found {
+    background-color: blue;
+    color: white;
+}
+
+#puzzleSquare .selected1:disabled {
+    background: cadetblue;
+}
+
+#puzzle .solved {
+    background-color: purple;
+    color: white;
+}
+
+
+/* indicates that all words have been found */
+
+#puzzle .complete {
+    color: grey;
+}
+
+
+/**
+  * Styles for the word list
+  */
+
+#words {
+    padding-top: 20px;
+    /*-moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+    width: 300px;
+    */
+}
+
+
+/*#words ul {
+    list-style-type: none;
+}¨*/
+
+#words li {
+    padding: 3px 0;
+    font: 1em sans-serif;
+}
+
+
+/* indicates that the word has been found */
+
+#words .wordFound {
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+/**
+  * Styles for the button
+  */
+
+#solve {
+    margin: 0 30px;
+}
+
+
+/*inabilitat*/

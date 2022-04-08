@@ -463,17 +463,18 @@ var cont_puntos = 0;
 var contar = 10 //valor inicial. 
 
 window.onload = function() {
-
-    document.getElementById("puzzle").style.display = "none"; //ocultar imagen
+    //document.getElementById("puzzle").style.visibility = "hidden"; //ocultar imagen
+    //document.getElementById("words").style.visibility = "hidden";
     cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás 
-
 }
 
 function despegar() {
     document.getElementById("mk").disabled = true
 
     function cuentaAtras() {
-        document.getElementById("puzzle").style.display = "block"; //imagen invisible si se comienza de nuevo
+        document.getElementById("puzzle").style.visibility = "visible"; //imagen invisible si se comienza de nuevo
+        document.getElementById("words").style.visibility = "visible";
+        document.getElementById("cont_words").style.visibility = "visible";
         contar -= 1; //variar el número de la cuenta
         cuenta.innerHTML = contar; //escribir el número
         if (contar <= 0) { //cuando llegamos a 0...
@@ -491,11 +492,20 @@ function despegar() {
 
 function llamar() {
     cont_puntos += 10;
-    alert(cont_puntos);
 }
 
 function registrar() {
-    alert("Ganaste y tus puntos son" + cont_puntos)
+    let puntos_nivel = new FormData()
+    puntos_nivel.append('puntos', cont_puntos);
+    fetch("puntos.php", {
+        method: "POST",
+        body: puntos_nivel
+    }).then(response => response.text()).then(response => {
+        if (response == true) {
+            alert("salio")
+            location.href = "../";
+        }
+    })
 }
 
 function parar() {
