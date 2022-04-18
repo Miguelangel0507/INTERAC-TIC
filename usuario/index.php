@@ -20,11 +20,20 @@ session_start();
     <h4>Sopa de letras</h4>
     <form action="" method="POST" id="eleccion">
         <label>¿Que nivel deseas jugar?</label><br>
-        <input type="button" id="boton1" value="Nivel 1" >
-        <input type="button" id="boton2" value="Nivel 2" >
-        <input type="button" id="boton3" value="Nivel 3" >
-        
+        <input type="button" id="botonSopa1" value="Nivel 1" >
+        <input type="button" id="botonSopa2" value="Nivel 2" >
+        <input type="button" id="botonSopa3" value="Nivel 3" >
     </form>
+
+    <h4>Trivia Tic</h4>
+    <form action="" method="POST" id="eleccion">
+        <label>¿Que nivel deseas jugar?</label><br>
+        <input type="button" id="botonTrivia1" value="Nivel 1" >
+        <input type="button" id="botonTrivia2" value="Nivel 2" >
+        <input type="button" id="botonTrivia3" value="Nivel 3" >
+    </form>
+
+
     <script src="decision.js"></script>
 </body>
 
