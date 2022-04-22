@@ -1,59 +1,55 @@
-<?php session_start()?>
+<?php session_start() ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../css/quiz.css">
-</head>
-<body>
-    <h1 id="title">Today's Quiz</h1>
+<html lang="es">
 
+<head>
+    <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" conte pregnt="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Trivia</title>
+
+    <link rel="stylesheet" href="../../css/quiz.css">
+    
+</head>
+
+<body>
+    <h1 id="title">Trivia TIC</h1>
     <!-- quiz-container -->
     <div id="quiz-container">
         <!-- question container -->
         <div class="questions">
+            <div class="cabecera">
+                <div class="back">
+                    <a role="button" class="atras" href="../index.php"><i class="fa-solid fa-arrow-left"></i>Salir</a>
+                    
+                    <h4 id="puntos">Puntos: 0 </h4>
+                </div>
+                <div class="tiempo">
+                    <h4>Tiempo:</h4>
+                    <h4 id="cuenta">000</h4>
+                </div>
+            </div>
             <h2 id="question"></h2>
-            <ol type="A">
-                <li class="option"><span id="option0" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option1" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option2" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option3" onclick="calcScore(this)"></span></li>
-            </ol>
+            <div id="container_question">
+                <div class="preguntas">
+                    <div class="pregunta preg1" class="A" value="A" onclick="calcScore(A)"><b><span id="A">A</span>.<label id="option0">.</label></b></div>
+                    <div class="pregunta preg2" class="B" value="B" onclick="calcScore(B)"><b><span id="B">B</span>.<label id="option1">.</label></b></div>
+                </div>
+                <div class="preguntas">
+                    <div class="pregunta preg3" class="C" value="C" onclick="calcScore(C)"><b><span id="C">C</span>.<label id="option2">.</label></b></div>
+                    <div class="pregunta preg4" class="D" value="D" onclick="calcScore(D)"><b><span id="D">D</span>.<label id="option3">.</label></b></div>
+                </div>
+            </div>
             <h4 id="stat"></h4>
         </div>
-
-        <div class="buttons">
-            <button type="button" class="next">Next</button>
-        </div>
-
     </div>
-
-    <!-- scoreboard section -->
-    <div id="scoreboard">
-        
-        <h2 id="score-title">Your Score</h2>
-        <h2 id="score"></h2>
-        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
-        <button type="button" id="check-answer" onclick="checkAnswer()">Check Answers</button>
-    </div>
-
-    <!-- answers section -->
-    <div id="answerBank">
-        <h2>Answers :</h2>
-        <ol type="1" id="answers">
-
-        </ol>
-        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
-    </div>
-    
-        
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="quiz.js"></script>
     <script>
-        var json=eval(<?php echo $_SESSION["resultado"]?>)
+        var json = eval(<?php echo $_SESSION["resultado"] ?>)
         displayQuestion2(json)
     </script>
 </body>
+
 </html>

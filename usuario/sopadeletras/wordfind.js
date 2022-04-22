@@ -477,10 +477,7 @@ function despegar() {
         contar -= 1; //variar el número de la cuenta
         cuenta.innerHTML = contar; //escribir el número
         if (contar <= 0) { //cuando llegamos a 0...
-            clearInterval(ignicion) //parar la cuenta atrás.
-                //visualizar la imagen.
-                //  document.getElementById("puzzle").style.display = "none" 
-
+            clearInterval(ignicion) //parar la cuenta atrás. 
             parar();
         }
     }

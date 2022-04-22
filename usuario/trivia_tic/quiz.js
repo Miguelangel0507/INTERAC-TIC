@@ -1,28 +1,3 @@
-//Question bank
-
-/*var questionBank = [{
-question: 'Eritrea, which became the 182nd member of the UN in 1993, is in the continent of',
-    option: ['Asia', 'Africa', 'Europe', 'Australia'],
-    answer: 'Africa'
-}, {
-    question: 'Garampani sanctuary is located at',
-    option: ['Junagarh, Gujarat', 'Diphu, Assam', 'Kohima, Nagaland', 'Gangtok, Sikkim'],
-    answer: 'Diphu, Assam'
-}, {
-    question: 'For which of the following disciplines is Nobel Prize awarded?',
-    option: ['Physics and Chemistry', 'Physiology or Medicine', 'Literature, Peace and Economics', 'All of the above'],
-    answer: 'All of the above'
-}, {
-    question: 'Hitler party which came into power in 1933 is known as',
-    option: ['Labour Party', 'Nazi Party', 'Ku-Klux-Klan', 'Democratic Party'],
-    answer: 'Nazi Party'
-}, {
-    question: 'First human heart transplant operation conducted by Dr. Christiaan Barnard on Louis Washkansky, was conducted in',
-    option: ['1967', '1968', '1958', '1922'],
-    answer: '1967'
-}
-]*/
-
 var question = document.getElementById('question');
 var quizContainer = document.getElementById('quiz-container');
 var scorecard = document.getElementById('scorecard');
@@ -33,6 +8,7 @@ var option3 = document.getElementById('option3');
 var next = document.querySelector('.next');
 var points = document.getElementById('score');
 var span = document.querySelectorAll('span');
+var cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás 
 var i = 0;
 var score = 0;
 
@@ -53,18 +29,47 @@ function displayQuestion(cuest) {
     option1.innerHTML = cuestionario['cuestionario'][i].respuesta2;
     option2.innerHTML = cuestionario['cuestionario'][i].respuesta3;
     option3.innerHTML = cuestionario['cuestionario'][i].respuesta4;
-    stat.innerHTML = "Question" + ' ' + (i + 1) + ' ' + 'of' + ' ' + cuestionario['cuestionario'].length;
+    stat.innerHTML = "Pregunta" + ' ' + (i + 1) + ' ' + 'de' + ' ' + cuestionario['cuestionario'].length;
+
 }
 
 //function to calculate scores
 function calcScore(e) {
-    if (e.innerHTML === cuestionario['cuestionario'][i].respuesta_correcta && score < cuestionario['cuestionario'].length) {
-        score = score + 1;
-        document.getElementById(e.id).style.background = 'limegreen';
+    if (e.innerHTML === cuestionario['cuestionario'][i].respuesta_correcta) {
+        score = score + 10;
+        Swal.fire({ //Mensaje de pregunta correcta
+            icon: 'success',
+            title: 'Felicitaciones, acertaste.',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false
+        })
+        clearInterval(ignicion)
+        puntos.innerHTML = "Puntos: " + ' ' + score;
     } else {
-        document.getElementById(e.id).style.background = 'tomato';
+        PreguntaErronea()
+        puntos.innerHTML = "Puntos: " + score;
+        clearInterval(ignicion)
+
     }
-    setTimeout(nextQuestion, 300);
+    setTimeout(nextQuestion, 3000);
+}
+
+function PreguntaErronea() {
+    Swal.fire({
+        icon: 'error',
+        title: '¡Perdiste!',
+        text: "La respuesta correcta es la:" + ' ' + cuestionario['cuestionario'][i].respuesta_correcta + "  ",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false
+    })
 }
 
 //function to display next question
@@ -72,33 +77,74 @@ function nextQuestion() {
     if (i < cuestionario['cuestionario'].length - 1) {
         i = i + 1;
         displayQuestion(cuestionario['cuestionario']);
+        reiniciar_cuenta()
+            //window.ignicion = setInterval(despegar, 1000);     SE DEBE DESCOMENTAR ESTA LINEA
+    } else { //se manda a la base de datos los puntos y se da aviso de que si gano o perdio
+        let puntos_nivel = new FormData()
+        puntos_nivel.append('puntos', score);
+        fetch("puntos.php", {
+            method: "POST",
+            body: puntos_nivel
+        }).then(response => response.text()).then(response => {
+            (async() => {
+                if (response == "gano") {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Felicitaciones Ganaste',
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "../";
+                        } else {
+                            location.href = "../";
+                        }
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '¡Perdiste!',
+                        text: 'debes sacar mas de 80 puntos',
+                        timer: 5000,
+                        timerProgressBar: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "../";
+                        } else {
+                            location.href = "../";
+                        }
+                    })
+                }
+
+            })()
+        })
+    }
+}
+reiniciar_cuenta()
+
+function reiniciar_cuenta() {
+    window.contar = 11;
+    despegar();
+}
+
+function despegar() {
+    cuenta.style.color = "black";
+    contar -= 1;
+    cuenta.innerHTML = contar;
+    if (contar <= 0) {
+        PreguntaErronea();
+        window.contar = 11;
+        clearInterval(ignicion);
+        setTimeout(nextQuestion, 3000);
+        return;
     } else {
-        points.innerHTML = score + '/' + cuestionario['cuestionario'].length;
-        quizContainer.style.display = 'none';
-        scoreboard.style.display = 'block'
+        if (contar <= 5) {
+            cuenta.style.color = "red";
+        }
+
     }
+
 }
-
-//click events to next button
-next.addEventListener('click', nextQuestion);
-
-//Back to Quiz button event
-function backToQuiz() {
-    location.reload();
-}
-
-//function to check Answers
-function checkAnswer() {
-    var answerBank = document.getElementById('answerBank');
-    var answers = document.getElementById('answers');
-    answerBank.style.display = 'block';
-    scoreboard.style.display = 'none';
-    for (var a = 0; a < questionBank.length; a++) {
-        var list = document.createElement('li');
-        list.innerHTML = questionBank[a].answer;
-        answers.appendChild(list);
-    }
-}
-
-
-//displayQuestion();
+despegar();
+var ignicion = setInterval(despegar, 1000);

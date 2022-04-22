@@ -5,34 +5,50 @@
 }
 
 body {
-    font-family: sans-serif;
-    background: linear-gradient(115deg, rgba(101, 151, 209, 0.8), rgba(202, 102, 211, 0.5)), url(/quizbg.jpg);
-    background-size: cover;
-    background-position: center;
+    background-image: url("../img/question-mark-g57ea2a59e_640.jpg");
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    height: 100vh;
+    background-size: cover;
+    font-size: 1.5rem;
 }
 
 #title {
     text-align: center;
+    border-radius: 1rem;
+    margin: 1rem 4rem;
     padding: 0.8rem 0;
     font-size: 3rem;
-    color: rgb(49, 70, 7);
-    background: rgba(105, 224, 90, 0.55);
+    background: rgba(229, 252, 250, 0.793);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tiempo {
+    display: flex;
+}
+
 .questions {
-    margin: 3rem auto;
+    margin: 2rem 4rem;
     width: 90vw;
     padding: 2rem;
-    background: rgba(0, 255, 221, 0.45);
+    background: rgba(229, 252, 250, 0.793);
     cursor: default;
     border-radius: 1rem;
 }
 
 #question {
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .option {
@@ -54,11 +70,33 @@ ol {
     color: rgb(1, 73, 73);
 }
 
-span {
-    display: block;
+span,
+.preguntas label {
     padding: 0.1rem 0.7rem;
     border-radius: 1rem;
 }
+
+.preg1 {
+    background-color: #03A0E9;
+}
+
+.preg2 {
+    background-color: #F0CC31;
+}
+
+.preg3 {
+    background-color: #F28F00;
+}
+
+.preg4 {
+    background-color: #E03D74;
+}
+
+
+/*#container_question {
+    display: flex;
+    justify-content: space-evenly;
+}*/
 
 #answer {
     margin-top: 2.5rem;
@@ -67,20 +105,40 @@ span {
 #stat {
     margin-top: 1.5rem;
     color: rgb(6, 17, 168);
+    text-align: end;
+}
+
+.preguntas {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0px;
+}
+
+.pregunta {
+    width: 40%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .buttons {
     text-align: center;
 }
 
-button {
+.atras {
+    text-decoration: none;
     padding: 0.2rem 1.5rem;
     border: none;
     outline: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 1.5rem;
-    color: rgba(93, 53, 156, 0.98);
-    background: rgba(161, 177, 19, 0.82);
+    color: #fff;
+    background-color: #5c636a;
+    border-color: #565e64;
+    font-family: inherit;
 }
 
 button:active {

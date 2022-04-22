@@ -12,14 +12,7 @@ if($_POST){
             $palabras["cuestionario"][] = $row;
         }
         $_SESSION['resultado'] = json_encode($palabras);
+        $_SESSION['desiciontrivia'] = $decision;
         echo json_encode($palabras);
-        //$resultado = $query->fetchAll();
-        //for ($i = 0; $i < 10; $i++) {
-        //    array_push($palabras, $usuario[$i][$decision]);
-        //}
-        
-        //$_SESSION['resultado'] = $resultado;
-        //$_SESSION['decision'] = $decision;
-        //echo true;
 }
 ?>
