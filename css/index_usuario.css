@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4rem;
+    height: 25rem;
+}
+
+.card1 {
+    margin-left: 200px;
+}
+
+.card-body {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.botones {
+    width: 80%;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 10px 0px;
+    height: 2rem;
+    color: white;
+}
+
+.card2 {
+    margin-right: 200px;
+}

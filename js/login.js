@@ -3,7 +3,6 @@ ingresar.addEventListener("click", () => {
     fetch("php/login.php", {
         method: "POST",
         body: new FormData(form_login)
-
     }).then(response => response.text()).then(response => {
         console.log(response);
         if (response == "ok") {

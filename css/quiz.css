@@ -25,6 +25,8 @@ body {
 .cabecera {
     display: flex;
     justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .back {
@@ -38,12 +40,18 @@ body {
 }
 
 .questions {
-    margin: 2rem 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0.5rem 4rem;
     width: 90vw;
-    padding: 2rem;
+    padding: 1rem;
     background: rgba(229, 252, 250, 0.793);
     cursor: default;
     border-radius: 1rem;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #question {
@@ -74,6 +82,7 @@ span,
 .preguntas label {
     padding: 0.1rem 0.7rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .preg1 {

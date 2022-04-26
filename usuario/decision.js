@@ -1,20 +1,25 @@
 validarNivelSopa();
 validarNivelTrivia();
+estadisticas();
 
 function validarNivelSopa() {
     fetch("validarNivelSopa.php").then(response => response.text()).then(response => {
         if (response == 1) {
             document.getElementById("botonSopa1").disabled = false;
             document.getElementById("botonSopa2").disabled = true;
+            document.getElementById("botonSopa2").style.backgroundColor = "#6c757d";
             document.getElementById("botonSopa3").disabled = true;
+            document.getElementById("botonSopa3").style.backgroundColor = "#6c757d";
         } else if (response == 2) {
             document.getElementById("botonSopa1").disabled = false;
             document.getElementById("botonSopa2").disabled = false;
             document.getElementById("botonSopa3").disabled = true;
+            document.getElementById("botonSopa3").style.backgroundColor = "#6c757d";
         } else {
             document.getElementById("botonSopa1").disabled = false;
             document.getElementById("botonSopa2").disabled = false;
             document.getElementById("botonSopa3").disabled = false;
+
         }
     })
 }
@@ -23,12 +28,18 @@ function validarNivelTrivia() {
     fetch("validarNivelTrivia.php").then(response => response.text()).then(response => {
         if (response == 1) {
             document.getElementById("botonTrivia1").disabled = false;
+
             document.getElementById("botonTrivia2").disabled = true;
+            document.getElementById("botonTrivia2").style.backgroundColor = "#6c757d";
+
             document.getElementById("botonTrivia3").disabled = true;
+            document.getElementById("botonTrivia3").style.backgroundColor = "#6c757d";
+
         } else if (response == 2) {
             document.getElementById("botonTrivia1").disabled = false;
             document.getElementById("botonTrivia2").disabled = false;
             document.getElementById("botonTrivia3").disabled = true;
+            document.getElementById("botonTrivia3").style.backgroundColor = "#6c757d";
         } else {
             document.getElementById("botonTrivia1").disabled = false;
             document.getElementById("botonTrivia2").disabled = false;

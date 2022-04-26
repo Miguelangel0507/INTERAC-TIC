@@ -1,0 +1,96 @@
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24252a;
+    padding-left: 5vw;
+}
+
+nav p {
+    margin-bottom: 0rem;
+}
+
+.cont-ul {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.5vw;
+    transition: all .3s ease 0s;
+}
+
+li:hover {
+    background-color: #008849;
+}
+
+.develop {
+    position: relative;
+}
+
+.estad_sopa,
+.estad_trivia {
+    background-color: white;
+}
+
+.ul-second {
+    display: none;
+    position: absolute;
+    margin-top: 1.5vw;
+    position: absolute;
+    z-index: 1;
+    right: 1.5vw;
+}
+
+.ul-second>li {
+    width: 400px;
+    border-bottom: solid 1px #fff;
+    text-align: center;
+    background-color: #24252a;
+}
+
+.ul-second>li:hover {
+    background-color: #008849;
+}
+
+.develop:hover>.ul-second {
+    display: block;
+}
+
+.ul-third {
+    position: absolute;
+    transform: translateX(100%);
+    right: 0;
+    top: 40%;
+    display: none;
+    background-color: #24252a;
+}
+
+.ul-third>li {
+    padding: 1.5vw;
+    border-bottom: solid 1px #fff;
+}
+
+.front:hover>.ul-third {
+    display: block;
+}
+
+@media (max-width:900px) {
+    .logo-danicodex {
+        display: none;
+    }
+}
+
+.cont-ul a,
+.logo-danicodex,
+.develop {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    margin-bottom: 0rem;
+}
