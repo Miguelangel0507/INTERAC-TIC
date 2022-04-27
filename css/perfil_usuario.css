@@ -8,3 +8,45 @@
 body {
     height: 100vh;
 }
+
+.cont_DatosUsuario {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position-y: center;
+    background-position-x: right;
+    padding: 5px;
+    margin: 5px;
+    width: 60%;
+    border-radius: 15px;
+    height: 70%;
+    font-size: 1.3rem;
+    border: 1px solid rgba(0, 0, 0, .125);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-control {
+    margin: 20px 0px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#container_datos {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60%;
+}
+
+label {
+    padding-top: 30px;
+    display: block;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+}

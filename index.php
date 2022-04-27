@@ -13,7 +13,7 @@
 <body>
     <!--registro-->
     <div class="padre">
-        
+
         <div class="row">
             <div class="logo">
                 <img src="img/descarga.png" alt="logo " />
@@ -24,13 +24,13 @@
                         <h1>Iniciar sesion</h1>
                     </div>
                     <div class="form-group mx-sm-4 pt-3">
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su usuario "  aria-label="Username" aria-describedby="basic-addon1" />
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su usuario " aria-label="Username" aria-describedby="basic-addon1" />
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña " />
                     </div>
                     <div class="form-group mx-sm-4 pb-2">
-                        
+
                         <input type="submit" id="ingresar" class="btn btn-block ingresar" onclick="envio_datos()" value="INGRESAR" />
                     </div>
                 </form>
