@@ -78,7 +78,7 @@ function nextQuestion() {
         i = i + 1;
         displayQuestion(cuestionario['cuestionario']);
         reiniciar_cuenta()
-            //window.ignicion = setInterval(despegar, 1000);     SE DEBE DESCOMENTAR ESTA LINEA
+        window.ignicion = setInterval(despegar, 1000);
     } else { //se manda a la base de datos los puntos y se da aviso de que si gano o perdio
         let puntos_nivel = new FormData()
         puntos_nivel.append('puntos', score);

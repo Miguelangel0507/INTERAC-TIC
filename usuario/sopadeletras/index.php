@@ -27,7 +27,7 @@ session_start();
                         <h2 align="center" id="cuenta">000</h2>
                     </div>
                     <div>
-                    <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=4,despegar()" />
+                    <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
                     </div>
                 </div>
             </div>
@@ -35,9 +35,9 @@ session_start();
             <p id="puntos">000</p>-->
 
             <div class="contenedor_central">
-                
+                <div>
                 <div id="puzzle"></div>
-                
+                </div>
                 
                 <div id="cont_words">
                     <div class="cont_puntos">

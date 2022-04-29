@@ -2,10 +2,10 @@
 if(isset($_POST)){
     session_start();
     $id = $_SESSION['id_usuario'];
-    $nombre = $_POST['editar_nombre'];
-    $username = $_POST['editar_nombre_personaje'];
+    $nombre = $_POST['nombres'];
+    $username = $_POST['nombre_personaje'];
     $correo = $_POST['editar_correo'];
-    $password = $_POST['editar_password'];
+    $password = $_POST['password'];
     $contraseña_fuerte = password_hash($password,  PASSWORD_BCRYPT,["COST"=>11]);
     
     require("../php/conexion.php");
