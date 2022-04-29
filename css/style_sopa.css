@@ -12,7 +12,6 @@ h1 {
     margin: 2% 0;
 }
 
-#puzzle,
 #words,
 #cont_words {
     visibility: hidden;
@@ -73,7 +72,8 @@ body {
     padding: 0px;
 }
 
-h1 {
+h1,
+#instrucciones h2 {
     text-align: center;
 }
 
@@ -99,6 +99,17 @@ h1 {
     padding: 2px;
     float: left;
     margin: 10px 20px;
+    display: none;
+}
+
+#lista_instrucciones {
+    font-size: larger;
+    text-align: center;
+}
+
+ol li,
+ol b {
+    margin-top: 20px;
 }
 
 #puzzle div {

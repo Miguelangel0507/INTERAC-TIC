@@ -469,10 +469,10 @@ window.onload = function() {
 }
 
 function despegar() {
-    document.getElementById("mk").disabled = true
 
     function cuentaAtras() {
-        document.getElementById("puzzle").style.visibility = "visible"; //imagen invisible si se comienza de nuevo
+        document.getElementById("instrucciones").style.display = "none";
+        document.getElementById("puzzle").style.display = "block"; //imagen invisible si se comienza de nuevo
         document.getElementById("words").style.visibility = "visible";
         contar -= 1; //variar el número de la cuenta
         cuenta.innerHTML = contar; //escribir el número

@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juego Sopa</title> 
+    <title>Juego Sopa</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
     <link rel="stylesheet" href="../../css/style_sopa.css" />
 </head>
@@ -18,7 +18,7 @@ session_start();
         <div class="row">
             <div class="encabezado">
                 <div class="title">
-                    <h1>Sopa de letras de <?php echo $_SESSION['decision']?></h1>
+                    <h1>Sopa de letras de <?php echo $_SESSION['decision'] ?></h1>
                 </div>
                 <!--lo nuevo-->
                 <div class="cont">
@@ -27,7 +27,7 @@ session_start();
                         <h2 align="center" id="cuenta">000</h2>
                     </div>
                     <div>
-                    <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
+                        <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
                     </div>
                 </div>
             </div>
@@ -36,17 +36,27 @@ session_start();
 
             <div class="contenedor_central">
                 <div>
-                <div id="puzzle"></div>
+                    <div id="instrucciones">
+                        <h2>Instrucciones del juego</h2>
+                        <ol id="lista_instrucciones">
+                            <li>En la parte derecha de la pagina estan ubicadas las palabras que debes encontrar en la sopa de letras.</li>
+                            <li>Al encontrar una de las palabras debes dar click en la letra inicial de la palabra y debes llevar el cursor hasta la ultima letra.</li>
+                            <li>Cada palabra te da 10 puntos, el minimo de puntos requeridos para ganar esta prueba es de 80 puntos.</li>
+                            <li>Si el tiempo llega a cero y no has conseguido el puntaje minimo para ganar la prueba, debereas repetir el nivel</li>
+                            <b>¡Ya estas listo para comenzar a jugar!</b>
+                        </ol>
+                    </div>
+                    <div id="puzzle"></div>
                 </div>
-                
+
                 <div id="cont_words">
                     <div class="cont_puntos">
-                    <label for="">Puntos:</label>
-                    <p id="puntos">000</p>
+                        <label for="">Puntos:</label>
+                        <p id="puntos">000</p>
                     </div>
                     <div id="words"></div>
                 </div>
-                
+
             </div>
             <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
