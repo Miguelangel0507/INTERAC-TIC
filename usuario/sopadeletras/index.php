@@ -34,7 +34,6 @@ session_start();
                     </div>
                 </div>
             </div>
-
             <div class="contenedor_central">
                 <div>
                     <div id="instrucciones">
