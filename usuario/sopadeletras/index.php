@@ -26,13 +26,14 @@ session_start();
                         <h2>Tiempo:</h2>
                         <h2 align="center" id="cuenta">000</h2>
                     </div>
-                    <div>
-                        <input id="mk" type="button" name="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
+                    <div id="comenzar">
+                        <input id="mk" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
+                    </div>
+                    <div id="salir">
+                        <a href="../index.php"><input type="button" class="btn btn-danger" value="Salir"></a>
                     </div>
                 </div>
             </div>
-            <!--<label for="">puntos:</label>
-            <p id="puntos">000</p>-->
 
             <div class="contenedor_central">
                 <div>
@@ -51,10 +52,13 @@ session_start();
 
                 <div id="cont_words">
                     <div class="cont_puntos">
-                        <label for="">Puntos:</label>
-                        <p id="puntos">000</p>
+                        <b for="">Puntos:</b>
+                        <b id="puntos">000</b>
                     </div>
                     <div id="words"></div>
+                    <div id="salir">
+                        <a href="../index.php"><input type="button" class="btn btn-danger" value="Salir"></a>
+                    </div>
                 </div>
 
             </div>

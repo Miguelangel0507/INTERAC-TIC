@@ -12,10 +12,15 @@ h1 {
     margin: 2% 0;
 }
 
-#words,
+#instrucciones h2 {
+    margin-top: 25px;
+}
+
+
+/*#words,
 #cont_words {
     visibility: hidden;
-}
+}*/
 
 #puzzle div button {
     border-right: 3px #eee solid;
@@ -32,7 +37,7 @@ h1 {
 
 .cont_puntos {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #mk {
@@ -41,6 +46,7 @@ h1 {
 
 .contenedor_central {
     display: flex;
+    justify-content: space-around;
     width: 80%;
 }
 
@@ -50,6 +56,17 @@ h1 {
 
 .encabezado {
     width: 80%
+}
+
+#cont_words {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#salir {
+    display: none;
+    text-align: center;
 }
 
 .row {
