@@ -111,6 +111,7 @@ formulario__btn.addEventListener("click", (e) => {
             body: new FormData(formulario_usuario)
         }).then(response => response.text()).then(response => { //alertas por actualizacion de datos
             if (response == true) {
+
                 Swal.fire({ //Mensaje de actualizacion de datos correcta
                     icon: 'success',
                     title: 'Tus datos fueron actualizados',
@@ -156,8 +157,6 @@ formulario__btn.addEventListener("click", (e) => {
         })
         MostrarDatos();
         formulario_usuario.reset();
-
-
     }
 });
 
@@ -176,7 +175,6 @@ btn_eliminar.addEventListener("click", () => {
                     allowEscapeKey: false,
                     allowEnterKey: false
                 })
-
                 setTimeout(location.href = "../index.php", 3000)
             }
         })
@@ -193,13 +191,12 @@ btn_eliminar.addEventListener("click", () => {
             allowEnterKey: false
         })
     }
-
 })
 
 function reset_mensaje() {
     for (var key in campos) {
         console.log(key)
-        console.log(campos)
+        console.log('grupo__' + key)
         document.getElementById('grupo__' + key).classList.remove('formulario__grupo-incorrecto');
         document.getElementById('grupo__' + key).classList.remove('formulario__grupo-correcto');
         document.querySelector('#grupo__' + key + ' i').classList.remove("fa-times-circle");

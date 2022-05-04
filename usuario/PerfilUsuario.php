@@ -40,7 +40,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Editar datos usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="reset_mensaje()"></button>
                 </div>
                 <div class="modal-body padre" id="padre">
                     <form action="" method="post" id="formulario_usuario">
@@ -111,7 +111,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="reset_mensaje()">Cerrar</button>
                     <div class="formulario__grupo formulario__grupo-btn-enviar">
                         <div class="botones">
                             <button type="submit" class="btn btn-primary formulario__btn" id="formulario__btn" data-bs-dismiss="modal">REGISTRAR</button>

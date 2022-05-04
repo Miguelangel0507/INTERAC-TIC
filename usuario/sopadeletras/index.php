@@ -66,7 +66,7 @@ session_start();
             <script type="text/javascript" src="wordfind.js"></script>
             <script type="text/javascript" src="wordfindgame.js"></script>
             <script>
-                //var words = ["calor", "camilo", "jorge"];
+            
 
                 // iniciar juego
                 var gamePuzzle = wordfindgame.create(<?php echo json_encode($_SESSION['array']); ?>, "#puzzle", "#words");

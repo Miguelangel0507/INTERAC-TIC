@@ -24,9 +24,9 @@
                 <li>Trivia tic es un juego de preguntas, dondes se te van a dar 4 posibles respuestas, y tu debes elegir la correcta.</li>
                 <li>Se te va a dar un limite de tiempo para que respondas la respuesta correcta, si no respondes te va salir un error y no se te van a dar puntos.</li>
                 <li>Al final del juego para poder ganar debes de tener como minimo 80 puntos.</li>
-                <div>
-                
-                <input id="mk" type="button" class="btn btn-success" name="comenzar" value="Comenzar juego" onclick="displayQuestion2(json)" />
+                <div id="container_btnos">
+                    <a role="button" class="atras" href="../index.php"><i class="fa-solid fa-arrow-left"></i>Salir</a>
+                    <input id="mk" type="button" class="btn btn-success" name="comenzar" value="Comenzar juego" onclick="displayQuestion2(json)" />
                 </div>
             </ol>
         </div>
@@ -35,7 +35,6 @@
                 <div class="cabecera">
                     <div class="back">
                         <a role="button" class="atras" href="../index.php"><i class="fa-solid fa-arrow-left"></i>Salir</a>
-
                         <h4 id="puntos">Puntos: 0 </h4>
                     </div>
                     <div class="tiempo">
@@ -60,14 +59,14 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
     <script src="quiz.js"></script>
+
     <script>
         var json = eval(<?php echo $_SESSION["resultado"] ?>)
         /* 
         displayQuestion2(json)
         funcion para que se inicialize las preguntas
-
         se debe descomentar la linea 148 de quiz.js funcion despegar qu es la del tiempo
         */
         //
