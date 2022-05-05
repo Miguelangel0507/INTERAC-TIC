@@ -13,10 +13,5 @@ ingresar.addEventListener("click", () => {
     })
 });
 
-
-
-
-
-
 //else if (response == "ok_administrador") {
 //alert("administrador");

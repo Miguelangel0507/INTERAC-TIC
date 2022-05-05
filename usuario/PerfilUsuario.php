@@ -98,15 +98,10 @@
                             <p class="formulario__input-error">
                                 Ambas contraseñas deben ser iguales.
                             </p>
-
                             <!-- validacion de formulario -->
                             <div class="formulario__mensaje2 alert alert-primary" role='alert' id="formulario__mensaje2" role='alert'>
                                 <label class="mensaje"><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor rellena el formulario correctamente</label>
                             </div>
-
-                            <!--boton de registro-->
-
-
                         </div>
                     </form>
                 </div>
@@ -114,6 +109,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="reset_mensaje()">Cerrar</button>
                     <div class="formulario__grupo formulario__grupo-btn-enviar">
                         <div class="botones">
+                            <!--boton de registro-->
                             <button type="submit" class="btn btn-primary formulario__btn" id="formulario__btn" data-bs-dismiss="modal">REGISTRAR</button>
                         </div>
 

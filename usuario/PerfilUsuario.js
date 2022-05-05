@@ -22,6 +22,7 @@ const expresiones = {
     correo: /^[a-zA-Z0-9\.]+@+[a-z]{3,7}\.[a-z]{2,3}$/,
 }
 
+
 const campos = {
     nombres: true,
     nombre_personaje: true,
@@ -111,7 +112,6 @@ formulario__btn.addEventListener("click", (e) => {
             body: new FormData(formulario_usuario)
         }).then(response => response.text()).then(response => { //alertas por actualizacion de datos
             if (response == true) {
-
                 Swal.fire({ //Mensaje de actualizacion de datos correcta
                     icon: 'success',
                     title: 'Tus datos fueron actualizados',
@@ -124,7 +124,6 @@ formulario__btn.addEventListener("click", (e) => {
                 })
                 MostrarDatos()
                 formulario_usuario.reset();
-
             } else {
                 Swal.fire({ //alerta al no hacer cambio en la base de datos
                     icon: 'warning',
@@ -139,7 +138,6 @@ formulario__btn.addEventListener("click", (e) => {
                 })
                 MostrarDatos();
                 formulario_usuario.reset();
-
             }
         })
     } else {
