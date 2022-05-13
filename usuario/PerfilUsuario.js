@@ -12,6 +12,9 @@ function MostrarDatos() { //Muestra los datos del usuario
         })
 }
 
+var c1 = document.getElementById('password');
+var c2 = document.getElementById('password2');
+
 const formulario = document.getElementById('padre')
 const inputs = document.querySelectorAll('#padre input')
 
@@ -22,20 +25,18 @@ const expresiones = {
     correo: /^[a-zA-Z0-9\.]+@+[a-z]{3,7}\.[a-z]{2,3}$/,
 }
 
-
 const campos = {
-    nombres: true,
+    nombre: true,
     nombre_personaje: true,
-    editar_correo: true,
+    correo: true,
     password: false,
     password2: false
 }
 
 const validarFormulario = (e) => {
-
     switch (e.target.name) {
         case 'nombres':
-            validarCampo(expresiones.nombre, e.target, "nombres");
+            validarCampo(expresiones.nombre, e.target, "nombre");
             break;
 
         case 'nombre_personaje':
@@ -43,7 +44,7 @@ const validarFormulario = (e) => {
             break;
 
         case 'editar_correo':
-            validarCampo(expresiones.correo, e.target, "editar_correo");
+            validarCampo(expresiones.correo, e.target, "correo");
             break;
 
         case 'password':
@@ -103,9 +104,35 @@ inputs.forEach((inputs) => {
     inputs.addEventListener("blur", validarFormulario);
 })
 
+// evento para el input radio del "si"
+document.getElementById('interesadoPositivo').addEventListener('click', function(e) {
+    c1.disabled = false, c2.disabled = false;
+    campos.password = false;
+})
+
+document.getElementById('interesadoNegativo').addEventListener('click', function(e) {
+    c1.disabled = true, c2.disabled = true;
+    const inputpassword1 = document.getElementById("password");
+    const inputpassword2 = document.getElementById("password2");
+    document.getElementById(`grupo__password`).classList.remove('formulario__grupo-incorrecto');
+    document.querySelector(`#grupo__password .formulario__input-error`).classList.remove("formulario__input-error-activo");
+    document.querySelector(`#grupo__password i`).classList.remove("fa-check-circle");
+    document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
+    document.querySelector(`#grupo__password2 i`).classList.remove("fa-check-circle");
+    document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
+    document.querySelector(`#grupo__password2 i`).classList.remove("fa-times-circle");
+    document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove("formulario__input-error-activo");
+    campos["password"] = true;
+    c1.value = "";
+    c2.value = "";
+    campos.password = false;
+});
+
 formulario__btn.addEventListener("click", (e) => {
     e.preventDefault();
-    if (campos.nombres && campos.nombre_personaje && campos.editar_correo && campos.password) {
+    var deci = document.getElementById('interesadoPositivo').checked
+    var deci2 = document.getElementById('interesadoNegativo').checked
+    if (deci && campos.nombre && campos.nombre_personaje && campos.correo && campos.password) {
         //se envia el formulario a la direccion URL para el registro del usuarios
         fetch("actualizar.php", {
             method: "POST",
@@ -122,8 +149,45 @@ formulario__btn.addEventListener("click", (e) => {
                     allowEscapeKey: false,
                     allowEnterKey: false
                 })
-                MostrarDatos()
                 formulario_usuario.reset();
+                MostrarDatos()
+                reset_mensaje()
+                $('#actualizar_datos').modal('hide');
+            } else {
+                Swal.fire({ //alerta al no hacer cambio en la base de datos
+                    icon: 'warning',
+                    title: 'Ocurrio un error.',
+                    text: "No se pudieron actualizar tus datos",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false
+                })
+                MostrarDatos();
+            }
+        })
+    } else if (deci2 && campos.nombre && campos.nombre_personaje && campos.correo) {
+        fetch("actualizar.php", {
+            method: "POST",
+            body: new FormData(formulario_usuario)
+        }).then(response => response.text()).then(response => { //alertas por actualizacion de datos
+            if (response == true) {
+                Swal.fire({ //Mensaje de actualizacion de datos correcta
+                    icon: 'success',
+                    title: 'Tus datos fueron actualizados',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false
+                })
+                formulario_usuario.reset();
+                MostrarDatos()
+                reset_mensaje()
+                $('#actualizar_datos').modal('hide');
             } else {
                 Swal.fire({ //alerta al no hacer cambio en la base de datos
                     icon: 'warning',
@@ -141,20 +205,17 @@ formulario__btn.addEventListener("click", (e) => {
             }
         })
     } else {
-        reset_mensaje();
         Swal.fire({ //alerta de datos incompletos
             icon: 'warning',
             title: 'No se actualizaron los datos',
             text: "Debes de llenar correctamente los campos",
             showConfirmButton: false,
-            timer: 4000,
+            timer: 3000,
             timerProgressBar: true,
             allowOutsideClick: false,
             allowEscapeKey: false,
             allowEnterKey: false
         })
-        MostrarDatos();
-        formulario_usuario.reset();
     }
 });
 
@@ -193,12 +254,11 @@ btn_eliminar.addEventListener("click", () => {
 
 function reset_mensaje() {
     for (var key in campos) {
-        console.log(key)
-        console.log('grupo__' + key)
         document.getElementById('grupo__' + key).classList.remove('formulario__grupo-incorrecto');
-        document.getElementById('grupo__' + key).classList.remove('formulario__grupo-correcto');
         document.querySelector('#grupo__' + key + ' i').classList.remove("fa-times-circle");
-        document.querySelector('#grupo__' + key + ' i').classList.remove("fa-check-circle");
         document.querySelector('#grupo__' + key + ' .formulario__input-error').classList.remove("formulario__input-error-activo");
+        document.getElementById('grupo__' + key).classList.remove('formulario__grupo-correcto');
+        document.querySelector('#grupo__' + key + ' i').classList.remove("fa-check-circle");
+        c1.disabled = true, c2.disabled = true;
     }
 }

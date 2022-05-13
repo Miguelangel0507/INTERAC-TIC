@@ -11,7 +11,10 @@
 </head>
 
 <body>
-    <?php include "HeaderUsario.php"; ?>
+    <?php 
+    session_start();
+    include "validacion.php";
+    include "HeaderUsario.php"; ?>
     <div class="body">
         <div class="cont_DatosUsuario">
             <h2>Datos Usuario</h2>
@@ -29,13 +32,13 @@
             </div>
             <div class="btns">
                 <button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
-                <button type='button' class='btn btn-success' data-bs-toggle='modal' data-bs-target='#staticBackdrop'><i class='far fa-edit' ></i> Editar Datos</button>
+                <button type='button' class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
             </div>
         </div>
     </div>
 
-    <!--Modal  Actualizar datos-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!--Modal actualizar datos Neider-->
+    <div class="modal fade" id="actualizar_datos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -43,19 +46,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="reset_mensaje()"></button>
                 </div>
                 <div class="modal-body padre" id="padre">
-                    <form action="" method="post" id="formulario_usuario">
-                        <!-- Grupo: Nombre -->
-                        <div class="formulario__grupo" id="grupo__nombres">
+                    <form method="POST" id="formulario_usuario">
+                        <!--nombre-->
+                        <div class="formulario__grupo " id="grupo__nombre">
                             <div class="formulario__grupo-input">
-                                <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombres y Apellidos" aria-label="Username" aria-describedby="basic-addon1" />
+                                <input type="text" class="form-control" name="nombres" id="nombres">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">
                                 El nombre tiene que ser de 4 a 16 dígitos y solo puede contener letras
                             </p>
                         </div>
-
-                        <!-- Grupo: Nombre_personaje -->
+                        <!--username-->
                         <div class="formulario__grupo" id="grupo__nombre_personaje">
                             <div class="formulario__grupo-input">
                                 <input type="text" class="form-control" name="nombre_personaje" id="nombre_personaje" placeholder="Nombra tu personaje" aria-label="Username" aria-describedby="basic-addon1" />
@@ -65,39 +67,44 @@
                                 El nombre del personaje tiene que ser de 4 a 16 dígitos y no contener espacio, solo puede contener numeros, letras y guion bajo
                             </p>
                         </div>
-
-                        <!-- Grupo: correo 
-                        <input type="text" class="form-control" name="correo" id="correo" placeholder="Correo electronico" aria-label="Correo electronico" aria-describedby="basic-addon1" />-->
-                        <div class="formulario__grupo" id="grupo__editar_correo">
+                        <!--correo-->
+                        <div class="formulario__grupo" id="grupo__correo">
                             <div class="formulario__grupo-input">
-                                <input type="text" class="form-control" name="editar_correo" id="editar_correo" placeholder=" Correo electronio" aria-label="Username" aria-describedby="basic-addon1" />
+                                <input type="text" class="form-control" name="editar_correo" id="editar_correo">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">
                                 El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
                             </p>
                         </div>
-
-                        <!-- Grupo: contraseña -->
+                        <p>Desea cambiar su clave</p>
+                        <p id="checkbox">
+                            <label class="list-group-item">
+                                No <input type="radio" name="interesado" value="no" id="interesadoNegativo" checked>
+                            </label>
+                            <label class="list-group-item">
+                                Sí <input type="radio" name="interesado" value="si" id="interesadoPositivo"> <br>
+                            </label>
+                        </p>
+                        <!--contraseñas-->
                         <div class="formulario__grupo" id="grupo__password">
                             <div class="formulario__grupo-input">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" />
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Nueva clave" disabled>
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">
                                 La contraseña tiene que ser de 8 dígitos y contener una letra mayuscula
                             </p>
-                        </div>
-
-                        <!-- Grupo: contraseña 2 -->
-                        <div class="formulario__grupo" id="grupo__password2">
-                            <div class="formulario__grupo-input">
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="Validar Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" />
-                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            <!--contraseñas 2<label class="la" for="">Validar contraseña:&nbsp </label>-->
+                            <div class="formulario__grupo" id="grupo__password2">
+                                <div class="formulario__grupo-input">
+                                    <input type="password" class="form-control" name="password2" id="password2" placeholder="Validar clave" disabled>
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">
+                                    Ambas contraseñas deben ser iguales.
+                                </p>
                             </div>
-                            <p class="formulario__input-error">
-                                Ambas contraseñas deben ser iguales.
-                            </p>
                             <!-- validacion de formulario -->
                             <div class="formulario__mensaje2 alert alert-primary" role='alert' id="formulario__mensaje2" role='alert'>
                                 <label class="mensaje"><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor rellena el formulario correctamente</label>
@@ -107,20 +114,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="reset_mensaje()">Cerrar</button>
-                    <div class="formulario__grupo formulario__grupo-btn-enviar">
-                        <div class="botones">
-                            <!--boton de registro-->
-                            <button type="submit" class="btn btn-primary formulario__btn" id="formulario__btn" data-bs-dismiss="modal">REGISTRAR</button>
-                        </div>
-
-                    </div>
-
-                    </form>
+                    <button type="submit" class="btn btn-primary formulario__btn" id="formulario__btn">Guardar Cambios</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <!--MODAL ELIMINAR CUENTA-->
     <div class="modal fade" id="M_eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

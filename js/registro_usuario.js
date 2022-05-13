@@ -15,11 +15,9 @@ const campos = {
     password: false
 }
 const validarFormulario = (e) => {
-
         switch (e.target.name) {
             case 'nombre':
                 validarCampo(expresiones.nombre, e.target, "nombre");
-
                 break;
 
             case 'nombre_personaje':
@@ -28,13 +26,11 @@ const validarFormulario = (e) => {
 
             case 'correo':
                 validarCampo(expresiones.correo, e.target, "correo");
-
                 break;
 
             case 'password':
                 validarCampo(expresiones.password, e.target, "password");
                 validarPassword2();
-
                 break;
 
             case 'password2':
@@ -92,36 +88,67 @@ inputs.forEach((inputs) => {
     inputs.addEventListener("blur", validarFormulario);
 })
 formulario__btn.addEventListener("click", (e) => {
-
-    e.preventDefault();
     //const terminos = document.getElementById("terminos");
-
     if (campos.nombre && campos.nombre_personaje && campos.correo && campos.password) {
         //se envia el formulario a la direccion URL para el registro del usuarios
+        e.preventDefault();
         fetch("php/registrar_usuario.php", {
             method: "POST",
             body: new FormData(formulario_usuario)
+        }).then(Response => Response.text()).then(Response => {
+            // alert(Response)
+            if (Response == "nom_ocupado") {
+                // alert("existecc")
+                document.querySelector('#grupo__nombre_personaje .formulario__input-error2').classList.add("formulario__input-error2-activo");
+                document.querySelector('#grupo__nombre_personaje ').classList.add('formulario__grupo-incorrecto');
+                document.querySelector('#grupo__nombre_personaje i').classList.add('fa-times-circle');
+            } else if (Response == "email_ocupado") {
+                //   alert("email existe")
+                document.querySelector('#grupo__correo .formulario__input-error2').classList.add("formulario__input-error2-activo");
+                document.querySelector('#grupo__correo ').classList.add('formulario__grupo-incorrecto');
+                document.querySelector('#grupo__correo i').classList.add('fa-times-circle');
+                document.querySelector('#grupo__nombre_personaje .formulario__input-error2').classList.remove("formulario__input-error2-activo")
+            } else if (Response == "guardados") {
+
+                // alert("email disponible")
+                formulario_usuario.reset();
+                document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
+                document.querySelector('#grupo__correo .formulario__input-error2').classList.remove("formulario__input-error2-activo");
+                setTimeout(() => {
+                    document.getElementById("formulario__mensaje-exito").classList.remove("formulario__mensaje-exito-activo")
+                    update();
+                }, 3000);
+                document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+                    icono.classList.remove('formulario__grupo-correcto');
+                });
+                return;
+            }
+
         });
 
         //se crea nueva rama ensayo
-        formulario_usuario.reset();
-        document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
 
-        setTimeout(() => {
-            document.getElementById("formulario__mensaje-exito").classList.remove("formulario__mensaje-exito-activo")
-            update();
-        }, 3000);
-
-        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario__grupo-correcto');
-        });
-        return;
     } else {
-        document.getElementById('formulario__mensaje2').classList.add("formulario__mensaje-activo2");
+        document.getElementById('grupo__nombre_personaje').classList.add("formulario__input-error2-activo");
 
 
     }
 });
+
+function ver() {
+    const c = document.getElementById("password")
+    const c2 = document.getElementById("password2")
+
+    if (c.type == "password") {
+        c.type = Text
+        c2.type = Text
+    } else {
+        c.type = "password"
+        c2.type = "password"
+    }
+}
+
+
 
 function update() {
     document.location.href = "index.php";

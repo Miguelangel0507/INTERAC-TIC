@@ -13,8 +13,9 @@ cd /
 // agrega los archivos existente
 git add . 
 
+git commit -m
 // se cargan al commit con comentario
-git commit -m "comentario"
+
 
 // se manda al git hub
 git push --set-upstream origin master

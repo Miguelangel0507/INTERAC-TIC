@@ -41,6 +41,9 @@
                             <p class="formulario__input-error">
                                 El nombre del personaje tiene que ser de 4 a 16 dígitos y no contener espacio, solo puede contener numeros, letras y guion bajo
                             </p>
+                            <p class="formulario__input-error2">
+                                El nombre del personaje ya existe intente con otro
+                            </p>
                         </div>
 
                         <!-- Grupo: correo -->
@@ -51,6 +54,9 @@
                             </div>
                             <p class="formulario__input-error">
                                 El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
+                            </p>
+                            <p class="formulario__input-error2">
+                                El correo ya existe
                             </p>
                         </div>
 
@@ -63,6 +69,7 @@
                             <p class="formulario__input-error">
                                 La contraseña tiene que ser de 8 dígitos y contener una letra mayuscula
                             </p>
+
                         </div>
 
                         <!-- Grupo: contraseña 2 -->
@@ -74,6 +81,9 @@
                             <p class="formulario__input-error">
                                 Ambas contraseñas deben ser iguales.
                             </p>
+                            <div class="v" styel="position:relative; top:11px">
+                                <input type="checkbox" onclick="ver()"> &nbsp Ver contraseña
+                            </div>
 
                             <!-- validacion de formulario -->
                             <div class="formulario__mensaje2 alert alert-primary" role='alert' id="formulario__mensaje2" role='alert'>
@@ -109,6 +119,7 @@
                         <input type="submit" class=" " value="INGRESAR " />-->
         <script src="js/registro_usuario.js"></script>
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

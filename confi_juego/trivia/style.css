@@ -1,0 +1,101 @@
+  body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .nav-link1 {
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            display: block;
+        }
+
+        .nav-item1 {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .navbar1 {
+            position: relative;
+            background-color: #424949;
+            list-style: none;
+            padding: 0;
+            /* width: 90%; */
+            /* max-width: 1000px; */
+            margin: auto;
+            /* left: 4%*/
+        }
+
+        .nav-link1:hover {
+            background: blue;
+        }
+
+        .navbar-nav1 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .pa {
+            padding-top: 14px;
+            font-size: 28px;
+
+
+        }
+
+        .collapse1 {
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        textarea.form-control {
+            height: auto;
+            height: 160px;
+        }
+
+        label {
+            display: flex;
+            font-family: cursive;
+        }
+
+        .form-control {
+            width: 430px;
+        }
+
+        .modal-title {
+            width: 90%;
+        }
+
+        .row {
+            display: table-row;
+        }
+
+        .modal-body {
+            display: flex;
+            position: relative;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 1rem;
+            justify-content: space-around;
+        }
+
+        .col-md-12 {
+
+            padding-top: 5px;
+            margin-left: 64px;
+        }
+
+        td {
+            display: table-cell;
+          vertical-align: middle !important;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .tr {
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .list-group-item {
+            margin-bottom: 0px;
+        }

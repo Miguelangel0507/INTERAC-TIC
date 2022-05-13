@@ -1,4 +1,5 @@
-<?php session_start() ?>
+<?php session_start();
+include('../validacion.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 

@@ -15,7 +15,9 @@ session_start();
 </head>
 
 <body>
-    <?php include "HeaderUsario.php"; ?>
+    <?php
+    include "validacion.php";
+    include "HeaderUsario.php"; ?>
     <div class="cards">
     
         <div class="card card1" style="width: 18rem;">

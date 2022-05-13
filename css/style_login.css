@@ -15,6 +15,10 @@ h1 {
     border-left: solid 1px;
 }
 
+.alert-primary {
+    display: none;
+}
+
 
 /*.form-control {
     background: whitesmoke;
@@ -45,8 +49,13 @@ h1 {
     width: 100%;
 }
 
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .ingresar:hover {
-    color: red;
+    color: white;
 }
 
 .olvide {
@@ -58,6 +67,8 @@ h1 {
 }
 
 .crear {
+    text-decoration: none;
+    color: white;
     color: white;
     font-size: 19px;
     border: 2px solid white;

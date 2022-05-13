@@ -13,13 +13,12 @@
 <body>
     <!--registro-->
     <div class="padre">
-
         <div class="row">
             <div class="logo">
                 <img src="img/descarga.png" alt="logo " />
             </div>
             <div class="formulario">
-                <form action="" method="post" id="form_login">
+                <form method="post" id="form_login">
                     <div class="form-group text-center pt-3">
                         <h1>Iniciar sesion</h1>
                     </div>
@@ -28,54 +27,18 @@
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña " />
+                        <div class="v" styel="position:relative; top:11px">
+                            <input type="checkbox" onclick="ver()"> &nbsp Ver contraseña
+                        </div>
                     </div>
                     <div class="form-group mx-sm-4 pb-2">
-
-                        <input type="submit" id="ingresar" class="btn btn-block ingresar" onclick="envio_datos()" value="INGRESAR" />
+                        <input type="submit" id="ingresar" class="btn btn-block ingresar" value="INGRESAR" />
                     </div>
                 </form>
-                <?php
-                if ($_POST) {
-                    session_start();
-                    //Se traen los datos ingresados por el usuario
-                    $username = $_POST['username'];
-                    $contraseña = $_POST['contraseña'];
-                    //se hace conexxion a la base de datos
-                    require("php/conexion.php");
-                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    //se hace la consulta a la tabla usuarios mediante el username
-                    $query = $pdo->prepare("SELECT * FROM usuarios WHERE username='$username'");
-                    $query->execute();
-
-                    $usuario = $query->fetch(PDO::FETCH_ASSOC);
-                    if ($usuario) {
-                        //se compara la contraseña ingresada con la guardada en el registro
-                        if (password_verify($contraseña, $usuario["contraseña"])) {
-                            //se valida el estado del usuario
-                            if ($usuario["estado"] == 1) {
-                                //se valida el rol del usuario y se direcciona segun su rol
-                                if ($usuario["rol_usuario"]  == 1) {
-                                    $_SESSION['id_usuario'] = $usuario["id_username"];
-                                    header("location: usuario");
-                                } else {
-                                    header("location: administrador/administrador.html");
-                                }
-                            } else {
-                                echo "<div class='alert alert-primary' role='alert'><i class='fas fa-exclamation-triangle'></i>Su estado es inactivo</div>";
-                            }
-                        } else {
-                            echo "<div class='alert alert-primary' role='alert'><i class='fas fa-exclamation-triangle'></i>verfica tu usuario y contraseña</div>";
-                        }
-                    } else {
-                        echo "<div class='alert alert-primary' role='alert'>verfica tu usuario y contraseña</div>";
-                    }
-                }
-                ?>
-
-
+                <div class='alert alert-primary' id="alerta" role='alert'></div>
                 <!--recuperar contraseña-->
                 <div class="form-group mx-sm-4 text-center">
-                    <span class=" "><a href="# " class="olvide">¿Olvidaste tu contraseña?</a></span>
+                    <span class=" "><a href="recuperar_clave/index.php" class="olvide">¿Olvidaste tu contraseña?</a></span>
                     <hr />
                 </div>
                 <!--registro-->
@@ -87,9 +50,8 @@
             </div>
         </div>
     </div>
-
+    <script src="js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
 </body>
 
