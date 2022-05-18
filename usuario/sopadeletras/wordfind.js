@@ -470,7 +470,7 @@ window.onload = function() {
 
 function despegar() {
     function cuentaAtras() {
-        document.getElementById("comenzar").style.display = "none";
+        document.getElementById("btn_empezar").style.display = "none";
         document.getElementById("salir").style.display = "block";
         document.getElementById("instrucciones").style.display = "none";
         document.getElementById("puzzle").style.display = "block"; //imagen invisible si se comienza de nuevo
@@ -536,7 +536,7 @@ function registrar() {
 }
 
 function parar() {
-    document.getElementById("mk").disabled = true
+    document.getElementById("btn_empezar").disabled = true
     $('.puzzleSquare').addClass('complete');
     registrar();
 

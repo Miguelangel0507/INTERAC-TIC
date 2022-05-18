@@ -19,7 +19,6 @@ session_start();
     include "validacion.php";
     include "HeaderUsario.php"; ?>
     <div class="cards">
-    
         <div class="card card1" style="width: 18rem;">
             <img src="../img/SopaLetras2.jpg" class="card-img-top" alt="...">
             <div class="card-body">

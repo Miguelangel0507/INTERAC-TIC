@@ -24,7 +24,6 @@ nav p {
 
 li {
     list-style: none;
-    cursor: pointer;
     padding: 1.5vw;
     transition: all .3s ease 0s;
 }
@@ -36,6 +35,13 @@ li:hover {
 
 .develop {
     position: relative;
+}
+
+.mensaje_eliminar {
+    margin-top: 0px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .estad_sopa,
@@ -52,11 +58,24 @@ li:hover {
     right: 0vw;
 }
 
+.btno-config {
+    border-radius: 10px;
+    width: 10%;
+    border: none;
+    margin: 0px 0px 10px;
+    background: white;
+}
+
+.config {
+    text-align: end;
+}
+
 .ul-second>li {
     width: 400px;
     border-bottom: solid 1px #fff;
     text-align: center;
     background-color: #24252a;
+    padding-top: 8px;
 }
 
 .ul-second>li:hover {

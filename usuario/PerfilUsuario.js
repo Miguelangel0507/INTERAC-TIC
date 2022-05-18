@@ -234,7 +234,8 @@ btn_eliminar.addEventListener("click", () => {
                     allowEscapeKey: false,
                     allowEnterKey: false
                 })
-                setTimeout(location.href = "../index.php", 3000)
+
+                setTimeout(salir, 1500)
             }
         })
     } else {
@@ -252,6 +253,10 @@ btn_eliminar.addEventListener("click", () => {
     }
 })
 
+function salir() {
+    location.href = "salir.php";
+}
+
 function reset_mensaje() {
     for (var key in campos) {
         document.getElementById('grupo__' + key).classList.remove('formulario__grupo-incorrecto');
@@ -260,5 +265,6 @@ function reset_mensaje() {
         document.getElementById('grupo__' + key).classList.remove('formulario__grupo-correcto');
         document.querySelector('#grupo__' + key + ' i').classList.remove("fa-check-circle");
         c1.disabled = true, c2.disabled = true;
+        MostrarDatos()
     }
 }

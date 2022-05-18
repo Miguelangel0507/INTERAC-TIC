@@ -1,7 +1,6 @@
 <?php
+session_start();
 if ($_POST) {
-    session_start();
-
     $username = $_POST['username'];
     $contra = $_POST['contraseña'];
 
@@ -33,4 +32,13 @@ if ($_POST) {
     } else {
         echo 0;
     }
+}else{
+    $_SESSION['id_usuario'] = "invitado";
+    $_SESSION['puntos_sopa1']  = 0;
+    $_SESSION['puntos_sopa2']  = 0;
+    $_SESSION['puntos_sopa3']  = 0;
+    $_SESSION['puntos_trivia1']  = 0;
+    $_SESSION['puntos_trivia2']  = 0;
+    $_SESSION['puntos_trivia3']  = 0;
+    echo "ingreso";
 }

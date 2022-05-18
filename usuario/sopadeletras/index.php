@@ -27,63 +27,59 @@ include('../validacion.php');
                         <h2>Tiempo:</h2>
                         <h2 align="center" id="cuenta">000</h2>
                     </div>
-                    <div id="comenzar">
-                        <input id="mk" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
-                    </div>
                     <div id="salir">
                         <a href="../index.php"><input type="button" class="btn btn-danger" value="Salir"></a>
                     </div>
                 </div>
             </div>
             <div class="contenedor_central">
-                <div>
-                    <div id="instrucciones">
-                        <h2>Instrucciones del juego</h2>
-                        <ol id="lista_instrucciones">
-                            <li>En la parte derecha de la pagina estan ubicadas las palabras que debes encontrar en la sopa de letras.</li>
-                            <li>Al encontrar una de las palabras debes dar click en la letra inicial de la palabra y debes llevar el cursor hasta la ultima letra.</li>
-                            <li>Cada palabra te da 10 puntos, el minimo de puntos requeridos para ganar esta prueba es de 80 puntos.</li>
-                            <li>Si el tiempo llega a cero y no has conseguido el puntaje minimo para ganar la prueba, debereas repetir el nivel</li>
-                            <b>¡Ya estas listo para comenzar a jugar!</b>
-                        </ol>
-                    </div>
-                    <div id="puzzle"></div>
-                </div>
 
-                <div id="cont_words">
-                    <div class="cont_puntos">
-                        <b for="">Puntos:</b>
-                        <b id="puntos">000</b>
-                    </div>
-                    <div id="words"></div>
-                    <div id="salir">
-                        <a href="../index.php"><input type="button" class="btn btn-danger" value="Salir"></a>
+                <div id="instrucciones">
+                    <h2>Instrucciones del juego</h2>
+                    <ol id="lista_instrucciones">
+                        <li>En la parte derecha de la pagina estan ubicadas las palabras que debes encontrar en la sopa de letras.</li>
+                        <li>Al encontrar una de las palabras debes dar click en la letra inicial de la palabra y debes llevar el cursor hasta la ultima letra.</li>
+                        <li>Cada palabra te da 10 puntos, el minimo de puntos requeridos para ganar esta prueba es de 80 puntos.</li>
+                        <li>Si el tiempo llega a cero y no has conseguido el puntaje minimo para ganar la prueba, debereas repetir el nivel</li>
+                        <b>¡Ya estas listo para comenzar a jugar!</b>
+                    </ol>
+                    <div id="comenzar">
+                        <input id="btn_empezar" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
                     </div>
                 </div>
 
+                <div id="puzzle"></div>
             </div>
-            <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-            <script type="text/javascript" src="wordfind.js"></script>
-            <script type="text/javascript" src="wordfindgame.js"></script>
-            <script>
-            
 
-                // iniciar juego
-                var gamePuzzle = wordfindgame.create(<?php echo json_encode($_SESSION['array']); ?>, "#puzzle", "#words");
+            <div id="cont_words">
+                <div class="cont_puntos">
+                    <b for="">Puntos:</b>
+                    <b id="puntos">000</b>
+                </div>
+                <div id="words"></div>
+            </div>
 
-                // cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
-                var puzzle = wordfind.newPuzzle(words, {
-                    height: 18,
-                    width: 18,
-                    fillBlanks: false,
-                });
-                wordfind.print(puzzle);
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         </div>
+        <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script type="text/javascript" src="wordfind.js"></script>
+        <script type="text/javascript" src="wordfindgame.js"></script>
+        <script>
+            // iniciar juego
+            var gamePuzzle = wordfindgame.create(<?php echo json_encode($_SESSION['array']); ?>, "#puzzle", "#words");
+
+            // cree solo un rompecabezas, sin completar los espacios en blanco e imprima en la consola
+            var puzzle = wordfind.newPuzzle(words, {
+                height: 18,
+                width: 18,
+                fillBlanks: false,
+            });
+            wordfind.print(puzzle);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    </div>
     </div>
 </body>
 

@@ -45,7 +45,7 @@
                 <div class="form-group text-center">
                     <span><a href="registro.html" class="crear">Crear cuenta nueva</a></span><br />
                     <label for="" class="o">o</label><br />
-                    <span><a href="# " class="crear">Ingresar como invitado</a></span><br />
+                    <span><a id="btn_invitado" class="crear">Ingresar como invitado</a></span><br />
                 </div>
             </div>
         </div>

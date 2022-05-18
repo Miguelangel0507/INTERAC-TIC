@@ -12,7 +12,6 @@ if($_POST){
         for ($i = 0; $i < 10; $i++) {
             array_push($palabras, $usuario[$i][$decision]);
         }
-        
         $_SESSION['array'] = $palabras;
         $_SESSION['decision'] = $decision;
         echo true;

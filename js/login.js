@@ -19,6 +19,22 @@ ingresar.addEventListener("click", (e) => {
     form_login.reset()
 });
 
+btn_invitado.addEventListener("click", () => {
+    fetch("validar_login.php").then(response => response.text()).then(response => {
+        if (response == "ingreso") {
+            document.location.href = "usuario/";
+        } else {
+            document.getElementById("alerta").innerHTML = "Ha ocurrido un error, intentalo de nuevo"
+            document.getElementById("alerta").style.display = "block"
+        }
+    })
+
+})
+
+
+
+
+
 function ver() {
     const c = document.getElementById("contraseña")
     if (c.type == "password") {

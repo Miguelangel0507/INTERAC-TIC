@@ -1,6 +1,6 @@
 estadisticas();
 
-function estadisticas() {
+function estadisticas() { //funcion para crear las estadisticas
     fetch("estadisticas.php").then(response => response.text()).then(response => {
         var estad = JSON.parse(response);
         var popCanvas = document.getElementById("SopaLetras");
@@ -81,4 +81,39 @@ function estadisticas() {
 
         });
     })
+}
+
+btn_eliminar_estadisticas.addEventListener("click", (e) => {
+    e.preventDefault();
+    fetch("eliminar_estadisticas.php").then(response => response.text()).then(response => {
+        if (response == true) {
+            Swal.fire({ //Mensaje de actualizacion de datos correcta
+                icon: 'success',
+                title: 'Se han restablecido tus estadisticas',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false
+            })
+            setTimeout(recargar, 2000)
+        } else {
+            Swal.fire({ //alerta de error
+                icon: 'warning',
+                title: 'Ocurrio un error.',
+                text: 'Debes escribir "ELIMINAR".',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false
+            })
+        }
+    })
+})
+
+function recargar() {
+    location.reload();
 }
