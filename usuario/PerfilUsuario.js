@@ -40,31 +40,30 @@ const campos = {
 }
 
 const validarFormulario = (e) => {
-    switch (e.target.name) {
-        case 'nombres':
-            validarCampo(expresiones.nombre, e.target, "nombre");
-            break;
+        switch (e.target.name) {
+            case 'nombres':
+                validarCampo(expresiones.nombre, e.target, "nombre");
+                break;
 
-        case 'nombre_personaje':
-            validarCampo(expresiones.usuario, e.target, "nombre_personaje");
-            break;
+            case 'nombre_personaje':
+                validarCampo(expresiones.usuario, e.target, "nombre_personaje");
+                break;
 
-        case 'editar_correo':
-            validarCampo(expresiones.correo, e.target, "correo");
-            break;
+            case 'editar_correo':
+                validarCampo(expresiones.correo, e.target, "correo");
+                break;
 
-        case 'password':
-            validarCampo(expresiones.password, e.target, "password");
-            validarPassword2();
-            break;
+            case 'password':
+                validarCampo(expresiones.password, e.target, "password");
+                validarPassword2();
+                break;
 
-        case 'password2':
-            validarPassword2();
-            break;
+            case 'password2':
+                validarPassword2();
+                break;
+        }
     }
-}
-
-//validar datos
+    //validar datos
 const validarCampo = (expresion, input, campo) => {
     if (expresion.test(input.value)) {
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
