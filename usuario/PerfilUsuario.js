@@ -3,15 +3,21 @@ MostrarDatos()
 function MostrarDatos() { //Muestra los datos del usuario
     fetch("DatosUsuario.php")
         .then(response => response.json()).then(response => {
-            document.getElementById("nombre").innerHTML = response[0].nombre;
-            document.getElementById("correo").innerHTML = response[0].email;
-            document.getElementById("username").innerHTML = response[0].username;
-            nombres.value = response[0].nombre;
-            nombre_personaje.value = response[0].username;
-            editar_correo.value = response[0].email;
+            if (response != "invitado") {
+                document.getElementById("nombre").innerHTML = response[0].nombre;
+                document.getElementById("correo").innerHTML = response[0].email;
+                document.getElementById("username").innerHTML = response[0].username;
+                nombres.value = response[0].nombre;
+                nombre_personaje.value = response[0].username;
+                editar_correo.value = response[0].email;
+            } else {
+                document.getElementById("btn_eliminar").style.display = "none"
+                document.getElementById("btn_actualizar").style.display = "none"
+                document.getElementById("alerta").style.display = "flex"
+
+            }
         })
 }
-
 var c1 = document.getElementById('password');
 var c2 = document.getElementById('password2');
 

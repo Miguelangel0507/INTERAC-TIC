@@ -1,8 +1,9 @@
 <?php
 session_start();
+$puntos = $_POST["puntos"];
+$id = $_SESSION['id_usuario'];
+if($id != "invitado"){
     require("../../php/conexion.php");
-    $puntos = $_POST["puntos"];
-    $id = $_SESSION['id_usuario'];
     if($_SESSION['decision'] == "municipios_risaralda"){
         $nivel = 'puntos_nivel1';
     }else if($_SESSION['decision'] == "tecnologias_tic"){
@@ -21,11 +22,20 @@ session_start();
         $query = $pdo->prepare("UPDATE puntossopa SET $nivel = $puntos WHERE id_puntos_sopa = $id");
         $query->execute();  
     };
-    if($puntos < 80){
-        echo "perdio";
-    }else{
-        echo "gano";
+}else{
+    if($_SESSION['decision'] == "municipios_risaralda"){
+        $_SESSION['puntos_sopa1']  = $puntos;
+    }else if($_SESSION['decision'] == "tecnologias_tic"){
+        $_SESSION['puntos_sopa2']  = $puntos;
+    }else if($_SESSION['decision'] == "sitios_turisticos"){
+        $_SESSION['puntos_sopa3']  = $puntos;
     }
+}
+if($puntos < 80){
+    echo "perdio";
+}else{
+    echo "gano";
+}
     
 
     //SELECT puntos_nivel1 FROM `puntossopa` WHERE id_puntos_sopa = 51

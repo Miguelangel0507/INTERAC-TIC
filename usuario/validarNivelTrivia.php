@@ -1,7 +1,7 @@
 <?php
 session_start();
 $id = $_SESSION['id_usuario'];
-
+if($id != "invitado"){
 require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //se hace la consulta a la tabla usuarios mediante el username
@@ -15,4 +15,13 @@ require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
     }else{
         echo 3;
     }
+}else{
+    if($_SESSION['puntos_trivia1'] <= 80){
+        echo 1;
+    }else if($_SESSION['puntos_trivia2'] <= 80){
+        echo 2;
+    }else{
+        echo 3;
+    }
+}
 ?>

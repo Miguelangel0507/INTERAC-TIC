@@ -31,8 +31,11 @@
                 </div>
             </div>
             <div class="btns">
-                <button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
-                <button type='button' class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
+                <div class='alert alert-primary' id="alerta" role='alert'>Estas como jugador invitado por lo tanto no tienes datos ingresados, para ingresar tus datos debes ir al registro de usuario.
+                <a class='btn btn-success' href="salir.php" role="button"> Ir a registro de usuario</a>
+                </div>
+                <button type='button' id="btn_eliminar" class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
+                <button type='button' id="btn_actualizar"class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
             </div>
         </div>
     </div>

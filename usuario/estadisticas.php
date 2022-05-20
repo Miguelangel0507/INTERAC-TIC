@@ -1,8 +1,8 @@
 <?php
 session_start();
 $id = $_SESSION['id_usuario'];
-
-require("../php/conexion.php");
+if($id != "invitado"){
+    require("../php/conexion.php");
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //se hace la consulta a la tabla usuarios mediante el username
     $query = $pdo->prepare("SELECT puntossopa.puntos_nivel1 AS 'S1', 
@@ -17,13 +17,18 @@ require("../php/conexion.php");
     where usuarios.id_username=$id");
     $query->execute();
     $estadisticas = $query->fetch(PDO::FETCH_ASSOC);
-    //$row = $query->fetch(PDO::FETCH_ASSOC);
-        //$estadisticas["resultado"][]= $row;
-    
-    //$usuario = $query->fetchAll();
-    //    for ($i = 0; $i < 10; $i++) {
-    //        array_push($estadisticas, $usuario[$i]);
-    //    }
     echo (json_encode($estadisticas));
+}else{
+    $estadisticas = [
+        "S1" => $_SESSION['puntos_sopa1'],
+        "S2" => $_SESSION['puntos_sopa2'],
+        "S3" => $_SESSION['puntos_sopa3'],
+        "T1" => $_SESSION['puntos_trivia1'],
+        "T2" => $_SESSION['puntos_trivia2'],
+        "T3" => $_SESSION['puntos_trivia3']
+    ];
+    echo (json_encode($estadisticas));
+
+}
 
 ?>

@@ -9,6 +9,14 @@ body {
     height: 100vh;
 }
 
+.alert-primary {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
 .cont_DatosUsuario {
     position: absolute;
     top: 50%;
