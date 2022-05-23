@@ -83,7 +83,7 @@ function estadisticas() { //funcion para crear las estadisticas
     })
 }
 
-btn_eliminar_estadisticas.addEventListener("click", (e) => {
+btn_eliminar_estadisticas.addEventListener("click", (e) => { //eliminar estadisticas del usuario
     e.preventDefault();
     fetch("eliminar_estadisticas.php").then(response => response.text()).then(response => {
         if (response == true) {
@@ -114,6 +114,6 @@ btn_eliminar_estadisticas.addEventListener("click", (e) => {
     })
 })
 
-function recargar() {
+function recargar() { //recaga la pagina
     location.reload();
 }

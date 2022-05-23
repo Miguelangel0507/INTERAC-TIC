@@ -125,6 +125,7 @@
             var backTo;
             for (var i = 0, len = selectedSquares.length; i < len; i++) {
                 if (selectedSquares[i] == this) {
+                    //alert(selectedSquares)
                     backTo = i + 1;
                     break;
                 }
@@ -136,15 +137,20 @@
                 curWord = curWord.substr(0, curWord.length - 1);
             }
 
+            //examinar esta parte tambien                                          //buenos indicios 
+
 
             // see if this is just a new orientation from the first square
             // this is needed to make selecting diagonal words easier
             var newOrientation = calcOrientation(
                 $(startSquare).attr('x') - 0,
+
                 $(startSquare).attr('y') - 0,
                 $(this).attr('x') - 0,
                 $(this).attr('y') - 0
+
             );
+            // console.log("startSquare \t"+startSquare);
 
             if (newOrientation) {
                 selectedSquares = [startSquare];
@@ -197,25 +203,48 @@
             }
         };
 
-        /**
+
+        // Pruebas colores
+
+        /**  var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+
+       
          * Event that handles mouse up on a square. Checks to see if a valid word
          * was created and updates the class of the letters and word if it was. Then
          * resets the game state to start a new word.
          *
          */
+        var x = 0;
         var endTurn = function() {
 
             // see if we formed a valid word
             for (var i = 0, len = wordList.length; i < len; i++) {
 
                 if (wordList[i] === curWord) {
-                    $('.selected').addClass('found');
+
+                    console.log("palabra: \t" + curWord)
+                    console.log("todas las pa: \t" + wordList)
+                        //setTimeout (aleatorio(),1000)
+                    $('.selected').addClass('found' + x++);
                     puntos += contador;
                     punt.innerHTML = puntos;
                     wordList.splice(i, 1);
                     $('.' + curWord).addClass('wordFound');
                     llamar();
-                }
+                } //else{
+                // console.log("palabra erro");
+                // $('.selected').addClass('found1');
+                //  setTimeout($('.selected').removeClass('found1'),1000);
+                // }
                 if (wordList.length === 0) {
                     $('.puzzleSquare').addClass('complete');
                     registrar();
@@ -231,7 +260,7 @@
             curWord = '';
             curOrientation = null;
         };
-
+        //examinar es parte bn                                          //desm inndicios 
         /**
          * Given two points, ensure that they are adjacent and determine what
          * orientation the second point is relative to the first
@@ -280,10 +309,12 @@
                 // attach events to the buttons
                 // optimistically add events for windows 8 touch
                 if (window.navigator.msPointerEnabled) {
+                    console.log("dentro del if \n")
                     $('.puzzleSquare').on('MSPointerDown', startTurn);
                     $('.puzzleSquare').on('MSPointerOver', select);
                     $('.puzzleSquare').on('MSPointerUp', endTurn);
                 } else {
+                    console.log("fuera del if \n")
                     $('.puzzleSquare').mousedown(startTurn);
                     $('.puzzleSquare').mouseenter(select);
                     $('.puzzleSquare').mouseup(endTurn);

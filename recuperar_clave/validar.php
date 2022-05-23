@@ -46,12 +46,12 @@
   
 
       if(mail($para, $titulo, $mensaje, $micorreo,$cabeceras)){
-            echo "verifica tu correo para restablecer contraseña";
+            echo "Verifica tu correo para restablecer contraseña";
             
         }else
-            echo "fallo la prueba";
+            echo "Fallo la prueba";
       }else       
-         echo "gmail no registrado"; 
+         echo "Gmail no registrado"; 
 ?>
 
 

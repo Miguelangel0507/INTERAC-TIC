@@ -1,6 +1,6 @@
 ingresar.addEventListener("click", (e) => {
     e.preventDefault();
-    fetch("validar_login.php", {
+    fetch("php/validar_login.php", {
         method: "POST",
         body: new FormData(form_login)
     }).then(response => response.text()).then(response => {
@@ -30,10 +30,6 @@ btn_invitado.addEventListener("click", () => {
     })
 
 })
-
-
-
-
 
 function ver() {
     const c = document.getElementById("contraseña")

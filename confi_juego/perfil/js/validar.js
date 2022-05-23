@@ -21,6 +21,7 @@ function MostrarDatos() { //Muestra los datos del usuario
 // Accedemos al botón
 var c1 = document.getElementById('password');
 var c2 =document.getElementById('password2');
+var c3 =document.getElementById('v');
 
 const formulario = document.getElementById('padre')
 const inputs = document.querySelectorAll('#padre input')
@@ -128,6 +129,7 @@ document.getElementById('interesadoPositivo').addEventListener('click', function
     console.log('Vamos a deshabilitar el input text');
     c1.disabled = true,
     c2.disabled = true;
+    c3.disabled = true;
     const inputpassword1 = document.getElementById("password");
     const inputpassword2 = document.getElementById("password2");
     document.getElementById(`grupo__password`).classList.remove('formulario__grupo-incorrecto');
@@ -257,5 +259,19 @@ document.getElementById('interesadoPositivo').addEventListener('click', function
              */
         
          
-  });
+  })
+
+  function ver2() {
+    const c2 = document.getElementById("password2")
+    const c = document.getElementById("password")
+    if (c.type == "password" && c2.type == "password") {
+        c.type = Text
+        c2.type = Text
+    } else {
+        c.type = "password"
+        c2.type = "password"
+
+    }
+}
+
 

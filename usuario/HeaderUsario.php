@@ -12,7 +12,9 @@
 
 <body>
     <nav>
-        <p class="logo-danicodex">INTERAC-TIC</p>
+        <!--logo-->
+        <p class="logo">INTERAC-TIC</p>
+        <!--lista-->
         <ul class="cont-ul">
             <a href="./index.php">
                 <li>Juegos</li>
@@ -21,14 +23,16 @@
                 Estadisticas
                 <ul class="ul-second">
                     <li class="back">
+                        <!--boton para restablecer estadisticas-->
                         <div class="config">
                             <button class="btno-config" data-bs-toggle='modal' data-bs-target='#M_estadisiticas'><i class="fa-solid fa-gear"></i></button>
                         </div>
-
+                        <!--estadisticas sopa-->
                         <div class="estad_sopa">
                             <canvas id="SopaLetras"></canvas>
                         </div>
                         <br>
+                        <!--estadisticas trivia-->
                         <div class="estad_trivia">
                             <canvas id="TriviaTic"></canvas>
                         </div>
@@ -44,7 +48,7 @@
         </ul>
     </nav>
 
-    <!--MODAL ELIMINAR CUENTA-->
+    <!--MODAL ELIMINAR ESTADISTICAS-->
     <div class="modal fade" id="M_estadisiticas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -53,8 +57,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label class="mensaje_eliminar" >Al eliminar tus estadisticas vas perder todo tu avance en los juegos.</label>
-                    <label class="mensaje_eliminar" >¿Seguro que quieres restablecer tus estadisticas?</label>
+                    <label class="mensaje_eliminar">Al eliminar tus estadisticas vas perder todo tu avance en los juegos.</label>
+                    <label class="mensaje_eliminar">¿Seguro que quieres restablecer tus estadisticas?</label>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

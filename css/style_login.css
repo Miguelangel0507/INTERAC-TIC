@@ -19,27 +19,6 @@ h1 {
     display: none;
 }
 
-
-/*.form-control {
-    background: whitesmoke;
-    border: 0.5px solid black;
-    transition: 00.5s ease-in;
-    outline: none;
-    box-shadow: none;
-}*/
-
-
-/*.form-control:focus {
-    border: 0.5px solid black;
-    background: white;
-    box-shadow: none;
-    outline: none;
-}
-
-.form-control::placeholder {
-    color: black;
-}*/
-
 .ingresar {
     width: 5px;
     background: rgb(73, 73, 238);

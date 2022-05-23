@@ -127,3 +127,16 @@ window.location.hash="Again-No-back-button";//esta linea es necesaria para chrom
 window.onhashchange=function(){window.location.hash="no-back-button";}
 
 
+
+function ver2() { 
+    const c2 = document.getElementById("password2")
+    const c = document.getElementById("password")
+    if (c.type == "password" && c2.type == "password") {
+        c.type = Text
+        c2.type = Text
+    } else {
+        c.type = "password"
+        c2.type = "password"
+
+    }
+}

@@ -3,7 +3,7 @@
         }
 
         .nav-link1 {
-            text-decoration: none;
+            text-decoration: none !important;
             color: white;
             padding: 20px;
             display: block;
@@ -26,18 +26,24 @@
         }
 
         .nav-link1:hover {
-            background: blue;
+            background: green;
         }
+        .nav-link1:hover{
+            border-bottom: 3px solid #faf600;
+           padding-bottom: 17px;
+          }
 
         .navbar-nav1 {
+            margin: 0px;
             display: flex;
             justify-content: flex-end;
+            text-decoration: none !important;
         }
 
         .pa {
             padding-top: 14px;
             font-size: 28px;
-
+            margin: 0px;
 
         }
 
@@ -58,7 +64,9 @@
         }
 
         .form-control {
+            text-align: center !important;
             width: 430px;
+           
         }
 
         .modal-title {
@@ -99,3 +107,6 @@
         .list-group-item {
             margin-bottom: 0px;
         }
+
+
+        /**/

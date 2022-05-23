@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../../css/estyle.css">
   <link rel="stylesheet" href="css/admin.css">
   <link rel="stylesheet" href="../../administrador/menu.css">
-
+<style>.nav-link1{text-decoration: none !important;}</style>
 </head>
 
 <body>

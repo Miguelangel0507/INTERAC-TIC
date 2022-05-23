@@ -10,9 +10,7 @@ include('../validacion.php'); ?>
     <meta http-equiv="X-UA-Compatible" conte pregnt="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Trivia</title>
-
     <link rel="stylesheet" href="../../css/quiz.css">
-
 </head>
 
 <body>
@@ -65,12 +63,6 @@ include('../validacion.php'); ?>
 
     <script>
         var json = eval(<?php echo $_SESSION["resultado"] ?>)
-        /* 
-        displayQuestion2(json)
-        funcion para que se inicialize las preguntas
-        se debe descomentar la linea 148 de quiz.js funcion despegar qu es la del tiempo
-        */
-        //
     </script>
 </body>
 

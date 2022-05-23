@@ -122,7 +122,7 @@ session_start();
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="trivia_nv2.php">3</a></li>
             <li class="page-item">
-                <a class="page-link" href="..trivia_nv2.php" aria-label="Next">
+                <a class="page-link" href="trivia_nv2.php" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

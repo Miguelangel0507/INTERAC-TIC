@@ -14,6 +14,7 @@ include('../validacion.php');
     <link rel="stylesheet" href="../../css/style_sopa.css" />
 </head>
 
+
 <body>
     <div class="padre">
         <div class="row">
@@ -21,7 +22,6 @@ include('../validacion.php');
                 <div class="title">
                     <h1>Sopa de letras de <?php echo $_SESSION['decision'] ?></h1>
                 </div>
-                <!--lo nuevo-->
                 <div class="cont">
                     <div class="tiempo">
                         <h2>Tiempo:</h2>
@@ -33,7 +33,6 @@ include('../validacion.php');
                 </div>
             </div>
             <div class="contenedor_central">
-
                 <div id="instrucciones">
                     <h2>Instrucciones del juego</h2>
                     <ol id="lista_instrucciones">
@@ -47,7 +46,6 @@ include('../validacion.php');
                         <input id="btn_empezar" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
                     </div>
                 </div>
-
                 <div id="puzzle"></div>
             </div>
 

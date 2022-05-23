@@ -7,27 +7,27 @@ if(isset($_POST)){
     $username = $_POST['nombre_personaje'];
     $correo = $_POST['editar_correo'];
 
-    if(isset($_POST['password'])){
+    if(isset($_POST['password'])){ //se valida si viene algo en el campo de contraseña para Actualizar o no el campo de contraseña
         $password = $_POST['password'];
-        $contraseña_fuerte = password_hash($password,  PASSWORD_BCRYPT,["COST"=>11]);
+        $contraseña_fuerte = password_hash($password,  PASSWORD_BCRYPT,["COST"=>11]);//se encripta la contraseña
         $consulta = $pdo->prepare("UPDATE datosusuario INNER JOIN usuarios 
         ON usuarios.id_username = datosusuario.id_datos_usuario
         SET datosusuario.nombre = '$nombre', 
         datosusuario.email = '$correo', 
         usuarios.username = '$username', 
         usuarios.contraseña = '$contraseña_fuerte' 
-        WHERE datosusuario.id_datos_usuario = $id");
+        WHERE datosusuario.id_datos_usuario = $id");//se hace la actualizacion de los datos en la base de datos con contraseña
         $consulta->execute();
-    }else{
+    }else{//no trae nada en el campo de contraseña
         $consulta = $pdo->prepare("UPDATE datosusuario INNER JOIN usuarios 
         ON usuarios.id_username = datosusuario.id_datos_usuario
         SET datosusuario.nombre = '$nombre', 
         datosusuario.email = '$correo', 
         usuarios.username = '$username'
-        WHERE datosusuario.id_datos_usuario = $id");
+        WHERE datosusuario.id_datos_usuario = $id");//se hace la actualizacion de los datos en la base de datos sin contraseña
     }
     $consulta->execute();
-    if($consulta){
+    if($consulta){//devuelve un true o un false depende si se hizo la consulta correctamente
         echo true;
     }else{
         echo false;

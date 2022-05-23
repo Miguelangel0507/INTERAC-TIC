@@ -120,11 +120,9 @@ function nextQuestion() {
         })
     }
 }
-//reiniciar_cuenta() se cambio a la funcion de iniciar
 
 function reiniciar_cuenta() {
     window.contar = 11;
-    //despegar();
     contador();
 }
 
@@ -148,5 +146,3 @@ function contador() {
     despegar()
     window.ignicion = setInterval(despegar, 1000);
 }
-//despegar(); se comentaal cambiar el reinicar_cuenta()
-//var ignicion = setInterval(despegar, 1000);

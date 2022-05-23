@@ -3,7 +3,7 @@ session_start();
 if ($_POST) {
     $username = $_POST['username'];
     $contra = $_POST['contraseña'];
-    require("php/conexion.php");
+    require("conexion.php");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $query = $pdo->prepare("SELECT * FROM usuarios INNER JOIN datosusuario on usuarios.id_username=datosusuario.id_datos_usuario WHERE username = '$username'");
     $query->execute();

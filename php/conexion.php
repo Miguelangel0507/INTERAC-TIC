@@ -9,15 +9,5 @@ try {
     echo "conexion fallida" .$e->getMessage();
 }
 
-/*$servidor ="localhost";
-$basededatos="interactic";
-$user="root";
-$pass="";
-try{
-    $conexion = new mysqli($servidor,$user, $pass, $basededatos);
-    echo "Regsitro exitoso";
-}catch (PDOException $e) {
-    echo "conexion fallida", $e->getMessage();
-}
-*/
+
 ?>

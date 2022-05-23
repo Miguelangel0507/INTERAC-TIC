@@ -11,11 +11,12 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     session_start();
-    include "validacion.php";
+    include "validacion.php"; //validacion de que el usuario este logueado
     include "HeaderUsario.php"; ?>
     <div class="body">
+        <!--contenedor datos usuario-->
         <div class="cont_DatosUsuario">
             <h2>Datos Usuario</h2>
             <div id="container_datos">
@@ -30,12 +31,16 @@
                     <label id="username"></label><br>
                 </div>
             </div>
-            <div class="btns">
+            <div>
+                <!--mensaje de alerta de jugador invitado-->
                 <div class='alert alert-primary' id="alerta" role='alert'>Estas como jugador invitado por lo tanto no tienes datos ingresados, para ingresar tus datos debes ir al registro de usuario.
-                <a class='btn btn-success' href="salir.php" role="button"> Ir a registro de usuario</a>
+                    <a class='btn btn-success' href="salir.php" role="button"> Ir a registro de usuario</a>
                 </div>
-                <button type='button' id="btn_eliminar" class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
-                <button type='button' id="btn_actualizar"class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
+                <!--botones para eliminar y actualizar usuario-->
+                <div class="btns">
+                    <button type='button' id="btn_eliminar" class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
+                    <button type='button' id="btn_actualizar" class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
+                </div>
             </div>
         </div>
     </div>
@@ -122,7 +127,7 @@
             </div>
         </div>
     </div>
-    
+
     <!--MODAL ELIMINAR CUENTA-->
     <div class="modal fade" id="M_eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -137,7 +142,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type='button' class='btn btn-danger btn_eliminar' id='btn_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
+                    <button type="submit" class="btn btn-danger btn_eliminar" id="btn_eliminarDatos"><i class="fas fa-trash-alt"></i> Eliminar Usuario</button>
                 </div>
             </div>
         </div>

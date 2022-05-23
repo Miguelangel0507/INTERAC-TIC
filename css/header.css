@@ -105,13 +105,13 @@ li:hover {
 }
 
 @media (max-width:900px) {
-    .logo-danicodex {
+    .logo {
         display: none;
     }
 }
 
 .cont-ul a,
-.logo-danicodex,
+.logo,
 .develop {
     text-decoration: none;
     color: white;

@@ -16,9 +16,11 @@ session_start();
 
 <body>
     <?php
-    include "validacion.php";
-    include "HeaderUsario.php"; ?>
+    include "validacion.php";//archivo para la validacion del usuario logeado
+    include "HeaderUsario.php";//encabezado ?> 
+    <!--div para las cards-->
     <div class="cards">
+        <!--card sopa-->
         <div class="card card1" style="width: 18rem;">
             <img src="../img/SopaLetras2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -32,6 +34,7 @@ session_start();
             </div>
         </div>
         <br>
+        <!--card trivia-->
         <div class="card card2" style="width: 18rem;">
             <img src="../img/triviaTIC.jpg" class="card-img-top" alt="...">
             <div class="card-body">

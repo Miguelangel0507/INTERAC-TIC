@@ -67,18 +67,6 @@ h1 {
     position: relative;
 }
 
-
-/*.formulario__input { NO HACE NADA
-    width: 100%;
-    background: #fff;
-    border: 3px solid transparent;
-    border-radius: 3px;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 40px 0 10px;
-    transition: .3s ease all;
-}*/
-
 .formulario__input:focus {
     border: 3px solid #0075FF;
     outline: none;
@@ -94,6 +82,7 @@ h1 {
 .formulario__input-error-activo {
     display: block;
 }
+
 .formulario__input-error2 {
     font-size: 12px;
     margin-bottom: 0;
@@ -103,7 +92,6 @@ h1 {
 .formulario__input-error2-activo {
     display: block;
 }
-
 
 .formulario__validacion-estado {
     position: absolute;
@@ -162,21 +150,6 @@ h1 {
 .formulario__grupo-btn-enviar {
     padding: 15px;
 }
-
-
-/*.formulario__btn{
-	height: 45px;
-	line-height: 40px;
-	width: 35%;
-	font-weight: bold;
-	border: none;
-	border-radius: 3px;
-	cursor: pointer;
-	transition: 1s ease all;
-	color: white;
-	background: black;
-}
-*/
 
 .formulario__btn:hover {
     box-shadow: 3px 0px 30px rgba(10, 85, 199, 0.4);

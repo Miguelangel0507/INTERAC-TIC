@@ -47,6 +47,9 @@
                             <p class="formulario__input-error">
                                 Ambas contraseñas deben ser iguales.
                             </p>
+                            <div class="v" >
+                                <input type="checkbox" onclick="ver2()" id="v"> <label for="v">&nbsp Ver contraseña</label> 
+                            </div>
                         </div>
 
                         

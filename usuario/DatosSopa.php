@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_POST){
-        $decision = $_POST["desicion1"];
+        $decision = $_POST["desicion1"];//se recupera la decision (nivel) que tomo el jugador
         require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //se hace la consulta a la tabla usuarios mediante el username
@@ -12,8 +12,8 @@ if($_POST){
         for ($i = 0; $i < 10; $i++) {
             array_push($palabras, $usuario[$i][$decision]);
         }
-        $_SESSION['array'] = $palabras;
-        $_SESSION['decision'] = $decision;
+        $_SESSION['array'] = $palabras;//las palabras se guardan en un array en la session 
+        $_SESSION['decision'] = $decision;//se crea una varibale en la sesion para llevar la desicion de juego que tomo
         echo true;
 }
 ?>
