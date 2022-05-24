@@ -20,7 +20,7 @@ ingresar.addEventListener("click", (e) => {
 });
 
 btn_invitado.addEventListener("click", () => {
-    fetch("validar_login.php").then(response => response.text()).then(response => {
+    fetch("php/validar_login.php").then(response => response.text()).then(response => {
         if (response == "ingreso") {
             document.location.href = "usuario/";
         } else {

@@ -7,9 +7,7 @@ if ($_POST) {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $query = $pdo->prepare("SELECT * FROM usuarios INNER JOIN datosusuario on usuarios.id_username=datosusuario.id_datos_usuario WHERE username = '$username'");
     $query->execute();
-
     $usuario = $query->fetch(PDO::FETCH_ASSOC);
-
     //echo $usuario["contraseña"];
     if (isset($usuario)) {
         if (password_verify($contra, $usuario["contraseña"])) {

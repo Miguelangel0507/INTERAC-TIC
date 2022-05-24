@@ -18,12 +18,12 @@ session_start();
 <link rel="stylesheet" href="admin.css">
 </head>
 <?php include("menus.php"); ?>
-
 <body onunload="opepopup()">
   <div class="cargando">
     <div class="loader-outter"></div>
     <div class="loader-inner"></div>
   </div>
+  
   <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="body">
@@ -31,6 +31,7 @@ session_start();
           <div class="col-sm-7" style="display: contents;">
             <div class="row">
               <div class="col-md-12 p">
+              <h2 id="titulo">Datos usuarios</h2>
                 <div class="table-responsive" style="align-items: center;">
                   <table class="table table-bordered table-striped table-hover">
                     <thead>

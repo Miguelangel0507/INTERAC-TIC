@@ -1,64 +1,85 @@
-.nombres{
+.nombres {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  .todo{
+}
+
+.todo {
+    border-right: 2px solid;
+    margin-top: 51px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.todo2{
-  display: flex;
+
+.edit-input {
+    text-align: center;
+}
+
+.detalle {
+    display: flex;
+}
+
+.contenedores {
+    width: 50%;
+}
+
+#titulo {
+    text-align: center;
+}
+
+.todo2 {
+    margin-top: 51px;
+    display: flex;
     justify-content: space-evenly;
     flex-direction: row;
 }
-.close{
-  color: white;
+
+.body-editar {
+    display: flex;
 }
-  
-  hr{
+
+.close {
+    color: white;
+}
+
+hr {
     width: 80%;
-  }
-  /*.seg{
-    top: -138px;
-    position: relative;
-    margin-left: 300px;
-  }
-  .pri{
-    position: relative;
-    top: 16px;
-    margin-left: 30px;
-  }*/
-  .por{
+}
+
+.modal-header {
+    background-color: #563d7c !important;
+    display: flex;
+}
+
+.por {
     display: flex;
     flex-direction: column;
     margin-left: 7px;
-  }
-       .modal-body {
-    display: flex;
-    position: relative;
+}
+
+.modal-body {
+    text-align: center;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1rem;
-    justify-content: space-around;}
-  
-      .col-md-12 {
-    
-        padding-top: 23px;
+    justify-content: space-around;
+}
+
+.col-md-12 {
+    padding-top: 23px;
     margin-left: 98px;
-    }
-    td{
-      font-size: 17px;
-    }
-    /*.detalle{
-      color: gray;
-      text-align: center;
-    }*/
-    .por{
-      text-align: left;
-    }
-    h4{
-      text-align: center;
-      margin: 10px 0;
-    }
+}
+
+td {
+    font-size: 17px;
+}
+
+.por {
+    text-align: left;
+}
+
+h4 {
+    text-align: center;
+    margin: 10px 0;
+}

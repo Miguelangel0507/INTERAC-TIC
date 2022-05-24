@@ -2,7 +2,7 @@
 <?php
 session_start();
 ?>
-<?php include ("../validacion.php"); ?>
+<?php include("../validacion.php"); ?>
 <html lang="en">
 
 <head>
@@ -18,31 +18,46 @@ session_start();
 </head>
 
 <body>
-<nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
-  
-  <div class="collapse1 navbar-collapse1" id="navbarNav">
-  <p class="pa"> <b><span style="color: white;">Preguntas trivia nivel 1</span> </b></p>
-    <ul class="navbar-nav1"> 
-     
-      <li class="nav-item1 active1">
-        <a class="nav-link1" href="../../administrador/index.php"><b> Home</b> <span class="sr-only1"></span></a>
-      </li>
-      
-     
-      <li class="nav-item1">
-        <a class="nav-link1" href="../perfil/perfil_admin.php"><b>Perfil</b></a>
-      </li>
-      <li class="nav-item1 active1">
-        <a class="nav-link1" href="../salir.php"><b> Salir</b> <span class="sr-only1"></span></a>
-      </li>
+    <!--Encabezado-->
+    <nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
+        <div class="collapse1 navbar-collapse1" id="navbarNav">
+            <p class="pa"> <b><span style="color: white;">Trivia nivel 1</span> </b></p>
+            <ul class="navbar-nav1">
+                <li class="nav-item1 active1">
+                    <a class="nav-link1" href="../../administrador/index.php"><b> Usuarios</b> <span class="sr-only1"></span></a>
+                </li>
+                <li class="nav-item1">
+                    <a class="nav-link1" href="#"><b> Configurar juego</b></a>
+                </li>
+                <li class="nav-item1">
+                    <a class="nav-link1" href="../perfil/perfil_admin.php"><b>Perfil</b></a>
+                </li>
+                <li class="nav-item1">
+                    <a class="nav-link1" href="../../usuario/salir.php"><b>Salir</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-      
+    <!--Paginacion-->
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="../sopa/index.php" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="../sopa/index.php">Sopa de letras</a></li>
+        <li class="page-item"><a class="page-link" href="#">Trivia nivel 1</a></li>
+        <li class="page-item"><a class="page-link" href="trivia_nv2.php">Trivia nivel 2</a></li>
+        <li class="page-item"><a class="page-link" href="trivia_nv3.php">Trivia nivel 3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="trivia_nv2.php" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
     </ul>
-  </div>
-</nav>
 
-
-
+    <!---Cuerpo-->
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="body">
@@ -77,61 +92,28 @@ session_start();
                                                     <td><?php echo $dataCliente['respuesta3']; ?></td>
                                                     <td><?php echo $dataCliente['respuesta4']; ?></td>
                                                     <td><?php echo $dataCliente['respuesta_correcta']; ?></td>
-
                                                     <td>
-
-
                                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nivel<?php echo $dataCliente['id_pregunta']; ?>">
                                                             Modificar
                                                         </button>
-
-
                                                     </td>
                                                 </tr>
-
-
                                                 <!--Ventana Modal para Actualizar--->
                                                 <?php include('modal_nv1.php'); ?>
-
-
-
-
                                             <?php } ?>
                                     </table>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
     </div>
-    <nav aria-label="Page navigation example " style="padding-left: 635px;">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="../sopa/index.php" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="../sopa/index.php">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="trivia_nv2.php">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="trivia_nv2.php" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
 </body>
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/popper.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
-<script src="pasar.js"></script>
+<!--<script src="pasar.js"></script>-->
+
 </html>
