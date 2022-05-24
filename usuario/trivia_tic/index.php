@@ -24,7 +24,9 @@ include('../validacion.php'); ?>
                 <li>Se te va a dar un limite de tiempo para que respondas la respuesta correcta, si no respondes te va salir un error y no se te van a dar puntos.</li>
                 <li>Al final del juego para poder ganar debes de tener como minimo 80 puntos.</li>
                 <div id="container_btnos">
-                    <a role="button" class="atras" href="../index.php"><i class="fa-solid fa-arrow-left"></i>Salir</a>
+                    <a role="button" href="../index.php">
+                        <button type="submit" class="btn btn-danger btn_eliminar" ><i class="fa-solid fa-arrow-left"></i> Salir</button>
+                    </a>
                     <input id="mk" type="button" class="btn btn-success" name="comenzar" value="Comenzar juego" onclick="displayQuestion2(json)" />
                 </div>
             </ol>
@@ -33,7 +35,9 @@ include('../validacion.php'); ?>
             <div class="questions" id="questions">
                 <div class="cabecera">
                     <div class="back">
-                        <a role="button" class="atras" href="../index.php"><i class="fa-solid fa-arrow-left"></i>Salir</a>
+                    <a role="button" href="../index.php">
+                        <button type="submit" class="btn btn-danger btn_eliminar" ><i class="fa-solid fa-arrow-left"></i> Salir</button>
+                    </a>
                         <h4 id="puntos">Puntos: 0 </h4>
                     </div>
                     <div class="tiempo">

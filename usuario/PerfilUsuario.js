@@ -4,7 +4,8 @@ function MostrarDatos() { //Muestra los datos del usuario
     fetch("DatosUsuario.php")
         .then(response => response.json()).then(response => {
             if (response != "invitado") {
-                document.getElementById("alerta").style.display = "none"
+                document.getElementById("cont_btns").style.display = "block";
+
                 document.getElementById("nombre").innerHTML = response[0].nombre;
                 document.getElementById("correo").innerHTML = response[0].email;
                 document.getElementById("username").innerHTML = response[0].username;
@@ -12,9 +13,7 @@ function MostrarDatos() { //Muestra los datos del usuario
                 nombre_personaje.value = response[0].username;
                 editar_correo.value = response[0].email;
             } else { //si es invitado activa la alerta
-                document.getElementById("btn_eliminar").style.display = "none"
-                document.getElementById("btn_actualizar").style.display = "none"
-                document.getElementById("alerta").style.display = "flex !important"
+                document.getElementById("mensaje_invitado").style.display = "block";
             }
         })
 }

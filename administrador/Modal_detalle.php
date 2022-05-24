@@ -29,7 +29,6 @@
             </div>
           </div>
         </div>
-        
 
         <!--datos de la base de datos-->
         <div class="contenedores">

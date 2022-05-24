@@ -128,6 +128,15 @@ label {
     display: block;
 }
 
+#checkbox {
+    display: flex;
+}
+
+.list-group-item {
+    width: 50%;
+    border: 1px solid rgba(0, 0, 0, .125) !important;
+}
+
 .formulario__validacion-estado {
     position: absolute;
     right: 10px;

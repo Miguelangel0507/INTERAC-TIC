@@ -33,13 +33,17 @@
             </div>
             <div>
                 <!--mensaje de alerta de jugador invitado-->
-                <div class='alert alert-primary' id="alerta" role='alert'>Estas como jugador invitado por lo tanto no tienes datos ingresados, para ingresar tus datos debes ir al registro de usuario.
-                    <a class='btn btn-success' href="salir.php" role="button"> Ir a registro de usuario</a>
+                <div id="mensaje_invitado" style="display: none">
+                    <div class='alert alert-primary' id="alerta" role='alert'>Estas como jugador invitado por lo tanto no tienes datos ingresados, para ingresar tus datos debes ir al registro de usuario.
+                        <a class='btn btn-success' href="salir.php" role="button"> Ir a registro de usuario</a>
+                    </div>
                 </div>
                 <!--botones para eliminar y actualizar usuario-->
-                <div class="btns">
-                    <button type='button' id="btn_eliminar" class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
-                    <button type='button' id="btn_actualizar" class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
+                <div id="cont_btns"style="display: none">
+                    <div class="btns" >
+                        <button type='button' id="btn_eliminar" class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#M_eliminar'><i class='fas fa-trash-alt'></i> Eliminar Usuario</button>
+                        <button type='button' id="btn_actualizar" class='btn btn-success' data-bs-toggle='modal' data-bs-target='#actualizar_datos'><i class='far fa-edit'></i> Editar Datos</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,6 +89,7 @@
                                 El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
                             </p>
                         </div>
+                        <!--checkbox -->
                         <p>Desea cambiar su clave</p>
                         <p id="checkbox">
                             <label class="list-group-item">
