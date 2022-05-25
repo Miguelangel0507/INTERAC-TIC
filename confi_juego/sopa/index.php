@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-include("../validacion.php") ?>
+include("../../php/validacion.php") ?>
 <html lang="en">
 
 <head>

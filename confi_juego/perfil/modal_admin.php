@@ -9,24 +9,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
-
-            <form method="POST"  id="formulario_usuario">
-              
-
+            <form method="POST" id="formulario_usuario">
                 <div class="modal-body" id="cont_modal">
-                    <!--lo nuevo-->
-
                     <div class="form-group kol">
-                        
-                        
-                       <input type="text" class="form-control" id="id1" name="id1" disabled >
-
+                        <input type="text" class="form-control" id="id1" name="id1" disabled>
                         <!--nombre-->
                         <div class="formulario__grupo " id="grupo__nombre">
                             <div class="formulario__grupo-input">
-                                
-                                   <input type="text" class="form-control" name="nombre1" id="nombre1">
+                                <input type="text" class="form-control" name="nombre1" id="nombre1">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">
@@ -37,19 +27,21 @@
                         <!--correo-->
                         <div class="formulario__grupo" id="grupo__correo">
                             <div class="formulario__grupo-input">
-
-                                <input type="text" class="form-control" name="correo" id="correo" >
+                                <input type="text" class="form-control" name="correo" id="correo">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">
                                 El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
                             </p>
                         </div>
+
+                        <!--cambiar contraseña-->
                         <p>desea cambiar su clave</p>
                         <p>
                             Sí <input type="radio" name="interesado" value="si" id="interesadoPositivo"> <br>
                             No <input type="radio" name="interesado" value="no" id="interesadoNegativo" checked>
                         </p>
+
                         <!--contraseñas-->
                         <div class="formulario__grupo" id="grupo__password">
                             <div class="formulario__grupo-input">
@@ -59,7 +51,6 @@
                             <p class="formulario__input-error">
                                 La contraseña tiene que ser de 8 dígitos y contener una letra mayuscula
                             </p>
-                            <!--contraseñas 2<label class="la" for="">Validar contraseña:&nbsp </label>-->
                             <div class="formulario__grupo" id="grupo__password2">
                                 <div class="formulario__grupo-input">
                                     <input type="password" class="form-control" name="password2" id="password2" placeholder="Validar clave" disabled>
@@ -68,9 +59,9 @@
                                 <p class="formulario__input-error">
                                     Ambas contraseñas deben ser iguales.
                                 </p>
-                                <div class="v" >
-                                <input type="checkbox" onclick="ver2()" id="v"> <label id="v" for="v"> &nbsp Ver contraseña</label>
-                            </div>
+                                <div class="v">
+                                    <input type="checkbox" onclick="ver2()" id="v"> <label id="v" for="v"> &nbsp Ver contraseña</label>
+                                </div>
                             </div>
 
                             <!-- validacion de formulario -->

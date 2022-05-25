@@ -2,7 +2,7 @@
 <?php
 session_start();
 ?>
-<?php include "../usuario/validacion.php"; ?>
+<?php include "../php/validacion.php"; ?>
 <html>
 
 <head>
