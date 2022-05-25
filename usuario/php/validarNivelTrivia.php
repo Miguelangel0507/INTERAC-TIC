@@ -2,7 +2,7 @@
 session_start();
 $id = $_SESSION['id_usuario'];
 if($id != "invitado"){// se valida si es usuario o invitado
-require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
+    require("../../php/conexion.php");
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //se hace la consulta a la tabla usuarios mediante el username
     $query = $pdo->prepare("SELECT * FROM `puntostrivia` WHERE id_puntos_trivia =  $id");//se trean las estadisticas del jugador

@@ -2,7 +2,7 @@
 session_start();
 if($_POST){
         $decision = $_POST["desicion1"];//se trae la desicion del usuario 
-        require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
+        require("../../php/conexion.php");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //se hace la consulta a la tabla usuarios mediante el username
         $query = $pdo->prepare("SELECT * FROM $decision");//se hace la consulta a la base de datos y se traen los preguntas con las respuestas

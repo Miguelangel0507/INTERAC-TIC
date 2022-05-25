@@ -2,7 +2,7 @@
 session_start();
 if($_POST){
         $decision = $_POST["desicion1"];//se recupera la decision (nivel) que tomo el jugador
-        require("/xampp/htdocs/INTERAC-TIC/php/conexion.php");
+        require("../../php/conexion.php");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //se hace la consulta a la tabla usuarios mediante el username
         $query = $pdo->prepare("SELECT $decision FROM categoriasopa");

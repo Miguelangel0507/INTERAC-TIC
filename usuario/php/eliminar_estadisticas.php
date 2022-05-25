@@ -2,7 +2,7 @@
 session_start();
 $id = $_SESSION['id_usuario'];
 if($id != "invitado"){//se valida si es usuario o invitado
-    include ("../php/conexion.php");
+    include("../../php/conexion.php");
     $query = $pdo->prepare("UPDATE puntossopa INNER JOIN puntostrivia 
     ON puntossopa.id_puntos_sopa = puntostrivia.id_puntos_trivia
     SET puntossopa.puntos_nivel1 = 0, 

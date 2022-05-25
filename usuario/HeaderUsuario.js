@@ -1,7 +1,7 @@
 estadisticas();
 
 function estadisticas() { //funcion para crear las estadisticas
-    fetch("estadisticas.php").then(response => response.text()).then(response => {
+    fetch("php/estadisticas.php").then(response => response.text()).then(response => {
         var estad = JSON.parse(response);
         var popCanvas = document.getElementById("SopaLetras");
         var barChart = new Chart(popCanvas, {
@@ -85,7 +85,7 @@ function estadisticas() { //funcion para crear las estadisticas
 
 btn_eliminar_estadisticas.addEventListener("click", (e) => { //eliminar estadisticas del usuario
     e.preventDefault();
-    fetch("eliminar_estadisticas.php").then(response => response.text()).then(response => {
+    fetch("php/eliminar_estadisticas.php").then(response => response.text()).then(response => {
         if (response == true) {
             Swal.fire({ //Mensaje de actualizacion de datos correcta
                 icon: 'success',

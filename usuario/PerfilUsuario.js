@@ -1,11 +1,11 @@
 MostrarDatos()
 
 function MostrarDatos() { //Muestra los datos del usuario
-    fetch("DatosUsuario.php")
+    fetch("php/DatosUsuario.php")
         .then(response => response.json()).then(response => {
             if (response != "invitado") {
                 document.getElementById("cont_btns").style.display = "block";
-
+                document.getElementById("cont_btns").style.transition = "0.5s ease-in";
                 document.getElementById("nombre").innerHTML = response[0].nombre;
                 document.getElementById("correo").innerHTML = response[0].email;
                 document.getElementById("username").innerHTML = response[0].username;
@@ -13,6 +13,7 @@ function MostrarDatos() { //Muestra los datos del usuario
                 nombre_personaje.value = response[0].username;
                 editar_correo.value = response[0].email;
             } else { //si es invitado activa la alerta
+                document.getElementById("mensaje_invitado").style.transition = "0.5s ease-in";
                 document.getElementById("mensaje_invitado").style.display = "block";
             }
         })
@@ -141,7 +142,7 @@ formulario__btn.addEventListener("click", (e) => {
     var deci2 = document.getElementById('interesadoNegativo').checked
     if (deci && campos.nombre && campos.nombre_personaje && campos.correo && campos.password) { //se valida que todos los campos sean correctos con las expreciones con contraseñas
         //se envia el formulario a la direccion URL para el registro del usuarios
-        fetch("actualizar.php", {
+        fetch("php/actualizar.php", {
             method: "POST",
             body: new FormData(formulario_usuario)
         }).then(response => response.text()).then(response => { //alertas por actualizacion de datos
@@ -176,7 +177,7 @@ formulario__btn.addEventListener("click", (e) => {
             }
         })
     } else if (deci2 && campos.nombre && campos.nombre_personaje && campos.correo) { //se valida que todos los campos sean correctos con las expreciones sin contraseñas
-        fetch("actualizar.php", {
+        fetch("php/actualizar.php", {
             method: "POST",
             body: new FormData(formulario_usuario)
         }).then(response => response.text()).then(response => { //alertas por actualizacion de datos

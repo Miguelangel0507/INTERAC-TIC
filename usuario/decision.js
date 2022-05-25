@@ -3,7 +3,7 @@ validarNivelTrivia();
 estadisticas();
 
 function validarNivelSopa() { //funcion para activar o desactivar los botones del jugador en la sopa de letras
-    fetch("validarNivelSopa.php").then(response => response.text()).then(response => {
+    fetch("php/validarNivelSopa.php").then(response => response.text()).then(response => {
         if (response == 1) { //solo activa el boton del nivel
             document.getElementById("botonSopa1").disabled = false;
             document.getElementById("botonSopa2").disabled = true;
@@ -24,7 +24,7 @@ function validarNivelSopa() { //funcion para activar o desactivar los botones de
 }
 
 function validarNivelTrivia() { //funcion para activar o desactivar los botones del jugador en la trivia
-    fetch("validarNivelTrivia.php").then(response => response.text()).then(response => {
+    fetch("php/validarNivelTrivia.php").then(response => response.text()).then(response => {
         if (response == 1) { //solo activa el boton del nivel
             document.getElementById("botonTrivia1").disabled = false;
             document.getElementById("botonTrivia2").disabled = true;
@@ -73,7 +73,7 @@ botonSopa3.addEventListener("click", () => {
 function mostrar_sopa(desicion) {
     let desicion_nivel = new FormData()
     desicion_nivel.append('desicion1', desicion);
-    fetch("DatosSopa.php", {
+    fetch("php/DatosSopa.php", {
         method: "POST",
         body: desicion_nivel
     }).then(response => response.text()).then(response => {
@@ -87,7 +87,7 @@ function mostrar_sopa(desicion) {
 function trivia(desicion) {
     let desicion_nivel = new FormData()
     desicion_nivel.append('desicion1', desicion);
-    fetch("DecisionTrivia.php", {
+    fetch("PHP/DecisionTrivia.php", {
         method: "POST",
         body: desicion_nivel
     }).then(response => response.text()).then(response => {

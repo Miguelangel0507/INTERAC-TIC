@@ -2,7 +2,7 @@
 session_start();
 $id = $_SESSION['id_usuario'];
 if($id != "invitado"){//se valida si es usuario o invitado
-    require("../php/conexion.php");
+    require("../../php/conexion.php");
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //se hace la consulta a la tabla usuarios mediante el username
     $query = $pdo->prepare("SELECT puntossopa.puntos_nivel1 AS 'S1', 

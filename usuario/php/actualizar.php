@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST)){
-    require("../php/conexion.php");
+    require("../../php/conexion.php");
+    
     session_start();
     $id = $_SESSION['id_usuario'];
     $nombre = $_POST['nombres'];
