@@ -6,24 +6,25 @@ session_start();
 <html>
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link type="text/css" rel="shortcut icon" href="img/logo-mywebsite-urian-viera.svg" />
-<title>Eliminar - Actualizar </title>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/cargando.css">
-<link rel="stylesheet" type="text/css" href="../css/maquinawrite.css">
-<link rel="stylesheet" href="../css/estyle.css">
-<link rel="stylesheet" href="admin.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link type="text/css" rel="shortcut icon" href="img/logo-mywebsite-urian-viera.svg" />
+  <title>Eliminar - Actualizar </title>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/cargando.css">
+  <link rel="stylesheet" type="text/css" href="../css/maquinawrite.css">
+  <link rel="stylesheet" href="../css/estyle.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <?php include("menus.php"); ?>
+
 <body onunload="opepopup()">
   <div class="cargando">
     <div class="loader-outter"></div>
     <div class="loader-inner"></div>
   </div>
-  
+
   <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="body">
@@ -31,7 +32,7 @@ session_start();
           <div class="col-sm-7" style="display: contents;">
             <div class="row">
               <div class="col-md-12 p">
-              <h2 id="titulo">Datos usuarios</h2>
+                <h2 id="titulo">Datos usuarios</h2>
                 <div class="table-responsive" style="align-items: center;">
                   <table class="table table-bordered table-striped table-hover">
                     <thead>
@@ -86,4 +87,5 @@ session_start();
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/delete.js"></script>
+
 </html>
