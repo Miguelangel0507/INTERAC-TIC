@@ -16,7 +16,7 @@ session_start();
 
 <body>
     <?php
-    include "validacion.php";//archivo para la validacion del usuario logeado
+    include "../php/validacion.php";//archivo para la validacion del usuario logeado
     include "HeaderUsario.php";//encabezado ?> 
     <!--div para las cards-->
     <div class="cards">
@@ -49,7 +49,7 @@ session_start();
         </div>
     </div>
     
-    <script src="decision.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

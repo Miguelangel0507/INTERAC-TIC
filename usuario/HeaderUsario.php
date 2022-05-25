@@ -42,7 +42,7 @@
             <a href="PerfilUsuario.php">
                 <li>Perfil</li>
             </a>
-            <a href="salir.php">
+            <a href="../php/salir.php">
                 <li>Salir</li>
             </a>
         </ul>

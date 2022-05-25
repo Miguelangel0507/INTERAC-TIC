@@ -13,7 +13,7 @@
 <body>
     <?php
     session_start();
-    include "validacion.php"; //validacion de que el usuario este logueado
+    include "../php/validacion.php"; //validacion de que el usuario este logueado
     include "HeaderUsario.php"; ?>
     <div class="body">
         <!--contenedor datos usuario-->
