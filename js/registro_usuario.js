@@ -39,7 +39,6 @@ const validarFormulario = (e) => {
                 break;
 
         }
-
     }
     //validar datos
 const validarCampo = (expresion, input, campo) => {
@@ -61,6 +60,7 @@ const validarCampo = (expresion, input, campo) => {
 
     }
     // Validar contraseñas
+
 const validarPassword2 = () => {
     const inputpassword1 = document.getElementById("password");
     const inputpassword2 = document.getElementById("password2");
@@ -142,8 +142,6 @@ function ver() {
         c2.type = "password"
     }
 }
-
-
 
 function update() {
     document.location.href = "index.php";

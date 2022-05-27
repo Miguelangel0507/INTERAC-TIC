@@ -18,13 +18,12 @@
     //$fecha = $_REQUEST['fecha'];
     ?>
 
-
     <div class="padre" id="padre">
-        <div class="row_ensayo">
-            <div class="formulario ">
-                <div class="datos">
-
+        <div class="row_ensayo cambio-contra">
+            <div class="formulario">
+                <div class="div_recuperar">
                     <form method="POST" id="formulario_usuario">
+                        <h4>Ingresa tu nueva contraseña.</h4>
                         <!-- Grupo: contraseña -->
                         <div class="formulario__grupo" id="grupo__password">
                             <div class="formulario__grupo-input">
@@ -47,27 +46,19 @@
                             <p class="formulario__input-error">
                                 Ambas contraseñas deben ser iguales.
                             </p>
-                            <div class="v" >
-                                <input type="checkbox" onclick="ver2()" id="v"> <label for="v">&nbsp Ver contraseña</label> 
+                            <div class="v">
+                                <input type="checkbox" onclick="ver2()" id="v"> <label for="v">&nbsp Ver contraseña</label>
                             </div>
                         </div>
 
-                        
-
                         <!--boton de registro-->
-                        <div class="formulario__grupo formulario__grupo-btn-enviar">
-                            <div class="botones">
-                                <button type="submit" class="btn btn-primary formulario__btn" id="formulario__btn">cambiar</button>
-                            </div>
-                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">contraseña cambiada </p>
+                        <div class="formulario__grupo formulario__grupo-btn-enviar">                            
+                                <button type="submit" class="btn btn-primary formulario__btn" id="formulario__btn">Cambiar</button>
                         </div>
                         <span class="spinner"></span>
                         <!-- validacion de formulario -->
                         <div class="formulario__mensaje2 alert alert-primary" role='alert' id="formulario__mensaje2" role='alert'>
-
-
                             <label class="mensaje"><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor rellena el formulario correctamente</label>
-
                         </div>
                     </form>
                 </div>

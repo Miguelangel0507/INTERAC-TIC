@@ -4,55 +4,48 @@
     height: 50%;
 }
 
-    .alert-primary {
+.alert-primary {
     display: none;
 }
-    body {
-      background-image: url("../img/fondo.jpg");
-    }
 
-    .contenedor {
-      background-color: white;
-      border: solid 1px gray;
-      width: 280px;
-      /* border-radius: 5px; margin-left: 462px; */
-      /* float: left; */
-      text-align: center;
-     
-      padding: 23px;
+body {
+    background-image: url("../img/fondo.jpg");
+}
 
-    }
+.contenedor {
+    background-color: white;
+    width: 380px;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 462px;
+    padding: 23px;
+}
 
-    .validar {
-      background-color: green;
-      border-radius: 5px;
-      font-size: 23px;
-    }
+.validar {
+    background-color: #31D431;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 25px;
+    margin: 10px;
+}
 
-    input {
-      background-color: gainsboro;
-      margin: 4px;
-    }
+input {
+    background-color: gainsboro;
+    margin: 4px;
+}
 
-    .m {
-      border-radius: 7px;
-      border: 1px solid black;
-      font-size: 25px;
-    }
+.m {
+    border-radius: 7px;
+    border: 1px solid black;
+    font-size: 25px;
+}
 
-    .d {
-      margin: 25px;
-    }
-
-    .alt {
-      display: flex;
-    /* height: 300px; */
-    /* align-items: center; */
+.alt {
+    align-items: center;
     margin-top: 127px;
-    flex-direction: column;
-     justify-content: space-between;
-    }
+}
 
-    input {
-      align-items: center;
-    }
+input {
+    align-items: center;
+}

@@ -32,7 +32,7 @@ include("../../php/validacion.php") ?>
           <a class="nav-link1" href="../perfil/perfil_admin.php"><b>Perfil</b></a>
         </li>
         <li class="nav-item1">
-          <a class="nav-link1" href="../../usuario/salir.php"><b>Salir</b></a>
+          <a class="nav-link1" href="../../php/salir.php"><b>Salir</b></a>
         </li>
       </ul>
     </div>

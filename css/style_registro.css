@@ -28,6 +28,18 @@ h1 {
     border-radius: 15px;
 }
 
+.cambio-contra {
+    width: 50%;
+}
+
+.div_recuperar {
+    width: 60%;
+}
+
+#formulario_usuario {
+    text-align: center;
+}
+
 .formulario {
     display: flex;
     justify-content: space-evenly;
