@@ -14,18 +14,18 @@
           <h4>Informacion</h4>
           <div class="todo">
             <div class="por">
-              <label style="font-size: 20px;">&nbsp &nbsp ID:&nbsp &nbsp</label>
-              <label style="font-size: 20px;">&nbsp &nbsp Nombre:&nbsp &nbsp</label>
-              <label style="font-size: 20px;">&nbsp &nbsp Nombre jugador:&nbsp &nbsp</label>
-              <label style="font-size: 20px;">&nbsp &nbsp Estado:&nbsp &nbsp</label>
-              <label style="font-size: 20px;">&nbsp &nbsp Email:&nbsp &nbsp</label>
+              <label style="font-size: 18px;">&nbsp &nbsp ID:</label>
+              <label style="font-size: 18px;">&nbsp &nbsp Nombre:</label>
+              <label style="font-size: 18px;">&nbsp &nbsp Username:</label>
+              <label style="font-size: 18px;">&nbsp &nbsp Estado:</label>
+              <label style="font-size: 18px;">&nbsp &nbsp Email:</label>
             </div>
             <div class="nombres">
-              <label><?php echo $dataCliente['id_datos_usuario'] ?> </label>
-              <label><?php echo $dataCliente['nombre'] ?> </label>
-              <label><?php echo $dataCliente['username'] ?> </label>
-              <label><?php echo $dataCliente['estado'] ?> </label>
-              <label><?php echo $dataCliente['email'] ?></label>
+              <label  style="font-size: 18px;"><?php echo $dataCliente['id_datos_usuario'] ?> </label>
+              <label  style="font-size: 18px;"><?php echo $dataCliente['nombre'] ?> </label>
+              <label  style="font-size: 18px;"><?php echo $dataCliente['username'] ?> </label>
+              <label  style="font-size: 18px;"><?php echo $dataCliente['estado'] ?> </label>
+              <label  style="font-size: 18px;"><?php echo $dataCliente['email'] ?></label>
             </div>
           </div>
         </div>

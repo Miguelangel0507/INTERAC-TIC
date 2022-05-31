@@ -4,6 +4,19 @@
     justify-content: space-between;
 }
 
+.datos {
+    font-family: cursive;
+    text-align: initial;
+    font-size: 16px;
+    margin: 0px;
+    color: gray;
+}
+
+.col-form-label {
+    font-family: cursive;
+    font-size: 20px;
+}
+
 .todo {
     border-right: 2px solid;
     margin-top: 51px;
@@ -29,7 +42,7 @@
 }
 
 .todo2 {
-    margin-top: 51px;
+    margin-top: 25px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;

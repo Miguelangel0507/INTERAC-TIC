@@ -20,6 +20,7 @@ function MostrarDatos() { //Muestra los datos del usuario
 }
 var c1 = document.getElementById('password');
 var c2 = document.getElementById('password2');
+var c3 = document.getElementById('v');
 
 const formulario = document.getElementById('padre')
 const inputs = document.querySelectorAll('#padre input')
@@ -112,13 +113,16 @@ inputs.forEach((inputs) => {
 // mediante el checkbox se habilitan los campos para actualizar la contraseña
 document.getElementById('interesadoPositivo').addEventListener('click', function(e) {
     c1.disabled = false, c2.disabled = false;
+    c3.disabled = false;
     campos.password = false;
 })
 
 
 //se deshabilitan los campos para actualizar la contraseña
 document.getElementById('interesadoNegativo').addEventListener('click', function(e) {
-    c1.disabled = true, c2.disabled = true;
+    c1.disabled = true,
+        c2.disabled = true;
+    c3.disabled = true;
     const inputpassword1 = document.getElementById("password");
     const inputpassword2 = document.getElementById("password2");
     document.getElementById(`grupo__password`).classList.remove('formulario__grupo-incorrecto');
@@ -274,5 +278,18 @@ function reset_mensaje() { //remueve los mensajes de errores
         document.querySelector('#grupo__' + key + ' i').classList.remove("fa-check-circle");
         c1.disabled = true, c2.disabled = true;
         MostrarDatos()
+    }
+}
+
+function ver2() {
+    const c2 = document.getElementById("password2")
+    const c = document.getElementById("password")
+    if (c.type == "password" && c2.type == "password") {
+        c.type = Text
+        c2.type = Text
+    } else {
+        c.type = "password"
+        c2.type = "password"
+
     }
 }

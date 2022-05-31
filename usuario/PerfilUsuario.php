@@ -61,6 +61,7 @@
                     <form method="POST" id="formulario_usuario">
                         <!--nombre-->
                         <div class="formulario__grupo " id="grupo__nombre">
+                            <p class="info">Nombre:</p>
                             <div class="formulario__grupo-input">
                                 <input type="text" class="form-control" name="nombres" id="nombres">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -71,6 +72,7 @@
                         </div>
                         <!--username-->
                         <div class="formulario__grupo" id="grupo__nombre_personaje">
+                            <p class="info">Nombre de usuario:</p>
                             <div class="formulario__grupo-input">
                                 <input type="text" class="form-control" name="nombre_personaje" id="nombre_personaje" placeholder="Nombra tu personaje" aria-label="Username" aria-describedby="basic-addon1" />
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -81,6 +83,7 @@
                         </div>
                         <!--correo-->
                         <div class="formulario__grupo" id="grupo__correo">
+                            <p class="info">Correo:</p>
                             <div class="formulario__grupo-input">
                                 <input type="text" class="form-control" name="editar_correo" id="editar_correo">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -90,7 +93,7 @@
                             </p>
                         </div>
                         <!--checkbox -->
-                        <p>Desea cambiar su clave</p>
+                        <p style="margin: 0px;">¿Desea cambiar su clave?</p>
                         <p id="checkbox">
                             <label class="list-group-item">
                                 No <input type="radio" name="interesado" value="no" id="interesadoNegativo" checked>
@@ -117,6 +120,9 @@
                                 <p class="formulario__input-error">
                                     Ambas contraseñas deben ser iguales.
                                 </p>
+                            </div>
+                            <div class="v">
+                                <input type="checkbox" onclick="ver2()" id="v" disabled> <label id="v" for="v" class="ver_contra"> &nbsp Ver contraseña</label>
                             </div>
                             <!-- validacion de formulario -->
                             <div class="formulario__mensaje2 alert alert-primary" role='alert' id="formulario__mensaje2" role='alert'>

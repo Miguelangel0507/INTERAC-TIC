@@ -58,55 +58,44 @@ session_start();
     </ul>
 
     <!---Cuerpo-->
-    <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="body">
-                <div class="row clearfix">
-                    <div class="col-sm-7">
-                        <div class="row">
-                            <div class="col-md-12 p">
-                                <div class="table-responsive" style="align-items: center;">
-                                    <table class="table table-bordered table-striped table-hover">
-                                        <thead>
-                                            <tr class="tr">
-                                                <th scope="col">ID</th>
-                                                <th scope="col">pregunata</th>
-                                                <th scope="col">Respuesta, A</th>
-                                                <th scope="col">Respuesta, B</th>
-                                                <th scope="col">Respuesta, C</th>
-                                                <th scope="col">Respuesta, D</th>
-                                                <th scope="col">Respuesta correcta</th>
-                                                <th scope="col">Editar</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            include("php/consul_trivia.php");
-                                            while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
-                                                <tr>
-                                                    <td><?php echo $dataCliente['id_pregunta']; ?></td>
-                                                    <td><?php echo $dataCliente['pregunta']; ?></td>
-                                                    <td><?php echo $dataCliente['respuesta1']; ?></td>
-                                                    <td><?php echo $dataCliente['respuesta2']; ?></td>
-                                                    <td><?php echo $dataCliente['respuesta3']; ?></td>
-                                                    <td><?php echo $dataCliente['respuesta4']; ?></td>
-                                                    <td><?php echo $dataCliente['respuesta_correcta']; ?></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nivel<?php echo $dataCliente['id_pregunta']; ?>">
-                                                            Modificar
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <!--Ventana Modal para Actualizar--->
-                                                <?php include('modal_nv1.php'); ?>
-                                            <?php } ?>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="tabla clearfix">
+        <div class="col-sm-9">
+            <div class="table-responsive" style="align-items: center;">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr class="tr">
+                            <th scope="col">ID</th>
+                            <th scope="col">pregunata</th>
+                            <th scope="col">Respuesta, A</th>
+                            <th scope="col">Respuesta, B</th>
+                            <th scope="col">Respuesta, C</th>
+                            <th scope="col">Respuesta, D</th>
+                            <th scope="col">Respuesta correcta</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include("php/consul_trivia.php");
+                        while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <tr>
+                                <td><?php echo $dataCliente['id_pregunta']; ?></td>
+                                <td><?php echo $dataCliente['pregunta']; ?></td>
+                                <td><?php echo $dataCliente['respuesta1']; ?></td>
+                                <td><?php echo $dataCliente['respuesta2']; ?></td>
+                                <td><?php echo $dataCliente['respuesta3']; ?></td>
+                                <td><?php echo $dataCliente['respuesta4']; ?></td>
+                                <td><?php echo $dataCliente['respuesta_correcta']; ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nivel<?php echo $dataCliente['id_pregunta']; ?>">
+                                        Modificar
+                                    </button>
+                                </td>
+                            </tr>
+                            <!--Ventana Modal para Actualizar--->
+                            <?php include('modal_nv1.php'); ?>
+                        <?php } ?>
+                </table>
             </div>
         </div>
     </div>

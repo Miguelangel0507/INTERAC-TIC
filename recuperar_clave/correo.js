@@ -70,7 +70,6 @@ inputs.forEach((inputs) => {
 
 formulario__btn.addEventListener("click", (e) => {
     e.preventDefault();
-    alert(campos.inputpassword1)
     if (campos.password && campos.inputpassword1) {
         //se envia el formulario a la direccion URL para el registro del usuarios
         fetch("nuevaClave.php", {

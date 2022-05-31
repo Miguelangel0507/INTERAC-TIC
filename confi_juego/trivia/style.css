@@ -13,6 +13,10 @@ body {
     width: 95%;
 }
 
+.contenedor_info {
+    width: 60%;
+}
+
 .nav-item1 {
     display: inline-block;
     text-align: center;
@@ -27,6 +31,11 @@ body {
     /* max-width: 1000px; */
     margin: auto;
     /* left: 4%*/
+}
+
+.tabla {
+    display: flex;
+    justify-content: center;
 }
 
 .nav-link1:hover {

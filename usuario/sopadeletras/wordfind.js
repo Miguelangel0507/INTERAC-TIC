@@ -518,8 +518,8 @@ function registrar() {
                 Swal.fire({
                     icon: 'error',
                     title: '¡Perdiste!',
-                    text: 'debes sacar mas de 80 puntos',
-                    confirmButtonText: 'Salir?',
+                    text: 'Debes sacar mas de 80 puntos',
+                    confirmButtonText: 'Salir.',
                     timer: 5000,
                     timerProgressBar: true
                 }).then((result) => {

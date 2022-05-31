@@ -55,7 +55,7 @@ h1 {
 
 .datos h4,
 .formulario__grupo-input {
-    margin: 16px 3px;
+    margin: 16px 3px 0px;
 }
 
 .btn_ingresar {
@@ -192,6 +192,7 @@ h1 {
 
 .formulario__grupo-incorrecto .formulario__grupo-input {
     box-shadow: 0 0 5px red;
+    border-radius: 5px;
 }
 
 

@@ -25,7 +25,7 @@
             <label>D:&nbsp&nbsp <input type="text" name="d" class="form-control" value="<?php echo $dataCliente['respuesta4']; ?>" required="true"></label>
             <label for="recipient-name" class="col-form-label">Respuesta correcta:</label>
             <input type="text" name="co" class="form-control" value="<?php echo $dataCliente['respuesta_correcta']; ?>" required="true" readonly>
-            <label>Actualizar nueva respuesta correcta</label><br>
+            <label>Actualizar nueva respuesta correcta</label>
             <div class="radio">
               <label for="A" class="list-group-item">A &nbsp &nbsp <input type="radio" name="res" id="A" value="A" required="true"></label>
               <label for="B" class="list-group-item">B &nbsp &nbsp <input type="radio" name="res" id="B" value="B" required="true"></label>

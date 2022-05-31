@@ -87,6 +87,7 @@ inputs.forEach((inputs) => {
     inputs.addEventListener("blur", validarFormulario);
 })
 formulario__btn.addEventListener("click", (e) => {
+    e.preventDefault();
     if (campos.nombre && campos.nombre_personaje && campos.correo && campos.password) {
         //se envia el formulario a la direccion URL para el registro del usuarios
         e.preventDefault();
@@ -104,6 +105,7 @@ formulario__btn.addEventListener("click", (e) => {
                 document.querySelector('#grupo__correo i').classList.add('fa-times-circle');
                 document.querySelector('#grupo__nombre_personaje .formulario__input-error2').classList.remove("formulario__input-error2-activo")
             } else if (Response == "guardados") {
+                formulario_usuario.reset();
                 Swal.fire({ //Mensaje de actualizacion de datos correcta
                     icon: 'success',
                     title: 'Registro exitoso',
@@ -115,18 +117,14 @@ formulario__btn.addEventListener("click", (e) => {
                     allowEnterKey: false
                 })
                 setTimeout(() => {
-                    document.getElementById("formulario__mensaje-exito").classList.remove("formulario__mensaje-exito-activo")
-                    update();
-                }, 3000);
-                document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-                    icono.classList.remove('formulario__grupo-correcto');
-                });
-                formulario_usuario.reset();
-                return;
+                    document.location.href = "index.php";
+                }, 2000);
+
+
             }
         });
     } else {
-        document.getElementById('grupo__nombre_personaje').classList.add("formulario__input-error2-activo");
+        document.getElementById('formulario__mensaje2').style.display = "block";
     }
 });
 

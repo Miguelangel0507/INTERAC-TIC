@@ -89,7 +89,8 @@ function nextQuestion() {
                 if (response == "gano") {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Felicitaciones Ganaste',
+                        title: '!Felicitaciones Ganaste!',
+                        texet: "Pasas al siguiente nivel",
                         showConfirmButton: false,
                         timer: 5000,
                         timerProgressBar: true

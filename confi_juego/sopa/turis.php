@@ -12,7 +12,7 @@
       <form method="POST" action="php/recibe_turis.php">
         <input type="hidden" name="id_turis" value="<?php echo $preguntas['id_categoria']; ?>">
         <div class="modal-body" id="cont_modal">
-          <div class="form-group">
+          <div class="form-group contenedor_info">
             <label for="recipient-name" class="col-form-label">Palabra a Editar:</label>
             <input type="text" name="turis" class="form-control" value="<?php echo $preguntas['sitios_turisticos']; ?>" required="true">
           </div>
