@@ -39,13 +39,13 @@
                 <!--recuperar contraseña-->
                 <div class="form-group mx-sm-4 text-center">
                     <span class=" "><a href="recuperar_clave/index.php" class="olvide">¿Olvidaste tu contraseña?</a></span>
-                    <hr />
                 </div>
+                <hr />
                 <!--registro-->
                 <div class="form-group text-center">
-                    <span><a href="registro.html" class="crear">Crear cuenta nueva</a></span><br />
-                    <label for="" class="o">o</label><br />
-                    <span><a id="btn_invitado" class="crear">Ingresar como invitado</a></span><br />
+                    <a href="registro.html" class="crear">Crear cuenta nueva</a></
+                    <label for="" class="o">o</label>
+                    <a id="btn_invitado" class="crear">Ingresar como invitado</a>
                 </div>
             </div>
         </div>

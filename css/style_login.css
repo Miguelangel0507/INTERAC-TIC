@@ -3,6 +3,10 @@ body {
     background-attachment: fixed;
 }
 
+img {
+    width: 100%;
+}
+
 h1 {
     color: black;
 }
@@ -46,13 +50,19 @@ a:hover {
     color: red;
 }
 
+.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .crear {
     text-decoration: none;
     color: white;
     color: white;
     font-size: 19px;
     border: 2px solid white;
-    padding: 10px;
+    padding: 10px 2px;
     border-radius: 10px;
     background: rgb(49, 212, 49);
     width: 80%;
@@ -68,14 +78,7 @@ a:hover {
     justify-content: space-around;
     background: white;
     display: flex;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-position-y: center;
-    background-position-x: center;
-    background-position-x: right;
-    padding: 5px;
-    margin: 5px;
+    margin: 45px 0px 20px;
     width: 60%;
     border-radius: 15px;
 }
@@ -88,4 +91,48 @@ a:hover {
 
 .o {
     margin: 10px;
+}
+
+@media(max-width: 1152px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .logo {
+        width: 70%;
+        align-items: center;
+    }
+    .formulario {
+        border-left: 0px;
+        width: 80%;
+    }
+}
+
+@media(max-width:633px) {
+    .row {
+        width: 75%;
+    }
+}
+
+@media(max-width: 550px) {
+    .row {
+        width: 80%;
+    }
+}
+
+@media(max-width:445px) {
+    .row {
+        width: 90%;
+        margin: 45px 0px;
+    }
+    .logo {
+        width: 100%;
+    }
+    .formulario {
+        width: 100%;
+    }
+    .text-center {
+        width: 100%;
+    }
 }
