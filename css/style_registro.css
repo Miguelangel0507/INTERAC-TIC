@@ -16,14 +16,8 @@ h1 {
 
 .row_ensayo {
     background-color: white;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-position-y: center;
-    background-position-x: center;
-    background-position-x: right;
     padding: 20px;
-    margin: 5px;
+    margin: 45px 0px 20px;
     width: 60%;
     border-radius: 15px;
 }
@@ -49,7 +43,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 45%;
-    padding: 0px 35px;
+    padding: 25px 35px;
     border-left: solid 1px;
 }
 
@@ -89,6 +83,10 @@ h1 {
     font-size: 12px;
     margin-bottom: 0;
     display: none;
+}
+
+img {
+    width: 100%;
 }
 
 .formulario__input-error-activo {
@@ -207,10 +205,6 @@ h1 {
     .formulario__grupo-btn-enviar {
         grid-column: 1;
     }
-    /* ----- -----  Mediaqueries ----- ----- */
-    .formulario__btn {
-        width: 100%;
-    }
 }
 
 
@@ -242,5 +236,61 @@ h1 {
     }
     to {
         transform: rotate(1turn)
+    }
+}
+
+@media(max-width:1126px) {
+    .formulario {
+        flex-direction: column;
+        align-items: center;
+    }
+    .imagen {
+        width: 60%
+    }
+    .datos {
+        border-left: 0px;
+        width: 60%;
+    }
+}
+
+@media(max-width:881px) {
+    .row_ensayo {
+        width: 80%;
+    }
+    .imagen {
+        width: 65%;
+    }
+    .datos {
+        width: 70%;
+    }
+    .botones {
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:565px) {
+    .imagen {
+        width: 70%;
+    }
+    .datos {
+        width: 85%;
+    }
+}
+
+@media(max-width:455px) {
+    .datos {
+        width: 95%;
+        padding: 25px 5px;
+    }
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+    .botones a,
+    .botones button {
+        margin-top: 20px;
+    }
+    .botones button {
+        width: 80%;
     }
 }
