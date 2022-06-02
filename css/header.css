@@ -5,6 +5,8 @@ nav {
     align-items: center;
     background-color: #24252a;
     padding-left: 5vw;
+    position: fixed;
+    top: 0;
 }
 
 nav p {
@@ -15,6 +17,20 @@ nav p {
     display: flex;
     align-items: center;
     margin-bottom: 0rem;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
 }
 
 .btns {
@@ -104,11 +120,7 @@ li:hover {
     display: block;
 }
 
-@media (max-width:900px) {
-    .logo {
-        display: none;
-    }
-}
+@media (max-width:900px) {}
 
 .cont-ul a,
 .logo,
@@ -119,4 +131,55 @@ li:hover {
 
 ul {
     margin-bottom: 0rem;
+}
+
+@media(max-width:584px) {
+    nav {
+        padding-left: 10px;
+        z-index: 100;
+    }
+    .checkbtn {
+        display: block;
+        padding: 0px;
+    }
+    .cont-ul {
+        position: fixed;
+        width: 100%;
+        height: 50%;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 100;
+        flex-direction: column;
+        padding-left: 0px;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+        line-height: 30px;
+        width: 100%;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    .ul-second {
+        margin-top: 0px;
+        margin: 0px;
+    }
+    .develop:hover>.ul-second {
+        display: block;
+    }
+    body:hover>ul {
+        display: none;
+    }
 }

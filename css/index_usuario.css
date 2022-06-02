@@ -5,10 +5,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    height: 100vh;
-}
-
 .cards {
     display: flex;
     justify-content: space-evenly;

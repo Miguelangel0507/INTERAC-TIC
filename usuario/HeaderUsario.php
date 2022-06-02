@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../css/header.css">
     <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
     <nav>
         <!--logo-->
         <p class="logo">INTERAC-TIC</p>
+        <!--checkbox-->
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
         <!--lista-->
         <ul class="cont-ul">
             <a href="./index.php">
@@ -70,6 +64,3 @@
     <script src="HeaderUsuario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-</body>
-
-</html>
