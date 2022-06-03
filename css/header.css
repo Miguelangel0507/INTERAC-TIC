@@ -5,8 +5,6 @@ nav {
     align-items: center;
     background-color: #24252a;
     padding-left: 5vw;
-    position: fixed;
-    top: 0;
 }
 
 nav p {
@@ -45,7 +43,7 @@ li {
 }
 
 li:hover {
-    background-color: #008849;
+    background-color: #008849!important;
     color: white;
 }
 
@@ -67,7 +65,6 @@ li:hover {
 
 .ul-second {
     display: none;
-    position: absolute;
     margin-top: 1.5vw;
     position: absolute;
     z-index: 1;
@@ -102,6 +99,11 @@ li:hover {
     display: block;
 }
 
+.datos {
+    width: 400px;
+    background-color: #24252a;
+}
+
 .ul-third {
     position: absolute;
     transform: translateX(100%);
@@ -120,8 +122,6 @@ li:hover {
     display: block;
 }
 
-@media (max-width:900px) {}
-
 .cont-ul a,
 .logo,
 .develop {
@@ -133,10 +133,11 @@ ul {
     margin-bottom: 0rem;
 }
 
-@media(max-width:584px) {
+@media(max-width:610px) {
     nav {
         padding-left: 10px;
         z-index: 100;
+        height: 50px;
     }
     .checkbtn {
         display: block;
@@ -145,9 +146,8 @@ ul {
     .cont-ul {
         position: fixed;
         width: 100%;
-        height: 50%;
         background: #2c3e50;
-        top: 80px;
+        top: 48px;
         left: -100%;
         text-align: center;
         transition: all .5s;
@@ -155,9 +155,12 @@ ul {
         flex-direction: column;
         padding-left: 0px;
     }
+    .chartjs-render-monitor {
+        margin-bottom: 3px;
+    }
     nav ul li {
         display: block;
-        margin: 10px 0;
+        margin: 0;
         line-height: 30px;
         width: 100%;
     }
@@ -169,17 +172,47 @@ ul {
         background: none;
         color: red;
     }
+    li:hover>.datos,
+    li:hover>.ul-second {
+        background-color: #008849!important;
+        color: white;
+    }
     #check:checked~ul {
         left: 0;
     }
     .ul-second {
-        margin-top: 0px;
+        padding: 0px;
+        width: 100%;
         margin: 0px;
+        margin-top: 7px;
     }
     .develop:hover>.ul-second {
         display: block;
+        background: #2c3e50;
+        padding: 5px;
+        position: initial;
+    }
+    .datos {
+        overflow: scroll;
+        background: #2c3e50;
+        height: 260px;
+        width: 100%;
+        padding: 0px;
     }
     body:hover>ul {
+        display: none;
+    }
+    .back {
+        width: 100% !important;
+        padding-top: 2px !important;
+    }
+    .cont-ul a {
+        width: 100%;
+    }
+    .btno-config {
+        margin: 4px;
+    }
+    br {
         display: none;
     }
 }

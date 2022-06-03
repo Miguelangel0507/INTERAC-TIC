@@ -16,21 +16,23 @@
             <li class="develop">
                 Estadisticas
                 <ul class="ul-second">
-                    <li class="back">
-                        <!--boton para restablecer estadisticas-->
-                        <div class="config">
-                            <button class="btno-config" data-bs-toggle='modal' data-bs-target='#M_estadisiticas'><i class="fa-solid fa-gear"></i></button>
-                        </div>
-                        <!--estadisticas sopa-->
-                        <div class="estad_sopa">
-                            <canvas id="SopaLetras"></canvas>
-                        </div>
-                        <br>
-                        <!--estadisticas trivia-->
-                        <div class="estad_trivia">
-                            <canvas id="TriviaTic"></canvas>
-                        </div>
-                    </li>
+                    <div class="datos">
+                        <li class="back">
+                            <!--boton para restablecer estadisticas-->
+                            <div class="config">
+                                <button class="btno-config" data-bs-toggle='modal' data-bs-target='#M_estadisiticas'><i class="fa-solid fa-gear"></i></button>
+                            </div>
+                            <!--estadisticas sopa-->
+                            <div class="estad_sopa">
+                                <canvas id="SopaLetras"></canvas>
+                            </div>
+                            <br>
+                            <!--estadisticas trivia-->
+                            <div class="estad_trivia">
+                                <canvas id="TriviaTic"></canvas>
+                            </div>
+                        </li>
+                    </div>
                 </ul>
             </li>
             <a href="PerfilUsuario.php">

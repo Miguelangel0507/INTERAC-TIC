@@ -8,17 +8,17 @@
 .cards {
     display: flex;
     justify-content: space-evenly;
-    margin: 4rem;
+    margin-top: 65px;
     height: 25rem;
-}
-
-.card1 {
-    margin-left: 200px;
 }
 
 .card-body {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card {
+    width: 18rem;
 }
 
 .botones {
@@ -31,12 +31,8 @@
     color: white;
 }
 
-.card2 {
-    margin-right: 200px;
-}
 
-
-/*modo responsivo*/
+/*modo responsivo
 
 @media screen and (max-width: 980px) {
     #contenedor {
@@ -47,5 +43,28 @@
     }
     #barra_lateral {
         width: 30%;
+    }
+}*/
+
+@media(max-width: 698px) {
+    .cards {
+        align-items: center;
+        height: auto;
+        flex-direction: column;
+        margin-top: 35px;
+    }
+    .card {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+    .card-body {
+        padding: 2px;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        margin-bottom: 0px;
+    }
+    .botones {
+        margin-bottom: 0px;
     }
 }

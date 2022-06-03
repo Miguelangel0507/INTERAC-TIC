@@ -21,7 +21,7 @@ session_start();
     <!--div para las cards-->
     <div class="cards">
         <!--card sopa-->
-        <div class="card card1" style="width: 18rem;">
+        <div class="card card1" >
             <img src="../img/SopaLetras2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h2 class="card-title">Sopa de letras</h2>
@@ -33,9 +33,8 @@ session_start();
                 </form>
             </div>
         </div>
-        <br>
         <!--card trivia-->
-        <div class="card card2" style="width: 18rem;">
+        <div class="card card2" >
             <img src="../img/triviaTIC.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h2 class="card-title">Trivia Tic</h2>
