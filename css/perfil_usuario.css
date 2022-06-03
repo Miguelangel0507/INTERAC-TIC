@@ -25,15 +25,10 @@ body {
 
 .cont_DatosUsuario {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-position-y: center;
-    background-position-x: right;
-    padding: 5px;
-    margin: 5px;
+    padding: 10px;
+    margin: 25px 5px;
     width: 60%;
     border-radius: 15px;
-    height: 70%;
     font-size: 1.3rem;
     border: 1px solid rgba(0, 0, 0, .125);
     display: flex;
@@ -175,6 +170,11 @@ label {
     display: block;
 }
 
+.cont_info {
+    display: flex;
+    flex-direction: column;
+}
+
 .formulario__mensaje {
     height: 45px;
     line-height: 54px;
@@ -291,5 +291,26 @@ label {
     }
     to {
         transform: rotate(1turn)
+    }
+}
+
+@media(max-width:730px) {
+    .cont_DatosUsuario {
+        width: 85%;
+    }
+}
+
+@media(max-width:808px) {
+    .modal-footer button.btn-primary {
+        width: 170px;
+    }
+}
+
+@media(max-width:384px) {
+    .cont_DatosUsuario {
+        width: 95%;
+    }
+    .btns button {
+        width: 40%
     }
 }

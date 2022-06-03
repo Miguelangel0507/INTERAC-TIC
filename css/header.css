@@ -198,6 +198,7 @@ ul {
         height: 260px;
         width: 100%;
         padding: 0px;
+        border: 0px;
     }
     body:hover>ul {
         display: none;

@@ -30,7 +30,6 @@ body {
 }
 
 .back {
-    width: 25%;
     display: flex;
     justify-content: space-around;
 }
@@ -44,12 +43,10 @@ body {
     padding: 1rem;
     border-radius: 1rem;
     margin: 0.5rem 4rem;
-    width: 90vw;
     padding: 1rem;
     background: rgba(229, 252, 250, 0.793);
     cursor: default;
     border-radius: 1rem;
-    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -208,4 +205,72 @@ button:active {
 
 #answers {
     margin-top: 1rem;
+}
+
+@media(max-width:1120px) {
+    ol {
+        width: 60%;
+    }
+}
+
+@media(max-width:950px) {
+    ol {
+        width: 75%;
+    }
+}
+
+@media(max-width:802px) {
+    #title,
+    .questions {
+        margin: 16px 35px;
+    }
+    #instrucciones {
+        margin: 0.5rem 35px;
+    }
+}
+
+@media(max-width:743px) {
+    ol {
+        width: 90%;
+        margin-bottom: 0px;
+        padding: 0px
+    }
+    body {
+        font-size: 1.2rem;
+    }
+    h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media(max-width:577px) {
+    .cabecera {
+        flex-direction: column;
+        margin: 0px;
+    }
+    .back {
+        justify-content: space-between;
+    }
+    .tiempo {
+        justify-content: center;
+    }
+    #question {
+        margin-bottom: 0px;
+    }
+    .preguntas {
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    .preg2,
+    .preg4 {
+        margin-top: 10px;
+    }
+    .pregunta {
+        width: 100%;
+        height: 50px;
+    }
+    #stat {
+        margin: 0px;
+    }
 }

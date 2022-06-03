@@ -20,15 +20,15 @@
         <div class="cont_DatosUsuario">
             <h2>Datos Usuario</h2>
             <div id="container_datos">
-                <div>
-                    <label>Nombre:</label><br>
-                    <label>Correo: </label><br>
-                    <label> Username:</label><br>
+                <div class="cont_info">
+                    <label>Nombre:</label>
+                    <label>Correo: </label>
+                    <label> Username:</label>
                 </div>
-                <div id="DatosUsuario">
-                    <label id="nombre"></label><br>
-                    <label id="correo"></label><br>
-                    <label id="username"></label><br>
+                <div class="cont_info" id="DatosUsuario">
+                    <label id="nombre"></label>
+                    <label id="correo"></label>
+                    <label id="username"></label>
                 </div>
             </div>
             <div>
