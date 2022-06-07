@@ -43,12 +43,11 @@ include("../../php/validacion.php")
                         <b>¡Ya estas listo para comenzar a jugar!</b>
                     </ol>
                     <div id="comenzar">
-                        <input id="btn_empezar" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=60,despegar()" />
+                        <input id="btn_empezar" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=10000,despegar()" />
                     </div>
                 </div>
                 <div id="puzzle"></div>
             </div>
-
             <div id="cont_words">
                 <div class="cont_puntos">
                     <b for="">Puntos:</b>
@@ -56,7 +55,6 @@ include("../../php/validacion.php")
                 </div>
                 <div id="words"></div>
             </div>
-
         </div>
         <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

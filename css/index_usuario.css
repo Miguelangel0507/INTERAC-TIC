@@ -31,20 +31,11 @@
     color: white;
 }
 
-
-/*modo responsivo
-
-@media screen and (max-width: 980px) {
-    #contenedor {
-        width: 90%;
+@media(max-width:1326px) {
+    .cards {
+        margin-top: 40px
     }
-    #contenido {
-        width: 60%;
-    }
-    #barra_lateral {
-        width: 30%;
-    }
-}*/
+}
 
 @media(max-width: 698px) {
     .cards {

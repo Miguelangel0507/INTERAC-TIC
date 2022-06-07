@@ -22,6 +22,10 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#quiz-container {
+    height: 450px;
+}
+
 .cabecera {
     display: flex;
     justify-content: space-between;
@@ -59,6 +63,7 @@ body {
 #instrucciones {
     text-align: center;
     align-items: center;
+    height: 100%;
 }
 
 #container_btnos {
@@ -207,6 +212,12 @@ button:active {
     margin-top: 1rem;
 }
 
+@media(max-width:1326px) {
+    #quiz-container {
+        height: 400px;
+    }
+}
+
 @media(max-width:1120px) {
     ol {
         width: 60%;
@@ -272,5 +283,21 @@ button:active {
     }
     #stat {
         margin: 0px;
+    }
+}
+
+@media(max-width:472px) {
+    body {
+        font-size: 1rem;
+    }
+    #instrucciones,
+    #title {
+        margin: 0.5rem 15px;
+    }
+    #quiz-container {
+        height: 435px;
+    }
+    ol {
+        height: 100%;
     }
 }

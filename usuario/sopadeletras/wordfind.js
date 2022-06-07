@@ -474,7 +474,7 @@ function despegar() {
         document.getElementById("salir").style.display = "block";
         document.getElementById("instrucciones").style.display = "none";
         document.getElementById("puzzle").style.display = "block"; //imagen invisible si se comienza de nuevo
-        document.getElementById("cont_words").style.display = "block"; //imagen invisible si se comienza de nuevo
+        document.getElementById("cont_words").style.display = "flex"; //imagen invisible si se comienza de nuevo
         document.getElementById("words").style.visibility = "visible";
         contar -= 1; //variar el número de la cuenta
         cuenta.innerHTML = contar; //escribir el número

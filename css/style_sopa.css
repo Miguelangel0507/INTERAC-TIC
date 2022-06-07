@@ -67,7 +67,7 @@ body {
 #cont_words {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #salir {
@@ -274,5 +274,141 @@ button::-moz-focus-inner {
     margin: 0 30px;
 }
 
+@media(max-width:1326px) {
+    .contenedor_central,
+    .encabezado {
+        width: 100%;
+    }
+    #instrucciones h2 {
+        margin-top: 15px;
+    }
+    li {
+        margin-top: 5px !important;
+    }
+    .contenedor_central {
+        width: 70%;
+    }
+}
 
-/*inabilitat*/
+@media(max-width:1166px) {
+    .contenedor_central {
+        width: 75%;
+    }
+}
+
+@media(max-width:1092px) {
+    .row {
+        width: 78%;
+    }
+}
+
+@media(max-width:926px) {
+    .row {
+        width: 85%;
+    }
+    #instrucciones h2 {
+        margin-top: 5px;
+    }
+    #lista_instrucciones {
+        margin-bottom: 0px;
+    }
+}
+
+@media(max-width:926px) {
+    .row {
+        width: 90%;
+    }
+}
+
+@media(max-width:796px) {
+    .row {
+        width: 95%;
+    }
+}
+
+@media(max-width:750px) {
+    .contenedor_central {
+        width: 82%;
+    }
+}
+
+@media(max-width:683px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+    .row {
+        width: 95%;
+    }
+    #puzzle {
+        margin: 0px;
+    }
+}
+
+@media(max-width:636px) {
+    #words ul {
+        padding-left: 25px;
+    }
+    #puzzle .puzzleSquare {
+        height: 25px;
+        width: 25px;
+        font: 0.8em sans-serif;
+    }
+    ul {
+        font-size: 0.8em;
+    }
+}
+
+@media(max-width:534px) {
+    #puzzle .puzzleSquare {
+        height: 22px;
+        width: 22px;
+        font: 0.8em sans-serif;
+    }
+}
+
+@media(max-width: 491px) {
+    #cont_words {
+        flex-direction: column-reverse;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #words li {
+        padding: 3px 20px;
+        list-style: none;
+    }
+    #words {
+        padding-top: 5px;
+    }
+    #cont_words {
+        margin-top: 0px;
+    }
+}
+
+@media(max-width:482px) {
+    .contenedor_central {
+        width: 98%;
+    }
+}
+
+@media(max-width:396px) {
+    #puzzle .puzzleSquare {
+        height: 20px;
+        width: 20px;
+        font: 0.7em sans-serif;
+    }
+}
+
+@media(max-width:356px) {
+    .row {
+        width: 98%;
+    }
+}
+
+@media(max-width:344px) {
+    #puzzle .puzzleSquare {
+        height: 18px;
+        width: 18px;
+    }
+}
