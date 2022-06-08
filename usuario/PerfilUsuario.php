@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Usuario</title>
     <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://www.risaralda.gov.co/info/gobrisaralda/web/portal/img/favicon.png">
     <link rel="stylesheet" href="../css/perfil_usuario.css">
 </head>
 

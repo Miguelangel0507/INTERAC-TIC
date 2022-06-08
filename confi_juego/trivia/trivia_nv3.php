@@ -8,8 +8,9 @@ include("../../php/validacion.php") ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Configuracion Trivia-tic Nivel 3</title>
     <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://www.risaralda.gov.co/info/gobrisaralda/web/portal/img/favicon.png">
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../css/cargando.css">
     <link rel="stylesheet" type="text/css" href="../../css/maquinawrite.css">
@@ -79,7 +80,7 @@ include("../../php/validacion.php") ?>
 
     <!--Cuerpo-->
     <div class="tabla clearfix">
-        <div class="col-sm-9">
+        <div class="contenedor_tabla">
             <div class="table-responsive" style="align-items: center;">
                 <table class="table table-bordered table-striped table-hover">
                     <thead>

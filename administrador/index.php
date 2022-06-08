@@ -10,7 +10,8 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link type="text/css" rel="shortcut icon" href="img/logo-mywebsite-urian-viera.svg" />
-  <title>Eliminar - Actualizar </title>
+  <link rel="shortcut icon" href="https://www.risaralda.gov.co/info/gobrisaralda/web/portal/img/favicon.png">
+  <title>Usuarios eliminar-Actualizar </title>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/cargando.css">
   <link rel="stylesheet" type="text/css" href="../css/maquinawrite.css">

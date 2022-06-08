@@ -30,12 +30,13 @@
           </div>
         </div>
 
+        <hr class="separador_info">
+
         <!--datos de la base de datos-->
         <div class="contenedores">
           <h4>Puntos</h4>
           <div class="todo2">
             <dl class="pri">
-
               <h6 style="font-size: 25px;"> Puntos trivia</h6>
               <label>Nivel 1:&nbsp &nbsp </label> <?php echo $dataCliente['t1'] ?> <br>
               <label>Nivel 2:&nbsp &nbsp </label> <?php echo $dataCliente['t2'] ?><br>

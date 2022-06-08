@@ -17,6 +17,10 @@
     font-size: 20px;
 }
 
+.separador_info {
+    display: none;
+}
+
 .clearfix {
     display: flex;
     flex-direction: column;
@@ -115,4 +119,35 @@ td {
 h4 {
     text-align: center;
     margin: 10px 0;
+}
+
+@media(max-width:991px) {
+    .detalle {
+        flex-direction: column;
+    }
+    .contenedores {
+        width: 100%;
+    }
+    .todo {
+        border: 0px;
+    }
+    .separador_info {
+        display: block;
+        width: 90%;
+        margin: 0px;
+        margin-left: 5%;
+    }
+    .todo2 {
+        margin-top: 20px !important;
+        justify-content: space-around !important;
+    }
+}
+
+@media(max-width:446px) {
+    .nombres {
+        width: 40%;
+    }
+    .nombres label {
+        overflow: hidden;
+    }
 }
