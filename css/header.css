@@ -31,11 +31,6 @@ nav p {
     display: none;
 }
 
-.btns {
-    display: flex;
-    justify-content: space-around;
-}
-
 li {
     list-style: none;
     padding: 1.5vw;

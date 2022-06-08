@@ -23,6 +23,12 @@ body {
     color: gray;
 }
 
+.btns {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+
 .cont_DatosUsuario {
     position: absolute;
     padding: 10px;

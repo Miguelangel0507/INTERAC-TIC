@@ -51,7 +51,10 @@ body {
 /*Perfil admin*/
 
 .todo2 {
-    text-align: -webkit-center;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -82,7 +85,6 @@ h3 {
 }
 
 .id {
-    position: relative;
     border-radius: 13px;
     border: 1px solid lightgrey;
     top: 61px;
@@ -97,4 +99,95 @@ h3 {
     flex-direction: row-reverse;
     justify-content: space-around;
     padding: 7px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 60px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 1326px) {
+    .todo2 {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+        padding-top: 6px;
+        margin-bottom: 0px;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        background-color: #424949;
+        top: 66px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li {
+        display: block;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    .navbar-nav1 {
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0px;
+    }
+    .nav-link1 b {
+        justify-content: center;
+    }
+    .nav-link1 {
+        padding: 15px;
+    }
+    .id {
+        width: 70%;
+    }
+}
+
+@media(max-width:659px) {
+    .id {
+        width: 85%;
+    }
+    h3 {
+        font-size: 35px;
+    }
+}
+
+@media(max-width:529px) {
+    .id {
+        width: 90%;
+    }
+}
+
+@media(max-width:576px) {
+    .ubicar2 {
+        width: 40%;
+    }
+    #n,
+    #e {
+        overflow: hidden;
+    }
 }

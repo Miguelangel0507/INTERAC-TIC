@@ -25,54 +25,46 @@ session_start();
     <div class="loader-inner"></div>
   </div>
 
-  <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="body">
-        <div class="row clearfix">
-          <div class="col-sm-7" style="display: contents;">
-            <div class="row">
-              <div class="col-md-12 p">
-                <h2 id="titulo">Datos usuarios</h2>
-                <div class="table-responsive" style="align-items: center;">
-                  <table class="table table-bordered table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Rol</th>
-                        <th scope="col">Acción</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                      include("registro.php");
-                      while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <tr>
-                          <td><?php echo $dataCliente['id_datos_usuario']; ?></td>
-                          <td><?php echo $dataCliente['nombre']; ?></td>
-                          <td><?php echo $dataCliente['email']; ?></td>
-                          <td><?php echo $dataCliente['estado']; ?></td>
-                          <td><?php echo $dataCliente['rol_usuario']; ?></td>
-                          <td>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Eliminar</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Modificar</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Childresn<?php echo $dataCliente['id_datos_usuario']; ?>">Detalles</button>
-                          </td>
-                        </tr>
-                        <!--Ventana Modal para Actualizar--->
-                        <?php include('ModalEditar.php'); ?>
-                        <?php include('Modal_detalle.php'); ?>
-                        <!--Ventana Modal para la Alerta de Eliminar--->
-                        <?php include('ModalEliminar.php'); ?>
-                      <?php } ?>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="clearfix">
+    <h2 id="titulo">Datos usuarios</h2>
+    <div class="contenedor_tabla">
+      <div class="table-responsive" >
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Rol</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            include("registro.php");
+            while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
+              <tr>
+                <td><?php echo $dataCliente['id_datos_usuario']; ?></td>
+                <td><?php echo $dataCliente['nombre']; ?></td>
+                <td><?php echo $dataCliente['email']; ?></td>
+                <td><?php echo $dataCliente['estado']; ?></td>
+                <td><?php echo $dataCliente['rol_usuario']; ?></td>
+                <td>
+                  <div class="btns_info_usuarios">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Eliminar</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Modificar</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Childresn<?php echo $dataCliente['id_datos_usuario']; ?>">Detalles</button>
+                  </div>
+                </td>
+              </tr>
+              <!--Ventana Modal para Actualizar--->
+              <?php include('ModalEditar.php'); ?>
+              <?php include('Modal_detalle.php'); ?>
+              <!--Ventana Modal para la Alerta de Eliminar--->
+              <?php include('ModalEliminar.php'); ?>
+            <?php } ?>
+        </table>
       </div>
     </div>
   </div>

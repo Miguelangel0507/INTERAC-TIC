@@ -9,6 +9,7 @@ include("../../php/validacion.php") ?>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../../css/cargando.css">
   <link rel="stylesheet" type="text/css" href="../../css/maquinawrite.css">
@@ -20,7 +21,14 @@ include("../../php/validacion.php") ?>
   <!--Encabezado-->
   <nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
     <div class="collapse1 navbar-collapse1" id="navbarNav">
-      <p class="pa"> <b><span style="color: white;">Palabras de la sopa de letras</span> </b></p>
+      <!--logo-->
+      <p class="title_sopa pa"> <b><span style="color: white;">Palabras de la sopa de letras</span> </b></p>
+      <!--checkbox-->
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!--lista-->
       <ul class="navbar-nav1">
         <li class="nav-item1 active1">
           <a class="nav-link1" href="../../administrador/index.php"><b> Usuarios</b> <span class="sr-only1"></span></a>
@@ -40,18 +48,28 @@ include("../../php/validacion.php") ?>
 
   <!--Paginacion -->
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Sopa de letras</a></li>
-    <li class="page-item"><a class="page-link" href="../trivia/trivia.php">Trivia</a></li>
     <li class="page-item">
-      <a class="page-link" href="../trivia/trivia.php" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
+      <div>
+        <a class="page-link" href="#">Sopa de letras</a>
+      </div>
+    </li>
+    <li class="page-item">
+      <div>
+        <a class="page-link" href="../trivia/trivia.php">Trivia</a>
+      </div>
+    </li>
+    <li class="page-item">
+      <div>
+        <a class="page-link" href="../trivia/trivia.php" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </div>
     </li>
   </ul>
 
   <!--Cuerpo-->
   <div class="tabla clearfix">
-    <div class="col-sm-9">
+    <div class="contenedor_tabla">
       <div class="table-responsive" style="align-items: center;">
         <table class="table table-bordered table-striped table-hover">
           <thead>

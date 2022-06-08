@@ -26,7 +26,14 @@ include "../../php/validacion.php" ?>
   <!--Encabezado-->
   <nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
     <div class="collapse1 navbar-collapse1" id="navbarNav">
+      <!--Logo-->
       <p class="pa"> <b><span style="color: white;">Administrador</span> </b></p>
+      <!--checkbox-->
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!--lista-->
       <ul class="navbar-nav1">
         <li class="nav-item1 active1">
           <a class="nav-link1" href="../../administrador/index.php"><b>Usuarios</b> <span class="sr-only1"></span></a>

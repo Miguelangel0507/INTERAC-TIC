@@ -17,6 +17,26 @@
     font-size: 20px;
 }
 
+.clearfix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.btns_info_usuarios {
+    width: 280px;
+}
+
+.contenedor_tabla {
+    width: 85%;
+}
+
+.table-responsive {
+    align-items: center;
+    border-radius: 10px;
+}
+
 .todo {
     border-right: 2px solid;
     margin-top: 51px;

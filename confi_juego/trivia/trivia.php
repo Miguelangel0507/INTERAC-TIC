@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../css/cargando.css">
     <link rel="stylesheet" type="text/css" href="../../css/maquinawrite.css">
@@ -21,7 +22,14 @@ session_start();
     <!--Encabezado-->
     <nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
         <div class="collapse1 navbar-collapse1" id="navbarNav">
+            <!--logo-->
             <p class="pa"> <b><span style="color: white;">Trivia nivel 1</span> </b></p>
+            <!--checkbox-->
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <!--lista-->
             <ul class="navbar-nav1">
                 <li class="nav-item1 active1">
                     <a class="nav-link1" href="../../administrador/index.php"><b> Usuarios</b> <span class="sr-only1"></span></a>
@@ -40,26 +48,44 @@ session_start();
     </nav>
 
     <!--Paginacion-->
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="../sopa/index.php" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="../sopa/index.php">Sopa de letras</a></li>
-        <li class="page-item"><a class="page-link" href="#">Trivia nivel 1</a></li>
-        <li class="page-item"><a class="page-link" href="trivia_nv2.php">Trivia nivel 2</a></li>
-        <li class="page-item"><a class="page-link" href="trivia_nv3.php">Trivia nivel 3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="trivia_nv2.php" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
+    <div class="div_pagination">
+        <ul class="ul_paginacion pagination">
+            <li class=" page-item">
+                <a class="anterior page-link" href="../sopa/index.php" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="../sopa/index.php">
+                    <div class="a-pagination"> Sopa de letras</div>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">
+                    <div class="a-pagination"> Trivia nivel 1</div>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="trivia_nv2.php">
+                    <div class="a-pagination"> Trivia nivel 2</div>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="trivia_nv3.php">
+                    <div class="a-pagination"> Trivia nivel 3</div>
+                </a>
+            </li>
+            <li class=" page-item">
+                <a class="anterior page-link" href="trivia_nv2.php" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <!---Cuerpo-->
     <div class="tabla clearfix">
-        <div class="col-sm-9">
+        <div class="contenedor_tabla">
             <div class="table-responsive" style="align-items: center;">
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
