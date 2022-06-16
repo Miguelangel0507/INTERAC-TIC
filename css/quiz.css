@@ -54,6 +54,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .questions {
@@ -210,6 +211,16 @@ button:active {
 
 #answers {
     margin-top: 1rem;
+}
+
+.container_question {
+    height: 480px;
+}
+
+@media(max-width:1326px) {
+    .cards {
+        height: 100%;
+    }
 }
 
 @media(max-width:1326px) {

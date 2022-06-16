@@ -123,7 +123,7 @@ function nextQuestion() {
 }
 
 function reiniciar_cuenta() {
-    window.contar = 11;
+    window.contar = 1000;
     contador();
 }
 
@@ -134,7 +134,7 @@ function contador() {
         cuenta.innerHTML = contar;
         if (contar <= 0) {
             PreguntaErronea();
-            window.contar = 11;
+            window.contar = 1000;
             clearInterval(ignicion);
             setTimeout(nextQuestion, 3000);
             return;

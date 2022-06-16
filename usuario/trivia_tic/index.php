@@ -32,7 +32,7 @@ include("../../php/validacion.php")?>
                 </div>
             </ol>
         </div>
-        <div>
+        <div class="container_quiz">
             <div class="questions" id="questions">
                 <div class="cabecera">
                     <div class="back">

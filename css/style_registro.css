@@ -138,9 +138,14 @@ img {
     display: none;
 }
 
+.v {
+    margin-top: 10px;
+}
+
 .botones {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .mensaje {

@@ -149,7 +149,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label>Para eliminar el usuario debes escribir la palabra "ELIMINAR".</label>
+                    <label class="label_eliminar">Para eliminar el usuario debes escribir la palabra "ELIMINAR".</label>
                     <input type="text" class="form-control" name="text_eliminar" id="text_eliminar" placeholder="ELIMINAR" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
                 <div class="modal-footer">
