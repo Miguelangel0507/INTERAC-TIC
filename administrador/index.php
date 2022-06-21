@@ -29,7 +29,7 @@ session_start();
   <div class="clearfix">
     <h2 id="titulo">Datos usuarios</h2>
     <div class="contenedor_tabla">
-      <div class="table-responsive" >
+      <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
           <thead>
             <tr>
@@ -43,6 +43,22 @@ session_start();
           </thead>
           <tbody>
             <?php
+            
+            include("total_registros.php");
+            $por_pagina = 5;
+
+            if (empty($_GET['pagina'])) {
+              $pagina = 1;
+            } else {
+              $pagina = $_GET['pagina'];
+            }
+            $desde = ($pagina - 1) * $por_pagina;
+            $total_paginas = ceil($total_registro / $por_pagina);
+
+            if (empty($_GET['busqueda'])){
+              
+            }
+
             include("registro.php");
             while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
               <tr>
@@ -68,6 +84,33 @@ session_start();
         </table>
       </div>
     </div>
+
+    <!--Paginador-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <?php if ($pagina > 1) {
+            echo '<a class="page-link" href="?pagina=' . $pagina-1 . ' " aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>';
+          }
+          ?>
+        </li>
+        <?php
+        for ($i = 1; $i <= $total_paginas; $i++) {
+        echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '">' . $i . '</a></li>';
+        }
+        ?>
+        <li class="page-item">
+          <?php if ($pagina != $total_paginas) {
+            echo '<a class="page-link" href="?pagina=' . $pagina + 1 . '" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>';
+          }
+          ?>
+        </li>
+      </ul>
+    </nav>
   </div>
 </body>
 

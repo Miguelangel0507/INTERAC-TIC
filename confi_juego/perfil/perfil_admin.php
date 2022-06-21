@@ -35,7 +35,7 @@ include "../../php/validacion.php" ?>
         <i class="fas fa-bars"></i>
       </label>
       <!--lista-->
-      <ul class="navbar-nav1">
+      <ul class="navbar-nav1 seccion_pag">
         <li class="nav-item1 active1">
           <a class="nav-link1" href="../../administrador/index.php"><b>Usuarios</b> <span class="sr-only1"></span></a>
         </li>

@@ -127,7 +127,7 @@ h3 {
         padding-top: 6px;
         margin-bottom: 0px;
     }
-    ul {
+    .seccion_pag {
         position: fixed;
         width: 100%;
         background-color: #424949;
