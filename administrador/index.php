@@ -28,6 +28,14 @@ session_start();
 
   <div class="clearfix">
     <h2 id="titulo">Datos usuarios</h2>
+
+    <form  method="get" class="form_search">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar por nombre o correo electronico" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="submit" value="Buscar" class="btn btn-outline-secondary">
+      </div>
+    </form>
+
     <div class="contenedor_tabla">
       <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
@@ -43,7 +51,6 @@ session_start();
           </thead>
           <tbody>
             <?php
-            
             include("total_registros.php");
             $por_pagina = 5;
 
@@ -54,10 +61,6 @@ session_start();
             }
             $desde = ($pagina - 1) * $por_pagina;
             $total_paginas = ceil($total_registro / $por_pagina);
-
-            if (empty($_GET['busqueda'])){
-              
-            }
 
             include("registro.php");
             while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -87,25 +90,41 @@ session_start();
 
     <!--Paginador-->
     <nav aria-label="Page navigation example">
-      <ul class="pagination">
+      <ul class="pagination pagination_usuarios">
         <li class="page-item">
           <?php if ($pagina > 1) {
-            echo '<a class="page-link" href="?pagina=' . $pagina-1 . ' " aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            </a>';
+            if (empty($_GET['busqueda'])) {
+              echo '<a class="page-link" href="?pagina=' . $pagina - 1 . ' " aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              </a>';
+            } else {
+              echo '<a class="page-link" href="?pagina=' . $pagina - 1 . '&busqueda=' . $busqueda . ' " aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              </a>';
+            }
           }
           ?>
         </li>
         <?php
         for ($i = 1; $i <= $total_paginas; $i++) {
-        echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '">' . $i . '</a></li>';
+          if (empty($_GET['busqueda'])) {
+            echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '">' . $i . '</a></li>';
+          } else {
+            echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '&busqueda=' . $busqueda . '">' . $i . '</a></li>';
+          }
         }
         ?>
         <li class="page-item">
           <?php if ($pagina != $total_paginas) {
-            echo '<a class="page-link" href="?pagina=' . $pagina + 1 . '" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>';
+            if (empty($_GET['busqueda'])) {
+              echo '<a class="page-link" href="&pagina=' . $pagina + 1 . '" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              </a>';
+            } else {
+              echo '<a class="page-link" href="?pagina=' . $pagina + 1 . '&busqueda=' . $busqueda . '" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              </a>';
+            }
           }
           ?>
         </li>

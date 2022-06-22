@@ -17,6 +17,14 @@
     font-size: 20px;
 }
 
+.pagination_usuarios {
+    margin: 0px;
+}
+
+.form_search {
+    width: 50%;
+}
+
 .separador_info {
     display: none;
 }
@@ -25,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 .btns_info_usuarios {
@@ -121,6 +129,12 @@ h4 {
     margin: 10px 0;
 }
 
+@media(max-width: 1326px) {
+    .pagination_usuarios {
+        margin-bottom: 10px;
+    }
+}
+
 @media(max-width:991px) {
     .detalle {
         flex-direction: column;
@@ -140,6 +154,9 @@ h4 {
     .todo2 {
         margin-top: 20px !important;
         justify-content: space-around !important;
+    }
+    .form_search {
+        width: 80%;
     }
 }
 
