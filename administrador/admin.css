@@ -36,6 +36,25 @@
     margin-top: 15px;
 }
 
+.alert_user {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#tipo_usuario,
+.btn-outline-secondary {
+    border: 1px solid #ced4da;
+}
+
+#tipo_usuario,
+.btn-outline-secondary {
+    border-left-width: 0px;
+}
+
+.btn-outline-secondary {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
 .btns_info_usuarios {
     width: 280px;
 }

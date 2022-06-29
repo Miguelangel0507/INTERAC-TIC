@@ -20,6 +20,10 @@
     opacity: 1;
 }
 
+.datos {
+    border: 0px;
+}
+
 .info-id {
     margin-bottom: 10px;
 }

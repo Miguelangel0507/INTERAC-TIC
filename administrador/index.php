@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="es">
 <?php
 session_start();
 ?>
@@ -15,23 +16,24 @@ session_start();
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/cargando.css">
   <link rel="stylesheet" type="text/css" href="../css/maquinawrite.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/estyle.css">
   <link rel="stylesheet" href="admin.css">
 </head>
 <?php include("menus.php"); ?>
 
 <body onunload="opepopup()">
-  <div class="cargando">
-    <div class="loader-outter"></div>
-    <div class="loader-inner"></div>
-  </div>
 
   <div class="clearfix">
     <h2 id="titulo">Datos usuarios</h2>
-
-    <form  method="get" class="form_search">
+    <form method="get" class="form_search">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar por nombre o correo electronico" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar por nombre, correo electronico, estado o rol..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        <select name="tipo_usuario" id="tipo_usuario">
+          <option value="todos">Todos</option>
+          <option value="admin">Administradores</option>
+          <option value="user">Usuarios</option>
+        </select>
         <input type="submit" value="Buscar" class="btn btn-outline-secondary">
       </div>
     </form>
@@ -52,38 +54,44 @@ session_start();
           <tbody>
             <?php
             include("total_registros.php");
-            $por_pagina = 5;
-
-            if (empty($_GET['pagina'])) {
-              $pagina = 1;
+            if ($total_registro == 0) { ?>
+              
+              <td colspan="6">
+              <div class='alert alert-primary alert_user' id="alerta" role='alert'>No se encontro ningun usuario o administrador</div>
+              </td>
+              <?php
             } else {
-              $pagina = $_GET['pagina'];
-            }
-            $desde = ($pagina - 1) * $por_pagina;
-            $total_paginas = ceil($total_registro / $por_pagina);
+              $por_pagina = 5;
 
-            include("registro.php");
-            while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
-              <tr>
-                <td><?php echo $dataCliente['id_datos_usuario']; ?></td>
-                <td><?php echo $dataCliente['nombre']; ?></td>
-                <td><?php echo $dataCliente['email']; ?></td>
-                <td><?php echo $dataCliente['estado']; ?></td>
-                <td><?php echo $dataCliente['rol_usuario']; ?></td>
-                <td>
-                  <div class="btns_info_usuarios">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Eliminar</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Modificar</button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Childresn<?php echo $dataCliente['id_datos_usuario']; ?>">Detalles</button>
-                  </div>
-                </td>
-              </tr>
-              <!--Ventana Modal para Actualizar--->
-              <?php include('ModalEditar.php'); ?>
-              <?php include('Modal_detalle.php'); ?>
-              <!--Ventana Modal para la Alerta de Eliminar--->
-              <?php include('ModalEliminar.php'); ?>
-            <?php } ?>
+              if (empty($_GET['pagina'])) {
+                $pagina = 1;
+              } else {
+                $pagina = $_GET['pagina'];
+              }
+              $desde = ($pagina - 1) * $por_pagina;
+              $total_paginas = ceil($total_registro / $por_pagina);
+              include("registro.php");
+              while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
+                <tr>
+                  <td><?php echo $dataCliente['id_datos_usuario']; ?></td>
+                  <td><?php echo $dataCliente['nombre']; ?></td>
+                  <td><?php echo $dataCliente['email']; ?></td>
+                  <td><?php echo $dataCliente['estado']; ?></td>
+                  <td><?php echo $dataCliente['rol_usuario']; ?></td>
+                  <td>
+                    <div class="btns_info_usuarios">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Eliminar</button>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['id_datos_usuario']; ?>">Modificar</button>
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Childresn<?php echo $dataCliente['id_datos_usuario']; ?>">Detalles</button>
+                    </div>
+                  </td>
+                </tr>
+                <!--Ventana Modal para Actualizar--->
+                <?php include('ModalEditar.php'); ?>
+                <?php include('Modal_detalle.php'); ?>
+                <!--Ventana Modal para la Alerta de Eliminar--->
+                <?php include('ModalEliminar.php'); ?>
+              <?php } ?>
         </table>
       </div>
     </div>
@@ -93,40 +101,33 @@ session_start();
       <ul class="pagination pagination_usuarios">
         <li class="page-item">
           <?php if ($pagina > 1) {
-            if (empty($_GET['busqueda'])) {
-              echo '<a class="page-link" href="?pagina=' . $pagina - 1 . ' " aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              </a>';
-            } else {
-              echo '<a class="page-link" href="?pagina=' . $pagina - 1 . '&busqueda=' . $busqueda . ' " aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              </a>';
-            }
-          }
+                if (empty($_GET['busqueda']) && empty($_GET['tipo_usuario'])) {
+                  echo '<a class="page-link" href="?pagina=' . $pagina - 1 . ' " aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>';
+                } else {
+                  echo '<a class="page-link" href="?pagina=' . $pagina - 1 . '&busqueda=' . $_GET["busqueda"] . '&tipo_usuario=' . $_GET["tipo_usuario"] . ' " aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>';
+                }
+              }
           ?>
         </li>
         <?php
-        for ($i = 1; $i <= $total_paginas; $i++) {
-          if (empty($_GET['busqueda'])) {
-            echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '">' . $i . '</a></li>';
-          } else {
-            echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '&busqueda=' . $busqueda . '">' . $i . '</a></li>';
-          }
-        }
+              for ($i = 1; $i <= $total_paginas; $i++) {
+                if (empty($_GET['busqueda']) && empty($_GET['tipo_usuario'])) {
+                  echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '">' . $i . '</a></li>';
+                } else {
+                  echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '&busqueda=' . $_GET["busqueda"] . '&tipo_usuario=' . $_GET["tipo_usuario"] . '">' . $i . '</a></li>';
+                }
+              }
         ?>
         <li class="page-item">
-          <?php if ($pagina != $total_paginas) {
-            if (empty($_GET['busqueda'])) {
-              echo '<a class="page-link" href="&pagina=' . $pagina + 1 . '" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              </a>';
-            } else {
-              echo '<a class="page-link" href="?pagina=' . $pagina + 1 . '&busqueda=' . $busqueda . '" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              </a>';
+        <?php if ($pagina != $total_paginas) {
+                if (empty($_GET['busqueda']) && empty($_GET['tipo_usuario'])) {
+                  echo '<a class="page-link" href="&pagina=' . $pagina + 1 . '" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>';
+                } else {
+                  echo '<a class="page-link" href="?pagina=' . $pagina + 1 . '&busqueda=' . $_GET["busqueda"] . '&tipo_usuario=' . $_GET["tipo_usuario"] . '" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>';
+                }
+              }
             }
-          }
-          ?>
+        ?>
         </li>
       </ul>
     </nav>

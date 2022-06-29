@@ -79,3 +79,16 @@ git push --set-upstream origin master
         </table>
       </div>
     </div>
+
+
+
+    SELECT COUNT(usuarios.rol_usuario) AS "total" from datosusuario INNER JOIN usuarios ON datosusuario.id_datos_usuario = usuarios.id_username WHERE usuarios.rol_usuario = 1 AND datosusuario.nombre LIKE"%ti%"
+
+
+    SELECT rol_usuario, id_username, datosusuario.nombre FROM usuarios INNER JOIN datosusuario on usuarios.id_username = datosusuario.id_datos_usuario WHERE usuarios.rol_usuario = 2
+
+    SELECT * FROM datosusuario WHERE datosusuario.nombre LIKE "%mig%" AND datosusuario.id_datos_usuario IN (SELECT usuarios.id_username FROM usuarios WHERE usuarios.rol_usuario = 1);
+
+
+//esta bueno
+    SELECT * FROM usuarios WHERE usuarios.rol_usuario = 1 AND usuarios.id_username IN (SELECT datosusuario.id_datos_usuario FROM datosusuario WHERE datosusuario.nombre LIKE "%mig%" OR datosusuario.email LIKE "%mig%")
