@@ -460,7 +460,7 @@ var cont_puntos = 0;
 
 
 //tiempo del juego
-var contar = 10 //valor inicial. 
+var contar = 100 //valor inicial. 
 
 window.onload = function() {
     //document.getElementById("puzzle").style.visibility = "hidden"; //ocultar imagen

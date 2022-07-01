@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2022 a las 17:11:01
+-- Tiempo de generación: 01-07-2022 a las 15:52:03
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -64,19 +64,6 @@ INSERT INTO `categoriasopa` (`id_categoria`, `municipios_risaralda`, `tecnologia
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoriastrivia`
---
-
-CREATE TABLE `categoriastrivia` (
-  `id_categoria` int(11) NOT NULL,
-  `capitales_mundo` varchar(20) NOT NULL,
-  `sitios_emblematicos` int(20) NOT NULL,
-  `inventos_tecnologicos` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `datosusuario`
 --
 
@@ -95,7 +82,16 @@ CREATE TABLE `datosusuario` (
 
 INSERT INTO `datosusuario` (`id_datos_usuario`, `nombre`, `email`, `avatar`, `codigo`, `fecha`) VALUES
 (57, 'Miguel Angel', 'melchormigugel0@gmail.com', 'avatar1', 7772, '2022-06-09 20:43:38'),
-(72, 'Miguel Angel', 'melchormiguelangel0@gmail.com', 'avatar1', 0, '2022-06-09 20:43:55');
+(72, 'Miguel Angel', 'melchormiguelangel0@gmail.com', 'avatar1', 0, '2022-06-09 20:43:55'),
+(73, 'Camilo', 'Camilo12@gmail.com', 'avatar1', 0, '2022-06-17 16:41:36'),
+(74, 'Neider', 'Neider05@gmial.com', 'avatar1', 0, '2022-06-17 16:42:05'),
+(75, 'Santi', 'Santi05@gmail.com', 'avatar1', 0, '2022-06-17 16:43:50'),
+(76, 'Miguel Angel', 'Miguel@gmial.com', 'avatar1', 0, '2022-06-17 16:45:03'),
+(77, 'Jaim', 'Jaime05@gmail.com', 'avatar1', 0, '2022-06-17 16:46:30'),
+(78, 'Majo', 'Majo05@gmial.com', 'avatar1', 0, '2022-06-17 16:47:00'),
+(79, 'Santiago', 'Santi20@gmial.com', 'avatar1', 0, '2022-06-22 14:21:31'),
+(80, 'JAIRO', 'Jairo20@gmail.com', 'avatar1', 0, '2022-06-22 14:22:21'),
+(81, 'Jaime', 'Jaime123@gmial.com', 'avatar1', 0, '2022-06-22 14:23:11');
 
 -- --------------------------------------------------------
 
@@ -135,7 +131,16 @@ CREATE TABLE `puntossopa` (
 
 INSERT INTO `puntossopa` (`id_puntos_sopa`, `puntos_nivel1`, `puntos_nivel2`, `puntos_nivel3`) VALUES
 (57, 0, 0, 0),
-(72, 0, 0, 0);
+(72, 20, 0, 0),
+(73, 0, 0, 0),
+(74, 0, 0, 0),
+(75, 0, 0, 0),
+(76, 0, 0, 0),
+(77, 0, 0, 0),
+(78, 0, 0, 0),
+(79, 0, 0, 0),
+(80, 0, 0, 0),
+(81, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -156,7 +161,16 @@ CREATE TABLE `puntostrivia` (
 
 INSERT INTO `puntostrivia` (`id_puntos_trivia`, `puntos_nivel1`, `puntos_nivel2`, `puntos_nivel3`) VALUES
 (57, 0, 0, 0),
-(72, 0, 0, 0);
+(72, 90, 0, 0),
+(73, 0, 0, 0),
+(74, 0, 0, 0),
+(75, 0, 0, 0),
+(76, 0, 0, 0),
+(77, 0, 0, 0),
+(78, 0, 0, 0),
+(79, 0, 0, 0),
+(80, 0, 0, 0),
+(81, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -293,7 +307,16 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_username`, `username`, `contraseña`, `estado`, `rol_usuario`) VALUES
 (57, 'Miguel0', '$2y$10$kBj6bHPz1oWoFAhhWBi7Q.6ZKLPVk5VNkjFaiQ.jEUlCNpjZBxlWm', 1, 2),
-(72, 'Miguel05', '$2y$10$raUDrw1ZaNoJ9JCjrRhC/OE2CS4lpPvOBkmCgcO5C9jsZ5gexiCPO', 1, 1);
+(72, 'Miguel05', '$2y$10$raUDrw1ZaNoJ9JCjrRhC/OE2CS4lpPvOBkmCgcO5C9jsZ5gexiCPO', 1, 1),
+(73, 'Camilo12', '$2y$10$gQh7bqo2Omemr9H5FE8BU.hf7BUjN9/ESJ63YoDctNSiCEPnADCEK', 1, 1),
+(74, 'Neider05', '$2y$10$OX/BZGqjkE9eIAHejDGf7eBxlQIzPfuNCiS76q9DEZrfYTBg8Vc8.', 1, 1),
+(75, 'Santi05', '$2y$10$CUX0mo.f8BvmN6VbLior/uEknf1.c1XfMjby7xEnQ5OSrPawO8nAy', 1, 1),
+(76, 'Miguel', '$2y$10$43HmLYIJjD03VXpWHnR5ruu2rM25NpOgG63Fw6gXswIPZCZNdp1wS', 1, 1),
+(77, 'Jaime05', '$2y$10$rgxoDXkjoujkJqeOuxplTucfgv5HOc/7q8EIp/VhC9hRM4mTzoQn6', 1, 1),
+(78, 'Majo05', '$2y$10$PO9xySN4GS6Pnh7PoBMo..Ly/wxQGzqVecdJuRcPOPo5Tn7CVR/9a', 1, 1),
+(79, 'Santi20', '$2y$10$V6xuSMrbGzfqIGx9N5/k7uid4allSZYcJWOibopRAEqp1ZY1FgOiK', 1, 1),
+(80, 'Jairo20', '$2y$10$OPQHNTLWEjT9KDh.wbwShOq5TVo7/ro6lQr9FLBLRFk2Bqh/lmyAS', 1, 1),
+(81, 'Jaime123', '$2y$10$CuWS1GRUl.jOUapEHyCsJeT1V.Ur9Q9nASl7E.9GiuSXvckp62/HG', 1, 1);
 
 --
 -- Disparadores `usuarios`
@@ -321,12 +344,6 @@ DELIMITER ;
 -- Indices de la tabla `categoriasopa`
 --
 ALTER TABLE `categoriasopa`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
--- Indices de la tabla `categoriastrivia`
---
-ALTER TABLE `categoriastrivia`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
@@ -398,28 +415,22 @@ ALTER TABLE `categoriasopa`
   MODIFY `id_categoria` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `categoriastrivia`
---
-ALTER TABLE `categoriastrivia`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `datosusuario`
 --
 ALTER TABLE `datosusuario`
-  MODIFY `id_datos_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_datos_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `puntossopa`
 --
 ALTER TABLE `puntossopa`
-  MODIFY `id_puntos_sopa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_puntos_sopa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `puntostrivia`
 --
 ALTER TABLE `puntostrivia`
-  MODIFY `id_puntos_trivia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_puntos_trivia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `trivia_nivel1`
@@ -443,7 +454,7 @@ ALTER TABLE `trivia_nivel3`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_username` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_username` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- Restricciones para tablas volcadas

@@ -20,12 +20,6 @@ session_start();
     include "../php/validacion.php";//archivo para la validacion del usuario logeado
     include "HeaderUsario.php";//encabezado ?> 
     <!--div para las cards-->
-    <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
     <div class="cards">
         <!--card sopa-->
         <div class="card card1" >

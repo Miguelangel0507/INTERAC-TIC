@@ -44,7 +44,7 @@ include("../../php/validacion.php")
                         <b>¡Ya estas listo para comenzar a jugar!</b>
                     </ol>
                     <div id="comenzar">
-                        <input id="btn_empezar" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="contar=10000,despegar()" />
+                        <input id="btn_empezar" class="btn btn-success" type="button" name="comenzar" id="comenzar" value="Comenzar juego" onclick="despegar()" />
                     </div>
                 </div>
                 <div id="puzzle"></div>

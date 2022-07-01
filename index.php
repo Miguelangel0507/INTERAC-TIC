@@ -14,6 +14,7 @@
 <body>
     <!--registro-->
     <div class="padre">
+        <!--<div class="padre2">-->
         <div class="row">
             <div class="logo">
                 <img src="img/descarga.png" alt="logo " />
@@ -44,11 +45,11 @@
                 <hr />
                 <!--registro-->
                 <div class="form-group text-center">
-                    <a href="registro.html" class="crear">Crear cuenta nueva</a></
-                    <label for="" class="o">o</label>
+                    <a href="registro.html" class="crear">Crear cuenta nueva</a></ <label for="" class="o">o</label>
                     <a id="btn_invitado" class="crear">Ingresar como invitado</a>
                 </div>
             </div>
+            <!--</div>-->
         </div>
     </div>
     <script src="js/login.js"></script>
