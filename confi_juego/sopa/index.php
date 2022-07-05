@@ -69,43 +69,162 @@ include("../../php/validacion.php") ?>
   </ul>
 
   <!--Cuerpo-->
+
+  <!--Tabla Nivel 1-->
+  <h4 class="h4_nivelsopa">Palabras sopa de letras nivel 1 (Tecnologias Tic).</h4>
   <div class="tabla clearfix">
     <div class="contenedor_tabla">
       <div class="table-responsive" style="align-items: center;">
         <table class="table table-bordered table-striped table-hover">
           <thead>
             <tr class="tr">
-              <th scope="col">ID</th>
-              <th scope="col">Municipios risaralda</th>
+              <th scope="col">Palabra</th>
               <th scope="col">Editar</th>
-              <th scope="col">Tecnologias TIC</th>
+              <th scope="col">Palabra</th>
               <th scope="col">Editar</th>
-              <th scope="col">Sitios turisticos</th>
-              <th scope="col">Editar </th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
             </tr>
           </thead>
           <tbody>
             <?php
-            include("consul_sopa.php");
-            while ($preguntas = $query->fetch(PDO::FETCH_ASSOC)) { ?>
+            include("php/consul_sopan1.php");
+            $cuenta = 0;
+            for ($i = 1; $i <= 8; $i = $i + 4) { ?>
               <tr>
-                <td><?php echo $preguntas['id_categoria']; ?></td>
-                <td><?php echo $preguntas['municipios_risaralda']; ?></td>
-                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#municipio<?php echo $preguntas['id_categoria']; ?>">Actualizar</button> </td>
-                <td><?php echo $preguntas['tecnologias_tic']; ?></td>
-                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $preguntas['id_categoria']; ?>"> Actualizar</button> </td>
-                <td><?php echo $preguntas['sitios_turisticos']; ?></td>
-                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $preguntas['id_categoria']; ?>"> Actualizar</button> </td>
+                <td><?php echo ($nivel1[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0];?>">Actualizar</button> </td>
+                <?php include("tecno.php"); $cuenta++;  ?>
+                <td><?php echo ($nivel1[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0];?>">Actualizar</button> </td>
+                <?php include("tecno.php"); $cuenta++;  ?>
+                <td><?php echo ($nivel1[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0];?>">Actualizar</button> </td>
+                <?php include("tecno.php"); $cuenta++;  ?>
+                <td><?php echo ($nivel1[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0];?>">Actualizar</button> </td>
+                <?php include("tecno.php"); $cuenta++;  ?>
               </tr>
-              <?php include("muni.php"); ?>
-              <?php include("turis.php"); ?>
-              <?php include("tecno.php"); ?>
             <?php } ?>
+          </tbody>
         </table>
       </div>
     </div>
   </div>
 
+  <hr class="hr_tablasopa">
+
+  <!--Tabla nivel 2-->
+  <h4 class="h4_nivelsopa">Palabras sopa de letras nivel 2 (Sitios turisticos).</h4>
+  <div class="tabla clearfix">
+    <div class="contenedor_tabla">
+      <div class="table-responsive" style="align-items: center;">
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr class="tr">
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            include("php/consul_sopan2.php");
+            $cuenta = 0 ;
+            for ($i = 1; $i <= 11; $i = $i + 4) { ?>
+              <tr>
+                <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                <?php include("turis.php"); $cuenta++;?>
+                <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                <?php include("turis.php"); $cuenta++;?>
+                <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                <?php include("turis.php"); $cuenta++;?>
+                <?php
+                if($cuenta == 11) { ?>
+                  <td></td>
+                  <td></td>
+          <?php } else {?>
+                  <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("turis.php"); $cuenta++;?>
+          <?php } ?>
+                
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hr_tablasopa">
+
+  <!--Tabla Nivel 3-->
+  <h4 class="h4_nivelsopa">Palabras sopa de letras nivel 3 (Municipios de Risaralda).</h4>
+  <div class="tabla clearfix">
+    <div class="contenedor_tabla">
+      <div class="table-responsive" style="align-items: center;">
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr class="tr">
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+            include("php/consul_sopan3.php");
+            $cuenta = 0 ;
+            for ($i = 1; $i <= 14; $i = $i + 4) { ?>
+              <tr>
+                <td><?php echo ($nivel3[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#municipio<?php echo $nivel3[$cuenta][0]; ?>">Actualizar</button> </td>
+                <?php include("muni.php"); $cuenta++;?>
+                <td><?php echo ($nivel3[$cuenta][1]); ?></td>
+                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#municipio<?php echo $nivel3[$cuenta][0]; ?>">Actualizar</button> </td>
+                <?php include("muni.php"); $cuenta++;?>
+                <?php
+                if($cuenta >= 14) { ?>
+                  <td></td>
+                  <td></td>
+          <?php } else {?>
+                  <td><?php echo ($nivel3[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#municipio<?php echo $nivel3[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("muni.php"); $cuenta++;?>
+          <?php } ?>
+                <?php
+                if($cuenta >= 14) { ?>
+                  <td></td>
+                  <td></td>
+          <?php } else {?>
+                  <td><?php echo ($nivel3[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#municipio<?php echo $nivel3[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("muni.php"); $cuenta++;?>
+          <?php } ?>
+                
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 </body>
 <script src="../../js/jquery.min.js"></script>

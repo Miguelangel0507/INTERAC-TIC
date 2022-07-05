@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2022 a las 15:52:03
+-- Tiempo de generación: 05-07-2022 a las 18:15:25
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -131,7 +131,7 @@ CREATE TABLE `puntossopa` (
 
 INSERT INTO `puntossopa` (`id_puntos_sopa`, `puntos_nivel1`, `puntos_nivel2`, `puntos_nivel3`) VALUES
 (57, 0, 0, 0),
-(72, 20, 0, 0),
+(72, 80, 110, 0),
 (73, 0, 0, 0),
 (74, 0, 0, 0),
 (75, 0, 0, 0),
@@ -161,7 +161,7 @@ CREATE TABLE `puntostrivia` (
 
 INSERT INTO `puntostrivia` (`id_puntos_trivia`, `puntos_nivel1`, `puntos_nivel2`, `puntos_nivel3`) VALUES
 (57, 0, 0, 0),
-(72, 90, 0, 0),
+(72, 0, 0, 0),
 (73, 0, 0, 0),
 (74, 0, 0, 0),
 (75, 0, 0, 0),
@@ -190,6 +190,90 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`id_roles`, `rol`) VALUES
 (1, 'Jugador'),
 (2, 'Administrador');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sopa_nivel1`
+--
+
+CREATE TABLE `sopa_nivel1` (
+  `id_palabra` int(11) NOT NULL,
+  `palabra` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sopa_nivel1`
+--
+
+INSERT INTO `sopa_nivel1` (`id_palabra`, `palabra`) VALUES
+(1, 'Google'),
+(2, 'Youtube'),
+(3, 'Celular'),
+(4, 'Usb'),
+(5, 'Gmail'),
+(6, 'Computador'),
+(7, 'Radio'),
+(8, 'Redes');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sopa_nivel2`
+--
+
+CREATE TABLE `sopa_nivel2` (
+  `id_palabra` int(11) NOT NULL,
+  `palabra` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sopa_nivel2`
+--
+
+INSERT INTO `sopa_nivel2` (`id_palabra`, `palabra`) VALUES
+(1, 'CerroBatero'),
+(2, 'Yarumal'),
+(3, 'PlazadeBolivar'),
+(4, 'MuseodelArte'),
+(5, 'LagunadelOtun'),
+(6, 'Ukumari'),
+(7, 'Tatama'),
+(8, 'CasadelaCultura'),
+(9, 'ParqueConsota'),
+(10, 'FincadelCafe'),
+(11, 'LosTermales');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sopa_nivel3`
+--
+
+CREATE TABLE `sopa_nivel3` (
+  `id_palabra` int(11) NOT NULL,
+  `palabra` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sopa_nivel3`
+--
+
+INSERT INTO `sopa_nivel3` (`id_palabra`, `palabra`) VALUES
+(1, 'Pereira'),
+(2, 'Dosquebradas'),
+(3, 'Marsella'),
+(4, 'SantaRosadeCabal'),
+(5, 'Apia'),
+(6, 'Balboa'),
+(7, 'BelendeUmbria'),
+(8, 'Guatica'),
+(9, 'LaCelia'),
+(10, 'LaVirginia'),
+(11, 'Quinchia'),
+(12, 'Santuario'),
+(13, 'Mistrato'),
+(14, 'PuebloRico');
 
 -- --------------------------------------------------------
 
@@ -378,6 +462,24 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_roles`);
 
 --
+-- Indices de la tabla `sopa_nivel1`
+--
+ALTER TABLE `sopa_nivel1`
+  ADD PRIMARY KEY (`id_palabra`);
+
+--
+-- Indices de la tabla `sopa_nivel2`
+--
+ALTER TABLE `sopa_nivel2`
+  ADD PRIMARY KEY (`id_palabra`);
+
+--
+-- Indices de la tabla `sopa_nivel3`
+--
+ALTER TABLE `sopa_nivel3`
+  ADD PRIMARY KEY (`id_palabra`);
+
+--
 -- Indices de la tabla `trivia_nivel1`
 --
 ALTER TABLE `trivia_nivel1`
@@ -431,6 +533,24 @@ ALTER TABLE `puntossopa`
 --
 ALTER TABLE `puntostrivia`
   MODIFY `id_puntos_trivia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT de la tabla `sopa_nivel1`
+--
+ALTER TABLE `sopa_nivel1`
+  MODIFY `id_palabra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `sopa_nivel2`
+--
+ALTER TABLE `sopa_nivel2`
+  MODIFY `id_palabra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `sopa_nivel3`
+--
+ALTER TABLE `sopa_nivel3`
+  MODIFY `id_palabra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `trivia_nivel1`

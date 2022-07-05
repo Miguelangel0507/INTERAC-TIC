@@ -1,9 +1,9 @@
 <?php
 session_start();
-include("../../php/validacion.php")
+include("../../php/validacion.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -22,6 +22,7 @@ include("../../php/validacion.php")
             <div class="encabezado">
                 <div class="title">
                     <h1>Sopa de letras de <?php echo $_SESSION['decision'] ?></h1>
+                    <input type="hidden" id="deci" value="<?php echo $_SESSION['decision']?>">
                 </div>
                 <div class="cont">
                     <div class="tiempo">
@@ -35,7 +36,7 @@ include("../../php/validacion.php")
             </div>
             <div class="contenedor_central">
                 <div id="instrucciones">
-                    <h2>Instrucciones del juego</h2>
+                    <h2>Instrucciones del juego</h2> 
                     <ol id="lista_instrucciones">
                         <li>En la parte derecha de la pagina estan ubicadas las palabras que debes encontrar en la sopa de letras.</li>
                         <li>Al encontrar una de las palabras debes dar click en la letra inicial de la palabra y debes llevar el cursor hasta la ultima letra.</li>
@@ -76,6 +77,7 @@ include("../../php/validacion.php")
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="wordfind.js"></script>
     </div>
     </div>
 </body>

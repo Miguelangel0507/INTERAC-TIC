@@ -17,6 +17,19 @@ body {
     width: 60%;
 }
 
+.h4_nivelsopa {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 12px;
+}
+
+.hr_tablasopa {
+    width: 90%;
+    align-items: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
 .nav-item1 {
     display: inline-block;
     text-align: center;

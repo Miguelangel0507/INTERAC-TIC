@@ -2,11 +2,10 @@
 require ('../../php/conexion.php');
 $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = $pdo->prepare("SELECT * FROM categoriasopa");
+$query = $pdo->prepare("SELECT * FROM `sopa_nivel1`");
 $query->execute();
-$sopa = array();
+$palabras = array();
+
+$nivel1 = $query->fetchAll();
 
 
-
-
-    ?>

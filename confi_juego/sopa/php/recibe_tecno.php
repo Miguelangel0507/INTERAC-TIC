@@ -1,21 +1,14 @@
 <?php
-
 require("../../../php/conexion.php");
 
-$id=$_REQUEST['id_tecno'];
-$cambio = $_REQUEST['tecno'];
-echo $id;
+$id=$_POST['id_tecno'];
+$cambio = $_POST['tecno'];
 
-echo $cambio;
 $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$update = $pdo->prepare("UPDATE  categoriasopa set tecnologias_tic = '$cambio' WHERE id_categoria = $id ");
+$update = $pdo->prepare("UPDATE  sopa_nivel1 set palabra = '$cambio' WHERE id_palabra = $id ");
 $update->execute();
-$result_update =$update->fetch(PDO::FETCH_ASSOC);
 
 echo "<script type='text/javascript'>
         window.location='../index.php';
     </script>";
-
-
-
 ?>

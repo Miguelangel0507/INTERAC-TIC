@@ -1,4 +1,4 @@
-<div class="modal fade" id="municipio<?php echo $preguntas['id_categoria']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="municipio<?php echo $nivel3[$cuenta][0]; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header" style="background-color: #563d7c !important;">
@@ -10,11 +10,11 @@
         </button>
       </div>
       <form method="POST" action="php/recibe_muni.php">
-        <input type="hidden" name="id_muni" value="<?php echo $preguntas['id_categoria']; ?>">
+        <input type="hidden" name="id_muni" value="<?php echo $nivel3[$cuenta][0]; ?>">
         <div class="modal-body" id="cont_modal">
           <div class="form-group contenedor_info">
             <label for="recipient-name" class="col-form-label">Palabra a Editar:</label>
-            <input type="text" name="muni" class="form-control" value="<?php echo $preguntas['municipios_risaralda']; ?>" required="true">
+            <input type="text" name="muni" class="form-control" value="<?php echo $nivel3[$cuenta][1]; ?>" required="true">
           </div>
         </div>
         <div class="modal-footer">

@@ -8,17 +8,17 @@ if($id != "invitado"){//se valida si el jugador es usuario o invitado
     $query = $pdo->prepare("SELECT * FROM `puntossopa` WHERE id_puntos_sopa =  $id");//se traen los puntos del jugador
     $query->execute();
     $niveles = $query->fetch(PDO::FETCH_ASSOC);
-    if($niveles["puntos_nivel1"] <= 80){//se valida en que nivel esta el usuario
+    if($niveles["puntos_nivel1"] < 80){//se valida en que nivel esta el usuario
         echo 1;
-    }else if($niveles["puntos_nivel2"] <= 80){
+    }else if($niveles["puntos_nivel2"] < 80){
         echo 2;
     }else{
         echo 3;
     }
 }else{//jugador invitado
-    if($_SESSION['puntos_sopa1'] <= 80){//se valida en que nivel esta el usuario
+    if($_SESSION['puntos_sopa1'] < 80){//se valida en que nivel esta el usuario
         echo 1;
-    }else if($_SESSION['puntos_sopa2'] <= 80){
+    }else if($_SESSION['puntos_sopa2'] < 80){
         echo 2;
     }else{
         echo 3;

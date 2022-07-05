@@ -58,15 +58,15 @@ botonTrivia3.addEventListener("click", () => {
 });
 
 botonSopa1.addEventListener("click", () => {
-    mostrar_sopa("municipios_risaralda")
-});
-
-botonSopa2.addEventListener("click", () => {
     mostrar_sopa("tecnologias_tic")
 });
 
+botonSopa2.addEventListener("click", () => {
+    mostrar_sopa("sitios_turisticos")
+});
+
 botonSopa3.addEventListener("click", () => {
-    mostrar_sopa("sitios_turisticos");
+    mostrar_sopa("municipios_risaralda");
 });
 
 //funcion que toma la decision del jugador y lo redirecciona a la sopa de letras

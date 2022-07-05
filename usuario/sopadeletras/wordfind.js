@@ -6,9 +6,9 @@
  *     http://github.com/bunkat/wordfind
  */
 var cont_puntos = 0;
-(function() {
 
-    'use strict';
+(function() {
+    "use strict";
 
     /**
      * Generates a new word find (word search) puzzle provided a set of words.
@@ -25,9 +25,8 @@ var cont_puntos = 0;
      * @api private
      */
     var WordFind = function() {
-
         // Letters used to fill blank spots in the puzzle
-        var letters = 'abcdefghijklmnoprstuvwy';
+        var letters = "abcdefghijklmnoprstuvwy";
 
         /**
          * Definitions for all the different orientations in which words can be
@@ -36,21 +35,44 @@ var cont_puntos = 0;
          */
 
         // The list of all the possible orientations
-        var allOrientations = ['horizontal', 'horizontalBack', 'vertical', 'verticalUp',
-            'diagonal', 'diagonalUp', 'diagonalBack', 'diagonalUpBack'
+        var allOrientations = [
+            "horizontal",
+            "horizontalBack",
+            "vertical",
+            "verticalUp",
+            "diagonal",
+            "diagonalUp",
+            "diagonalBack",
+            "diagonalUpBack",
         ];
 
         // The definition of the orientation, calculates the next square given a
         // starting square (x,y) and distance (i) from that square.
         var orientations = {
-            horizontal: function(x, y, i) { return { x: x + i, y: y }; },
-            horizontalBack: function(x, y, i) { return { x: x - i, y: y }; },
-            vertical: function(x, y, i) { return { x: x, y: y + i }; },
-            verticalUp: function(x, y, i) { return { x: x, y: y - i }; },
-            diagonal: function(x, y, i) { return { x: x + i, y: y + i }; },
-            diagonalBack: function(x, y, i) { return { x: x - i, y: y + i }; },
-            diagonalUp: function(x, y, i) { return { x: x + i, y: y - i }; },
-            diagonalUpBack: function(x, y, i) { return { x: x - i, y: y - i }; }
+            horizontal: function(x, y, i) {
+                return { x: x + i, y: y };
+            },
+            horizontalBack: function(x, y, i) {
+                return { x: x - i, y: y };
+            },
+            vertical: function(x, y, i) {
+                return { x: x, y: y + i };
+            },
+            verticalUp: function(x, y, i) {
+                return { x: x, y: y - i };
+            },
+            diagonal: function(x, y, i) {
+                return { x: x + i, y: y + i };
+            },
+            diagonalBack: function(x, y, i) {
+                return { x: x - i, y: y + i };
+            },
+            diagonalUp: function(x, y, i) {
+                return { x: x + i, y: y - i };
+            },
+            diagonalUpBack: function(x, y, i) {
+                return { x: x - i, y: y - i };
+            },
         };
 
         // Determines if an orientation is possible given the starting square (x,y),
@@ -58,14 +80,30 @@ var cont_puntos = 0;
         // Returns true if the word will fit starting at the square provided using
         // the specified orientation.
         var checkOrientations = {
-            horizontal: function(x, y, h, w, l) { return w >= x + l; },
-            horizontalBack: function(x, y, h, w, l) { return x + 1 >= l; },
-            vertical: function(x, y, h, w, l) { return h >= y + l; },
-            verticalUp: function(x, y, h, w, l) { return y + 1 >= l; },
-            diagonal: function(x, y, h, w, l) { return (w >= x + l) && (h >= y + l); },
-            diagonalBack: function(x, y, h, w, l) { return (x + 1 >= l) && (h >= y + l); },
-            diagonalUp: function(x, y, h, w, l) { return (w >= x + l) && (y + 1 >= l); },
-            diagonalUpBack: function(x, y, h, w, l) { return (x + 1 >= l) && (y + 1 >= l); }
+            horizontal: function(x, y, h, w, l) {
+                return w >= x + l;
+            },
+            horizontalBack: function(x, y, h, w, l) {
+                return x + 1 >= l;
+            },
+            vertical: function(x, y, h, w, l) {
+                return h >= y + l;
+            },
+            verticalUp: function(x, y, h, w, l) {
+                return y + 1 >= l;
+            },
+            diagonal: function(x, y, h, w, l) {
+                return w >= x + l && h >= y + l;
+            },
+            diagonalBack: function(x, y, h, w, l) {
+                return x + 1 >= l && h >= y + l;
+            },
+            diagonalUp: function(x, y, h, w, l) {
+                return w >= x + l && y + 1 >= l;
+            },
+            diagonalUpBack: function(x, y, h, w, l) {
+                return x + 1 >= l && y + 1 >= l;
+            },
         };
 
         // Determines the next possible valid square given the square (x,y) was ]
@@ -73,14 +111,30 @@ var cont_puntos = 0;
         // squares that must be checked. Returning {x: x+1, y: y} will always work
         // but will not be optimal.
         var skipOrientations = {
-            horizontal: function(x, y, l) { return { x: 0, y: y + 1 }; },
-            horizontalBack: function(x, y, l) { return { x: l - 1, y: y }; },
-            vertical: function(x, y, l) { return { x: 0, y: y + 100 }; },
-            verticalUp: function(x, y, l) { return { x: 0, y: l - 1 }; },
-            diagonal: function(x, y, l) { return { x: 0, y: y + 1 }; },
-            diagonalBack: function(x, y, l) { return { x: l - 1, y: x >= l - 1 ? y + 1 : y }; },
-            diagonalUp: function(x, y, l) { return { x: 0, y: y < l - 1 ? l - 1 : y + 1 }; },
-            diagonalUpBack: function(x, y, l) { return { x: l - 1, y: x >= l - 1 ? y + 1 : y }; }
+            horizontal: function(x, y, l) {
+                return { x: 0, y: y + 1 };
+            },
+            horizontalBack: function(x, y, l) {
+                return { x: l - 1, y: y };
+            },
+            vertical: function(x, y, l) {
+                return { x: 0, y: y + 100 };
+            },
+            verticalUp: function(x, y, l) {
+                return { x: 0, y: l - 1 };
+            },
+            diagonal: function(x, y, l) {
+                return { x: 0, y: y + 1 };
+            },
+            diagonalBack: function(x, y, l) {
+                return { x: l - 1, y: x >= l - 1 ? y + 1 : y };
+            },
+            diagonalUp: function(x, y, l) {
+                return { x: 0, y: y < l - 1 ? l - 1 : y + 1 };
+            },
+            diagonalUpBack: function(x, y, l) {
+                return { x: l - 1, y: x >= l - 1 ? y + 1 : y };
+            },
         };
 
         /**
@@ -93,15 +147,16 @@ var cont_puntos = 0;
          * @param {[Options]} options: The options to use when filling the puzzle
          */
         var fillPuzzle = function(words, options) {
-
             var puzzle = [],
-                i, j, len;
+                i,
+                j,
+                len;
 
             // initialize the puzzle with blanks
             for (i = 0; i < options.height; i++) {
                 puzzle.push([]);
                 for (j = 0; j < options.width; j++) {
-                    puzzle[i].push('');
+                    puzzle[i].push("");
                 }
             }
 
@@ -129,7 +184,6 @@ var cont_puntos = 0;
          * @param {String} word: The word to fit into the puzzle.
          */
         var placeWordInPuzzle = function(puzzle, options, word) {
-
             // find all of the best locations where this word would fit
             var locations = findBestLocations(puzzle, options, word);
 
@@ -158,7 +212,6 @@ var cont_puntos = 0;
          * @param {String} word: The word to fit into the puzzle.
          */
         var findBestLocations = function(puzzle, options, word) {
-
             var locations = [],
                 height = options.height,
                 width = options.width,
@@ -167,7 +220,6 @@ var cont_puntos = 0;
 
             // loop through all of the possible orientations at this position
             for (var k = 0, len = options.orientations.length; k < len; k++) {
-
                 var orientation = options.orientations[k],
                     check = checkOrientations[orientation],
                     next = orientations[orientation],
@@ -177,17 +229,23 @@ var cont_puntos = 0;
 
                 // loop through every position on the board
                 while (y < height) {
-
                     // see if this orientation is even possible at this location
                     if (check(x, y, height, width, wordLength)) {
-
                         // determine if the word fits at the current position
                         var overlap = calcOverlap(word, puzzle, x, y, next);
 
                         // if the overlap was bigger than previous overlaps that we've seen
-                        if (overlap >= maxOverlap || (!options.preferOverlap && overlap > -1)) {
+                        if (
+                            overlap >= maxOverlap ||
+                            (!options.preferOverlap && overlap > -1)
+                        ) {
                             maxOverlap = overlap;
-                            locations.push({ x: x, y: y, orientation: orientation, overlap: overlap });
+                            locations.push({
+                                x: x,
+                                y: y,
+                                orientation: orientation,
+                                overlap: overlap,
+                            });
                         }
 
                         x++;
@@ -203,7 +261,6 @@ var cont_puntos = 0;
                         x = nextPossible.x;
                         y = nextPossible.y;
                     }
-
                 }
             }
 
@@ -232,7 +289,6 @@ var cont_puntos = 0;
 
             // traverse the squares to determine if the word fits
             for (var i = 0, len = word.length; i < len; i++) {
-
                 var next = fnGetSquare(x, y, i),
                     square = puzzle[next.y][next.x];
 
@@ -243,7 +299,7 @@ var cont_puntos = 0;
                 }
                 // if it contains a different letter, than our word doesn't fit
                 // here, return -1
-                else if (square !== '') {
+                else if (square !== "") {
                     return -1;
                 }
             }
@@ -264,7 +320,6 @@ var cont_puntos = 0;
          * @param {int} overlap: The required level of overlap
          */
         var pruneLocations = function(locations, overlap) {
-
             var pruned = [];
             for (var i = 0, len = locations.length; i < len; i++) {
                 if (locations[i].overlap >= overlap) {
@@ -292,7 +347,6 @@ var cont_puntos = 0;
         };
 
         return {
-
             /**
              * Returns the list of all of the possible orientations.
              * @api public
@@ -324,23 +378,41 @@ var cont_puntos = 0;
              * @api public
              */
             newPuzzle: function(words, settings) {
-                var wordList, puzzle, attempts = 0,
+                var wordList,
+                    puzzle,
+                    attempts = 0,
                     opts = settings || {};
 
                 // copy and sort the words by length, inserting words into the puzzle
                 // from longest to shortest works out the best
                 wordList = words.slice(0).sort(function(a, b) {
-                    return (a.length < b.length) ? 1 : 0;
+                    return a.length < b.length ? 1 : 0;
                 });
 
-                // initialize the options
+                // initialize the options (tamaño)
+
+                //////////Prueba 1 alert(deci)
+                var deci = document.getElementById("deci");
+
+                var tama = () => {
+                    if (deci.value == "tecnologias_tic") {
+                        return 12;
+                    } else if (deci.value == "sitios_turisticos") {
+
+                        return 16;
+                    } else if (deci.value == "municipios_risaralda") {
+
+                        return 20;
+                    }
+                }
+
                 var options = {
-                    height: 16,
-                    width: 16,
+                    height: tama(),
+                    width: tama(),
                     orientations: opts.orientations || allOrientations,
                     fillBlanks: opts.fillBlanks !== undefined ? opts.fillBlanks : true,
                     maxAttempts: opts.maxAttempts || 3,
-                    preferOverlap: opts.preferOverlap !== undefined ? opts.preferOverlap : true
+                    preferOverlap: opts.preferOverlap !== undefined ? opts.preferOverlap : true,
                 };
 
                 // add the words to the puzzle
@@ -376,7 +448,6 @@ var cont_puntos = 0;
                 for (var i = 0, height = puzzle.length; i < height; i++) {
                     var row = puzzle[i];
                     for (var j = 0, width = row.length; j < width; j++) {
-
                         if (!puzzle[i][j]) {
                             var randomLetter = Math.floor(Math.random() * letters.length);
                             puzzle[i][j] = letters[randomLetter];
@@ -406,7 +477,7 @@ var cont_puntos = 0;
                         height: puzzle.length,
                         width: puzzle[0].length,
                         orientations: allOrientations,
-                        preferOverlap: true
+                        preferOverlap: true,
                     },
                     found = [],
                     notFound = [];
@@ -434,39 +505,52 @@ var cont_puntos = 0;
              * @api public
              */
             print: function(puzzle) {
-                var puzzleString = '';
+                var puzzleString = "";
                 for (var i = 0, height = puzzle.length; i < height; i++) {
                     var row = puzzle[i];
                     for (var j = 0, width = row.length; j < width; j++) {
-                        puzzleString += (row[j] === '' ? ' ' : row[j]) + ' ';
+                        puzzleString += (row[j] === "" ? " " : row[j]) + " ";
                     }
-                    puzzleString += '\n';
+                    puzzleString += "\n";
                 }
 
                 console.log(puzzleString);
                 return puzzleString;
-            }
+            },
         };
     };
 
     /**
      * Allow library to be used within both the browser and node.js
      */
-    var root = typeof exports !== "undefined" && exports !== null ? exports : window;
+    var root =
+        typeof exports !== "undefined" && exports !== null ? exports : window;
     root.wordfind = WordFind();
+}.call(this));
 
-}).call(this);
+// Prube tiempo segun nivel
 
+var tiempo = () => {
+    if (deci.value == "tecnologias_tic") {
+        return 101;
+    } else if (deci.value == "sitios_turisticos") {
 
+        return 201;
+    } else if (deci.value == "municipios_risaralda") {
+
+        return 301;
+    }
+}
+contar = tiempo();
 
 //tiempo del juego
-var contar = 100 //valor inicial. 
+//valor inicial.var contar = 10; 
 
 window.onload = function() {
     //document.getElementById("puzzle").style.visibility = "hidden"; //ocultar imagen
     //document.getElementById("words").style.visibility = "hidden";
-    cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás 
-}
+    cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás
+};
 
 function despegar() {
     function cuentaAtras() {
@@ -478,13 +562,14 @@ function despegar() {
         document.getElementById("words").style.visibility = "visible";
         contar -= 1; //variar el número de la cuenta
         cuenta.innerHTML = contar; //escribir el número
-        if (contar <= 0) { //cuando llegamos a 0...
-            clearInterval(ignicion) //parar la cuenta atrás. 
+        if (contar <= 0) {
+            //cuando llegamos a 0...
+            clearInterval(ignicion); //parar la cuenta atrás.
             parar();
         }
     }
-    cuentaAtras() //llamada a la función de cuenta atrás
-        //repetir la función cuenta atrás cada segundo
+    cuentaAtras(); //llamada a la función de cuenta atrás
+    //repetir la función cuenta atrás cada segundo
     ignicion = setInterval(cuentaAtras, 1000);
 }
 
@@ -493,51 +578,51 @@ function llamar() {
 }
 
 function registrar() {
-    let puntos_nivel = new FormData()
-    puntos_nivel.append('puntos', cont_puntos);
+    let puntos_nivel = new FormData();
+    puntos_nivel.append("puntos", cont_puntos);
     fetch("puntos.php", {
-        method: "POST",
-        body: puntos_nivel
-    }).then(response => response.text()).then(response => {
-        (async() => {
-            if (response == "gano") {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Felicitaciones Ganaste',
-                    showConfirmButton: false,
-                    timer: 5000,
-                    timerProgressBar: true
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        location.href = "../";
-                    } else {
-                        location.href = "../";
-                    }
-                })
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: '¡Perdiste!',
-                    text: 'Debes sacar mas de 80 puntos',
-                    confirmButtonText: 'Salir.',
-                    timer: 5000,
-                    timerProgressBar: true
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        location.href = "../";
-                    } else {
-                        location.href = "../";
-                    }
-                })
-            }
-
-        })()
-    })
+            method: "POST",
+            body: puntos_nivel,
+        })
+        .then((response) => response.text())
+        .then((response) => {
+            (async() => {
+                if (response == "gano") {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Felicitaciones Ganaste",
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "../";
+                        } else {
+                            location.href = "../";
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "¡Perdiste!",
+                        text: "Debes sacar mas de 80 puntos",
+                        confirmButtonText: "Salir.",
+                        timer: 5000,
+                        timerProgressBar: true,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "../";
+                        } else {
+                            location.href = "../";
+                        }
+                    });
+                }
+            })();
+        });
 }
 
 function parar() {
-    document.getElementById("btn_empezar").disabled = true
-    $('.puzzleSquare').addClass('complete');
+    document.getElementById("btn_empezar").disabled = true;
+    $(".puzzleSquare").addClass("complete");
     registrar();
-
 }
