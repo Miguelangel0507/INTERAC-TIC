@@ -3,83 +3,143 @@ estadisticas();
 function estadisticas() { //funcion para crear las estadisticas
     fetch("php/estadisticas.php").then(response => response.text()).then(response => {
         var estad = JSON.parse(response);
-        var popCanvas = document.getElementById("SopaLetras");
+        var popCanvas = document.getElementById("nivel1");
+        var popCanvas2 = document.getElementById("nivel2");
+        var popCanvas3 = document.getElementById("nivel3");
+        var popCanvas4 = document.getElementById("nivel_trivia1");
+        var popCanvas5 = document.getElementById("nivel_trivia2");
+        var popCanvas6 = document.getElementById("nivel_trivia3");
         var barChart = new Chart(popCanvas, {
-            type: 'bar',
+            type: 'pie',
             data: {
-                labels: ["nivel1", "Nivel2", "Nivel3"],
+                labels: ["Puntos", "Puntos faltantes"],
                 datasets: [{
                     label: 'Sopa de letras',
-                    data: [estad.S1, estad.S2, estad.S3],
+                    data: [estad.S1, 80 - estad.S1],
+                    //data: [estad.S1, estad.S2, estad.S3],
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 206, 86)',
+                        'rgb(23, 151, 64)',
+                        'rgb(204, 6, 5, 0.6)'
+
                     ]
                 }]
             },
             options: {
-                scales: {
-                    plugins: {
-                        title: {
-                            display: false
-                        }
-                    },
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 100,
-                            stepSize: 10
-                        }
-                    }],
-                    xA: [{
-                        barThickness: 10
-                    }]
-
+                title: {
+                    display: true,
+                    text: "Nivel 1"
                 }
             }
-
         });
 
-        var Result_trivia = document.getElementById("TriviaTic");
-        var barChart = new Chart(Result_trivia, {
-            type: 'bar',
+        var barChart = new Chart(popCanvas2, {
+            type: 'pie',
             data: {
-                labels: ["nivel1", "Nivel2", "Nivel3"],
+                labels: ["Puntos", "Puntos faltantes"],
+                datasets: [{
+                    label: 'Sopa de letras',
+                    data: [estad.S2, 110 - estad.S2],
+                    //data: [estad.S1, estad.S2, estad.S3],
+                    backgroundColor: [
+                        'rgb(23, 151, 64)',
+                        'rgb(204, 6, 5, 0.6)'
+                    ]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Nivel 2"
+                }
+            }
+        })
+
+        var barChart = new Chart(popCanvas3, {
+            type: 'pie',
+            data: {
+                labels: ["Puntos", "Puntos faltantes"],
+                datasets: [{
+                    label: 'Sopa de letras',
+                    data: [estad.S3, 110 - estad.S3],
+                    backgroundColor: [
+                        'rgb(23, 151, 64)',
+                        'rgb(204, 6, 5, 0.6)'
+                    ]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Nivel 2"
+                }
+            }
+        })
+
+        var barChart = new Chart(popCanvas4, {
+            type: 'pie',
+            data: {
+                labels: ["Puntos", "Puntos faltantes"],
                 datasets: [{
                     label: 'Trivia Tic',
-                    data: [estad.T1, estad.T2, estad.T3],
+                    data: [estad.T1, 100 - estad.T1],
                     backgroundColor: [
-                        'rgb(178, 226, 242)',
-                        'rgb(255, 105, 97)',
-                        'rgb(119, 221, 119)',
+                        'rgb(23, 151, 64)',
+                        'rgb(204, 6, 5, 0.6)'
                     ]
                 }]
             },
             options: {
-                scales: {
-                    plugins: {
-                        title: {
-                            display: false
-                        }
-                    },
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 100,
-                            stepSize: 10
-                        }
-                    }],
-                    xA: [{
-                        barThickness: 10
-                    }]
-
+                title: {
+                    display: true,
+                    text: "Nivel 1"
                 }
             }
 
-        });
+        })
+
+        var barChart = new Chart(popCanvas5, {
+            type: 'pie',
+            data: {
+                labels: ["Puntos", "Puntos faltantes"],
+                datasets: [{
+                    label: 'Trivia Tic',
+                    data: [estad.T1, 100 - estad.T1],
+                    backgroundColor: [
+                        'rgb(23, 151, 64)',
+                        'rgb(204, 6, 5, 0.6)'
+                    ]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Nivel 2"
+                }
+            }
+
+        })
+
+        var barChart = new Chart(popCanvas6, {
+            type: 'pie',
+            data: {
+                labels: ["Puntos", "Puntos faltantes"],
+                datasets: [{
+                    label: 'Trivia Tic',
+                    data: [estad.T1, 100 - estad.T1],
+                    backgroundColor: [
+                        'rgb(23, 151, 64)',
+                        'rgb(204, 6, 5, 0.6)'
+                    ]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Nivel 3"
+                }
+            }
+
+        })
     })
 }
 

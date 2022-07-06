@@ -17,19 +17,49 @@
                 Estadisticas
                 <ul class="ul-second">
                     <div class="datos">
-                        <li class="back">
-                            <!--boton para restablecer estadisticas-->
-                            <div class="config">
-                                <button class="btno-config" data-bs-toggle='modal' data-bs-target='#M_estadisiticas'><i class="fa-solid fa-gear"></i></button>
+                        <li class="btn_eliminar_estad">
+                            <button class="btno-config" data-bs-toggle='modal' data-bs-target='#M_estadisiticas'><i class="fa-solid fa-gear"></i>Restablecer </button>
+                        </li>
+                        <li class="S_N1">Sopa de letras (Nivel 1)
+                            <div class="seccion">
+                                <div class="info_estad">
+                                    <canvas id="nivel1"></canvas>
+                                </div>
                             </div>
-                            <!--estadisticas sopa-->
-                            <div class="estad_sopa">
-                                <canvas id="SopaLetras"></canvas>
+                        </li>
+                        <li class="S_N2">Sopa de letras (Nivel 2)
+                            <div class="seccion2">
+                                <div class="info_estad">
+                                    <canvas id="nivel2"></canvas>
+                                </div>
                             </div>
-                            <br>
-                            <!--estadisticas trivia-->
-                            <div class="estad_trivia">
-                                <canvas id="TriviaTic"></canvas>
+                        </li>
+                        <li class="S_N3">Sopa de letras (Nivel 3)
+                            <div class="seccion3">
+                                <div class="info_estad">
+                                    <canvas id="nivel3"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="T_N1">Trivia-TIC (Nivel 1)
+                            <div class="seccion_trivia1">
+                                <div class="info_estad">
+                                    <canvas id="nivel_trivia1"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="T_N2">Trivia-TIC (Nivel 2)
+                            <div class="seccion_trivia2">
+                                <div class="info_estad">
+                                    <canvas id="nivel_trivia2"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="T_N3">Trivia-TIC (Nivel 3)
+                            <div class="seccion_trivia3">
+                                <div class="info_estad">
+                                    <canvas id="nivel_trivia3"></canvas>
+                                </div>
                             </div>
                         </li>
                     </div>
