@@ -5,12 +5,15 @@ if($_POST){
         if($decision == "tecnologias_tic"){
             $nivel = "sopa_nivel1";
             $total_palabras = 8;
+            $_SESSION['minimo_puntaje'] = 60;
         }else if($decision == "sitios_turisticos"){
             $nivel = "sopa_nivel2";
             $total_palabras = 11;
+            $_SESSION['minimo_puntaje'] = 90;
         }else {
             $nivel = "sopa_nivel3";
             $total_palabras = 14;
+            $_SESSION['minimo_puntaje'] = 110;
         }
         require("../../php/conexion.php");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

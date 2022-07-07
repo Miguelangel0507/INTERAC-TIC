@@ -70,7 +70,7 @@ function estadisticas() { //funcion para crear las estadisticas
             options: {
                 title: {
                     display: true,
-                    text: "Nivel 2"
+                    text: "Nivel 3"
                 }
             }
         })

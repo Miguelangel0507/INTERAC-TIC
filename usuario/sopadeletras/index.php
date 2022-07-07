@@ -40,7 +40,7 @@ include("../../php/validacion.php");
                     <ol id="lista_instrucciones">
                         <li>En la parte derecha de la pagina estan ubicadas las palabras que debes encontrar en la sopa de letras.</li>
                         <li>Al encontrar una de las palabras debes dar click en la letra inicial de la palabra y debes llevar el cursor hasta la ultima letra.</li>
-                        <li>Cada palabra te da 10 puntos, el minimo de puntos requeridos para ganar esta prueba es de 80 puntos.</li>
+                        <li>Cada palabra encontrada te da 10 puntos, el minimo de puntos requeridos para ganar esta prueba es de <b><?php echo $_SESSION['minimo_puntaje'] ?></b> puntos.</li>
                         <li>Si el tiempo llega a cero y no has conseguido el puntaje minimo para ganar la prueba, debereas repetir el nivel</li>
                         <b>¡Ya estas listo para comenzar a jugar!</b>
                     </ol>
