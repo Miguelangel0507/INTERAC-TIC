@@ -290,21 +290,33 @@ button::-moz-focus-inner {
     }
 }
 
-@media(max-width:1166px) {
+@media(max-width:1229px) {
     .contenedor_central {
         width: 75%;
     }
 }
 
-@media(max-width:1092px) {
+@media(max-width:1142px) {
     .row {
-        width: 78%;
+        width: 84%;
+    }
+    .contenedor_central {
+        width: 80%;
+    }
+}
+
+@media(max-width:1068px) {
+    .row {
+        width: 95%;
+    }
+    .contenedor_central {
+        width: auto;
     }
 }
 
 @media(max-width:926px) {
     .row {
-        width: 85%;
+        width: 90%;
     }
     #instrucciones h2 {
         margin-top: 5px;
@@ -314,9 +326,14 @@ button::-moz-focus-inner {
     }
 }
 
-@media(max-width:926px) {
-    .row {
-        width: 90%;
+@media(max-width:922px) {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #words li {
+        padding: 3px 20px;
+        list-style: none;
     }
 }
 
@@ -326,13 +343,7 @@ button::-moz-focus-inner {
     }
 }
 
-@media(max-width:750px) {
-    .contenedor_central {
-        width: 82%;
-    }
-}
-
-@media(max-width:683px) {
+@media(max-width:685px) {
     h1 {
         font-size: 2.1rem;
     }
@@ -344,7 +355,7 @@ button::-moz-focus-inner {
     }
 }
 
-@media(max-width:636px) {
+@media(max-width:644px) {
     #words ul {
         padding-left: 25px;
     }
@@ -358,7 +369,7 @@ button::-moz-focus-inner {
     }
 }
 
-@media(max-width:534px) {
+@media(max-width:537px) {
     #puzzle .puzzleSquare {
         height: 22px;
         width: 22px;
@@ -369,14 +380,6 @@ button::-moz-focus-inner {
 @media(max-width: 491px) {
     #cont_words {
         flex-direction: column-reverse;
-    }
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #words li {
-        padding: 3px 20px;
-        list-style: none;
     }
     #words {
         padding-top: 5px;
@@ -392,7 +395,13 @@ button::-moz-focus-inner {
     }
 }
 
-@media(max-width:396px) {
+@media(max-width:444px) {
+    .row {
+        width: 100%;
+    }
+}
+
+@media(max-width:416px) {
     #puzzle .puzzleSquare {
         height: 20px;
         width: 20px;

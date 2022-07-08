@@ -399,10 +399,10 @@ var cont_puntos = 0;
                         return 12;
                     } else if (deci.value == "sitios_turisticos") {
 
-                        return 16;
+                        return 15;
                     } else if (deci.value == "municipios_risaralda") {
 
-                        return 20;
+                        return 18;
                     }
                 }
 

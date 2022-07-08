@@ -1,266 +1,356 @@
-        nav {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #24252a;
-            padding-left: 5vw;
-        }
-        
-        nav p {
-            margin-bottom: 0rem;
-        }
-        
-        .cont-ul {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0rem;
-        }
-        
-        .seccion,
-        .seccion2,
-        .seccion3,
-        .seccion_trivia1,
-        .seccion_trivia2,
-        .seccion_trivia3 {
-            display: none;
-            position: absolute;
-            margin-top: 1.5vw;
-            position: initial;
-        }
-        
-        .info_estad {
-            background-color: white;
-        }
-        
-        .btn_eliminar_estad {
-            display: flex;
-            justify-content: flex-end;
-            padding: 5px;
-        }
-        
-        .S_N1:hover>.seccion {
-            display: block;
-        }
-        
-        .S_N2:hover>.seccion2 {
-            display: block;
-        }
-        
-        .S_N3:hover>.seccion3 {
-            display: block;
-        }
-        
-        .T_N1:hover>.seccion_trivia1 {
-            display: block;
-        }
-        
-        .T_N2:hover>.seccion_trivia2 {
-            display: block;
-        }
-        
-        .T_N3:hover>.seccion_trivia3 {
-            display: block;
-        }
-        
-        .checkbtn {
-            font-size: 30px;
-            color: #fff;
-            float: right;
-            line-height: 80px;
-            margin-right: 40px;
-            cursor: pointer;
-            display: none;
-        }
-        
-        .S_n1,
-        .S_N2,
-        .S_N3 {
-            width: 100%
-        }
-        
-        #check {
-            display: none;
-        }
-        
-        li {
-            list-style: none;
-            padding: 1.5vw;
-            transition: all .3s ease 0s;
-        }
-        
-        li:hover {
-            background-color: #008849!important;
-            color: white;
-        }
-        
-        .develop {
-            position: relative;
-        }
-        
-        .mensaje_eliminar {
-            margin-top: 0px;
-            padding-top: 20px;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .estad_sopa,
-        .estad_trivia {
-            background-color: white;
-        }
-        
-        .ul-second {
-            display: none;
-            margin-top: 1.5vw;
-            position: absolute;
-            z-index: 1;
-            right: 0vw;
-        }
-        
-        .btno-config {
-            border-radius: 10px;
-            border: none;
-            background: white;
-            padding: 5px;
-        }
-        
-        .config {
-            text-align: end;
-        }
-        
-        .ul-second>li {
-            width: 400px;
-            border-bottom: solid 1px #fff;
-            text-align: center;
-            background-color: #24252a;
-            padding-top: 8px;
-        }
-        
-        .ul-second>li:hover {
-            background-color: #008849;
-        }
-        
-        .develop:hover>.ul-second {
-            display: block;
-        }
-        
-        .datos {
-            width: 400px;
-            background-color: #24252a;
-        }
-        
-        .ul-third {
-            position: absolute;
-            transform: translateX(100%);
-            right: 0;
-            top: 40%;
-            display: none;
-            background-color: #24252a;
-        }
-        
-        .ul-third>li {
-            padding: 1.5vw;
-            border-bottom: solid 1px #fff;
-        }
-        
-        .front:hover>.ul-third {
-            display: block;
-        }
-        
-        .cont-ul a,
-        .logo,
-        .develop {
-            text-decoration: none;
-            color: white;
-        }
-        
-        ul {
-            margin-bottom: 0rem;
-        }
-        
-        @media(max-width:610px) {
-            nav {
-                padding-left: 10px;
-                z-index: 100;
-                height: 50px;
-            }
-            .checkbtn {
-                display: block;
-                padding: 0px;
-            }
-            .cont-ul {
-                position: fixed;
-                width: 100%;
-                background: #2c3e50;
-                top: 48px;
-                left: -100%;
-                text-align: center;
-                transition: all .5s;
-                z-index: 100;
-                flex-direction: column;
-                padding-left: 0px;
-            }
-            .chartjs-render-monitor {
-                margin-bottom: 3px;
-            }
-            nav ul li,
-            .ul-second li {
-                /*display: block;*/
-                margin: 0;
-                line-height: 30px;
-                width: 100%;
-            }
-            nav ul li a {
-                font-size: 20px;
-            }
-            li a:hover,
-            li a.active {
-                background: none;
-                color: red;
-            }
-            li:hover>.datos,
-            li:hover>.ul-second {
-                background-color: #008849!important;
-                color: white;
-            }
-            #check:checked~ul {
-                left: 0;
-            }
-            .ul-second {
-                padding: 0px;
-                width: 100%;
-                margin: 0px;
-                margin-top: 7px;
-            }
-            .develop:hover>.ul-second {
-                display: block;
-                background: #2c3e50;
-                padding: 5px;
-                position: initial;
-            }
-            .datos {
-                overflow: scroll;
-                background: #2c3e50;
-                height: 260px;
-                width: 100%;
-                padding: 0px;
-                border: 0px;
-            }
-            body:hover>ul {
-                display: none;
-            }
-            .back {
-                width: 100% !important;
-                padding-top: 2px !important;
-            }
-            .cont-ul a {
-                width: 100%;
-            }
-            .btno-config {
-                margin: 4px;
-            }
-            br {
-                display: none;
-            }
-        }
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24252a;
+    padding-left: 5vw;
+}
+
+nav p {
+    margin-bottom: 0rem;
+}
+
+.cont-ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0rem;
+}
+
+.info_puntos {
+    padding-top: 0px;
+}
+
+.seccion,
+.seccion2,
+.seccion3,
+.seccion_trivia1,
+.seccion_trivia2,
+.seccion_trivia3 {
+    display: none;
+    position: absolute;
+    margin-top: 1.5vw;
+    position: initial;
+}
+
+.info_estad {
+    background-color: white;
+}
+
+.btn_eliminar_estad {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 15px;
+    height: 45px;
+}
+
+.S_N1:hover>.seccion {
+    display: block;
+}
+
+.S_N2:hover>.seccion2 {
+    display: block;
+}
+
+.S_N3:hover>.seccion3 {
+    display: block;
+}
+
+.T_N1:hover>.seccion_trivia1 {
+    display: block;
+}
+
+.T_N2:hover>.seccion_trivia2 {
+    display: block;
+}
+
+.T_N3:hover>.seccion_trivia3 {
+    display: block;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.S_N1,
+.S_N2,
+.S_N3,
+.T_N1,
+.T_N2,
+.T_N3 {
+    text-align: center;
+    padding: 11px 16px;
+}
+
+#check {
+    display: none;
+}
+
+li {
+    list-style: none;
+    padding: 1.5vw;
+    transition: all .3s ease 0s;
+    width: 100%;
+}
+
+li:hover {
+    background-color: #008849!important;
+    color: white;
+}
+
+.develop {
+    position: relative;
+}
+
+.mensaje_eliminar {
+    margin-top: 0px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.estad_sopa,
+.estad_trivia {
+    background-color: white;
+}
+
+.ul-second {
+    display: none;
+    margin-top: 1.5vw;
+    position: absolute;
+    z-index: 1;
+    right: 0vw;
+}
+
+.btno-config {
+    border-radius: 10px;
+    border: none;
+    background: white;
+    padding: 5px;
+}
+
+.config {
+    text-align: end;
+}
+
+.ul-second>li {
+    width: 400px;
+    border-bottom: solid 1px #fff;
+    text-align: center;
+    background-color: #24252a;
+    padding-top: 8px;
+}
+
+
+/*.datos label:hover {
+    background-color: #008849;
+}*/
+
+.info_puntosT {
+    width: 100%;
+    height: 45px;
+    padding: 8px 15px;
+    text-align: initial;
+}
+
+.info_puntosT:hover {
+    background-color: #008849;
+}
+
+.ul-second>li:hover {
+    background-color: #008849;
+}
+
+.develop:hover>.ul-second {
+    display: block;
+}
+
+.develop:hover .logo {
+    background-color: white;
+}
+
+.datos {
+    width: 329px;
+    background-color: #24252a;
+}
+
+.ul-third {
+    position: absolute;
+    transform: translateX(100%);
+    right: 0;
+    top: 40%;
+    display: none;
+    background-color: #24252a;
+}
+
+.ul-third>li {
+    padding: 1.5vw;
+    border-bottom: solid 1px #fff;
+}
+
+.front:hover>.ul-third {
+    display: block;
+}
+
+.cont-ul a,
+.logo,
+.develop {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    margin-bottom: 0rem;
+}
+
+@media(min-width: 942px) {
+    .seccion {
+        display: none;
+        position: absolute;
+        left: -329px;
+        top: -19px;
+        width: 100%;
+        padding: 10px;
+        background-color: #008849;
+    }
+    .seccion2 {
+        display: none;
+        position: absolute;
+        left: -329px;
+        top: 7px;
+        width: 100%;
+        padding: 10px;
+        background-color: #008849;
+    }
+    .seccion3 {
+        display: none;
+        position: absolute;
+        left: -329px;
+        top: 48px;
+        width: 100%;
+        padding: 10px;
+        background-color: #008849;
+    }
+    .seccion_trivia1 {
+        display: none;
+        position: absolute;
+        left: -329px;
+        top: 140px;
+        width: 100%;
+        padding: 10px;
+        background-color: #008849;
+    }
+    .seccion_trivia2 {
+        display: none;
+        position: absolute;
+        left: -329px;
+        top: 187px;
+        width: 100%;
+        padding: 10px;
+        background-color: #008849;
+    }
+    .seccion_trivia3 {
+        display: none;
+        position: absolute;
+        left: -329px;
+        top: 231px;
+        width: 100%;
+        padding: 10px;
+        background-color: #008849;
+    }
+}
+
+@media(max-width:610px) {
+    .btn_eliminar_estad {
+        height: 58px;
+    }
+    nav {
+        padding-left: 10px;
+        z-index: 100;
+        height: 50px;
+    }
+    .checkbtn {
+        display: block;
+        padding: 0px;
+    }
+    .cont-ul {
+        position: fixed;
+        width: 100%;
+        background: #2c3e50;
+        top: 48px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 100;
+        flex-direction: column;
+        padding-left: 0px;
+    }
+    .chartjs-render-monitor {
+        margin-bottom: 3px;
+    }
+    nav ul li,
+    .ul-second li {
+        /*display: block;*/
+        margin: 0;
+        line-height: 30px;
+        width: 100%;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+    }
+    li:hover>.datos,
+    li:hover>.ul-second {
+        background-color: #008849!important;
+        color: white;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    .ul-second {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 7px;
+    }
+    .develop:hover>.ul-second {
+        display: block;
+        background: #2c3e50;
+        padding: 5px;
+        position: initial;
+    }
+    .datos {
+        overflow: scroll;
+        background: #2c3e50;
+        height: 260px;
+        width: 100%;
+        padding: 0px;
+        border: 0px;
+    }
+    body:hover>ul {
+        display: none;
+    }
+    .back {
+        width: 100% !important;
+        padding-top: 2px !important;
+    }
+    .cont-ul a {
+        width: 100%;
+    }
+    .btno-config {
+        margin: 4px;
+    }
+    br {
+        display: none;
+    }
+}
