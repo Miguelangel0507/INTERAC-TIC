@@ -1,5 +1,6 @@
 
 <?php
+// detalles neider F.G.O
 include('config.php');
 $idRegistros = $_REQUEST['id'];
 $estado     = $_REQUEST['estado'];
