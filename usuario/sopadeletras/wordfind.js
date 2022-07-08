@@ -492,7 +492,7 @@ var cont_puntos = 0;
                     } else {
                         notFound.push(word);
                     }
-                } //ensayo
+                }
 
                 return { found: found, notFound: notFound };
             },

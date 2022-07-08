@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2022 a las 18:15:25
+-- Tiempo de generación: 08-07-2022 a las 16:33:49
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -31,35 +31,6 @@ INSERT INTO usuarios (username, contraseña) VALUES (user_name, password);
 END$$
 
 DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `categoriasopa`
---
-
-CREATE TABLE `categoriasopa` (
-  `id_categoria` int(2) NOT NULL,
-  `municipios_risaralda` varchar(20) NOT NULL,
-  `tecnologias_tic` varchar(20) NOT NULL,
-  `sitios_turisticos` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `categoriasopa`
---
-
-INSERT INTO `categoriasopa` (`id_categoria`, `municipios_risaralda`, `tecnologias_tic`, `sitios_turisticos`) VALUES
-(1, 'Pereira', 'Computador', 'ParqueAraucarias'),
-(2, 'Apia', 'Gmail', 'Tatama'),
-(3, 'Marsella', 'Facebook', 'Ukumari'),
-(4, 'Balboa', 'Radio', 'LagunadelOtun'),
-(5, 'Quinchia', 'google', 'MuseodelArte'),
-(6, 'Santuario', 'Youtube', 'PlazadeBolivar'),
-(7, 'Mistrato', 'Usb', 'Yarumal'),
-(8, 'LaCelia', 'RealidadVirtual', 'CasadelaCultura'),
-(9, 'Virginia', 'Celular', 'CerroBatero'),
-(10, 'Guatica', 'Redes', 'Nevado');
 
 -- --------------------------------------------------------
 
@@ -425,12 +396,6 @@ DELIMITER ;
 --
 
 --
--- Indices de la tabla `categoriasopa`
---
-ALTER TABLE `categoriasopa`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
 -- Indices de la tabla `datosusuario`
 --
 ALTER TABLE `datosusuario`
@@ -509,12 +474,6 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `categoriasopa`
---
-ALTER TABLE `categoriasopa`
-  MODIFY `id_categoria` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `datosusuario`

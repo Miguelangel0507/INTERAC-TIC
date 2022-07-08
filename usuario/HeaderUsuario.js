@@ -103,7 +103,7 @@ function estadisticas() { //funcion para crear las estadisticas
                 labels: ["Puntos", "Puntos faltantes"],
                 datasets: [{
                     label: 'Trivia Tic',
-                    data: [estad.T1, 100 - estad.T1],
+                    data: [estad.T2, 100 - estad.T2],
                     backgroundColor: [
                         'rgb(23, 151, 64)',
                         'rgb(204, 6, 5, 0.6)'
@@ -125,7 +125,7 @@ function estadisticas() { //funcion para crear las estadisticas
                 labels: ["Puntos", "Puntos faltantes"],
                 datasets: [{
                     label: 'Trivia Tic',
-                    data: [estad.T1, 100 - estad.T1],
+                    data: [estad.T3, 100 - estad.T3],
                     backgroundColor: [
                         'rgb(23, 151, 64)',
                         'rgb(204, 6, 5, 0.6)'
