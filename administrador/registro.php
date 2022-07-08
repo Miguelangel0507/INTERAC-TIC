@@ -1,7 +1,7 @@
 <?php
 require('../php/conexion.php');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+// validamos el tipo de usuario 
 if (empty($_GET['tipo_usuario'])) {
 } else {
     $tipo_usuario = $_GET['tipo_usuario'];
@@ -17,6 +17,8 @@ if (empty($_GET['busqueda'])) {
 } else {
     $busqueda = $_GET['busqueda'];
 }
+// Se valida la consulata segun lo indicado, y se envia MYSQL
+
 
 if (empty($_GET['busqueda'])) {
     if (empty($_GET['tipo_usuario'])) {

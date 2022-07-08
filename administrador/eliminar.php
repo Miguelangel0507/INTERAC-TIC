@@ -1,4 +1,5 @@
 <?php
+// Codigo que elimina un usuario de la base datos
 if(isset($_POST)){
     require("../php/conexion.php");
     $id =$_POST['id'];

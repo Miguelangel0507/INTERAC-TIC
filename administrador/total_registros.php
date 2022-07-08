@@ -1,4 +1,5 @@
 <?php
+// condigo que trae el total de usuarios o admini o todos los regis....
 require('../php/conexion.php');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 if(empty($_GET['tipo_usuario'])){}else{

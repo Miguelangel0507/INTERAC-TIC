@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Menu de la pagina del administrador-->
 <html lang="en">
 
 <head>

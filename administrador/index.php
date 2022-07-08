@@ -3,6 +3,7 @@
 <?php
 session_start();
 ?>
+<!--include de la validacion session-->
 <?php include "../php/validacion.php"; ?>
 <html>
 
@@ -20,6 +21,7 @@ session_start();
   <link rel="stylesheet" href="../css/estyle.css">
   <link rel="stylesheet" href="admin.css">
 </head>
+<!--traemos el cabecero del menu-->
 <?php include("menus.php"); ?>
 
 <body onunload="opepopup()">
@@ -40,6 +42,7 @@ session_start();
 
     <div class="contenedor_tabla">
       <div class="table-responsive">
+        <!--Tabla de Registros-->
         <table class="table table-bordered table-striped table-hover">
           <thead>
             <tr>
@@ -70,6 +73,7 @@ session_start();
               }
               $desde = ($pagina - 1) * $por_pagina;
               $total_paginas = ceil($total_registro / $por_pagina);
+              // traemos la consulta y la pasamos a la tabla
               include("registro.php");
               while ($dataCliente = $query->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>

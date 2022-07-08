@@ -1,5 +1,6 @@
 
 <?php
+// Consulta para actualizar el rol y estado
 require ('../php/conexion.php');
 $idRegistros = $_REQUEST['id'];
 $estado     = $_REQUEST['estado'];

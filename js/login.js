@@ -1,3 +1,4 @@
+// Validamos el rol del usuario y su actividad
 ingresar.addEventListener("click", (e) => {
     e.preventDefault();
     fetch("php/validar_login.php", {

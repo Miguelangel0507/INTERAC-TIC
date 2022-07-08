@@ -1,6 +1,6 @@
 
 <?php
-// detalles neider F.G.O
+// Consulta para actualizar el rol y estado
 include('config.php');
 $idRegistros = $_REQUEST['id'];
 $estado     = $_REQUEST['estado'];

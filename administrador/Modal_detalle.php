@@ -1,3 +1,4 @@
+<!--sub menu detalles de la pagina del administrador-->
 <div class="modal fade" id="Childresn<?php echo $dataCliente['id_datos_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content" style="height: auto;">
