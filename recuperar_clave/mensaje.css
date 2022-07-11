@@ -1,0 +1,21 @@
+/*styles mensaje correo*/
+a{
+    text-size-adjust: 24px;
+  transition: background-color .5s;
+  color: blue;
+ text-decoration: none;
+}
+
+  a:hover{
+    background-color: gold;
+  }
+.link{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px gray;
+    width: 304px;
+    height: 183px;
+    margin: 40px 595px;
+    justify-content: center;
+    align-items: center;
+}
