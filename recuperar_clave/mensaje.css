@@ -6,9 +6,10 @@ a{
  text-decoration: none;
 }
 
-  a:hover{
+a:hover{
     background-color: gold;
-  }
+}
+
 .link{
     display: flex;
     flex-direction: column;
