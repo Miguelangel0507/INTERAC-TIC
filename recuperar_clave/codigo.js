@@ -8,10 +8,10 @@ validar.addEventListener("click", (e) => {
         .then((response) => {
             e.preventDefault();
             if (response == "v") {
-                document.getElementById("alerta").innerHTML = "codigo vencido.";
+                document.getElementById("alerta").innerHTML = "Codigo vencido.";
                 document.getElementById("alerta").style.display = "block";
             } else if (response == "m") {
-                document.getElementById("alerta").innerHTML = "codigo erroneo.";
+                document.getElementById("alerta").innerHTML = "Codigo erroneo.";
                 document.getElementById("alerta").style.display = "block";
             } else {
                 document.location.href = "cambiar.php?id=" + response;

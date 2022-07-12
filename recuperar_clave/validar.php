@@ -37,10 +37,10 @@ if ($datos) {
     $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
     $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     if (mail($para, $titulo, $mensaje, $micorreo, $cabeceras)) {
-        echo "Verifica tu correo para restablecer contraseña";
+        echo "Verifica tu correo para restablecer contraseña.";
         $query = $pdo->prepare("UPDATE datosusuario SET codigo = $codigo  WHERE id_datos_usuario = $datos[id_datos_usuario] ");
         $query->execute();
     } else
-        echo "Fallo la prueba";
+        echo "Hubo un error, intentalo mas tarde.";
 } else
-    echo "Gmail no registrado";
+    echo "Correo electronico no registrado.";

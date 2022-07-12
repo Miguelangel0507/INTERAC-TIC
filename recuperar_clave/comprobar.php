@@ -19,7 +19,6 @@ if ($_POST) {
       } else {
          echo "v";
       }
-      /**/
    } else {
       echo "m";
    }
