@@ -15,6 +15,8 @@ include("../../php/validacion.php")?>
 </head>
 
 <body>
+<input type="hidden" id="import" value="<?php echo $_SESSION['desiciontrivia'];?>">
+
     <h1 id="title">Trivia TIC</h1>
     <!-- quiz-container -->
     <div id="quiz-container">

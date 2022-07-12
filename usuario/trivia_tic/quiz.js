@@ -121,11 +121,26 @@ function nextQuestion() {
         })
     }
 }
+var importante = document.getElementById("import").value
+
+
+
+var tim = () =>{
+ if(importante == "trivia_nivel1")
+        return 20;
+else if(importante == "trivia_nivel2")
+        return 15;
+else if(importante == "trivia_nivel3")
+         return 11;
+
+}
+
 
 function reiniciar_cuenta() {
-    window.contar = 1000;
+    window.contar = tim();
     contador();
 }
+
 
 function contador() {
     function despegar() {
@@ -134,7 +149,7 @@ function contador() {
         cuenta.innerHTML = contar;
         if (contar <= 0) {
             PreguntaErronea();
-            window.contar = 1000;
+            window.contar = tim();
             clearInterval(ignicion);
             setTimeout(nextQuestion, 3000);
             return;
@@ -145,5 +160,5 @@ function contador() {
         }
     }
     despegar()
-    window.ignicion = setInterval(despegar, 1000);
+    window.ignicion = setInterval(despegar, 1005);
 }

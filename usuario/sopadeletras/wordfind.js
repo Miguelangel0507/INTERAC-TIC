@@ -532,13 +532,13 @@ var cont_puntos = 0;
 
 var tiempo = () => {
     if (deci.value == "tecnologias_tic") {
-        return 101;
+        return 61;
     } else if (deci.value == "sitios_turisticos") {
 
-        return 201;
+        return 121;
     } else if (deci.value == "municipios_risaralda") {
 
-        return 301;
+        return 181;
     }
 }
 contar = tiempo();
