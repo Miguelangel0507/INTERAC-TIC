@@ -112,7 +112,6 @@
                             <p class="formulario__input-error">
                                 La contraseña tiene que ser de 8 dígitos y contener una letra mayuscula
                             </p>
-                            <!--contraseñas 2<label class="la" for="">Validar contraseña:&nbsp </label>-->
                             <div class="formulario__grupo" id="grupo__password2">
                                 <div class="formulario__grupo-input">
                                     <input type="password" class="form-control" name="password2" id="password2" placeholder="Validar clave" disabled>

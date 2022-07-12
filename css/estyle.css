@@ -26,8 +26,6 @@ b {
 .row {
     display: -ms-flexbox;
     display: flex;
-    /* margin-right: -15px; */
-    /* margin-left: -15px; */
     justify-content: space-evenly;
 }
 

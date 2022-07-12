@@ -21,7 +21,6 @@
                             <label class="info_puntos">Sopa de letras</label>
                             <button class="btno-config" data-bs-toggle='modal' data-bs-target='#M_estadisiticas'><i class="fa-solid fa-gear"></i>Restablecer </button>
                         </li>
-                        
                         <li class="S_N1">Nivel 1
                             <div class="seccion">
                                 <div class="info_estad">

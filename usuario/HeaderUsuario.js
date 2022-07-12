@@ -20,7 +20,6 @@ function estadisticas() { //funcion para crear las estadisticas
                     backgroundColor: [
                         'rgb(23, 151, 64)',
                         'rgb(204, 6, 5, 0.6)'
-
                     ]
                 }]
             },

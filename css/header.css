@@ -147,11 +147,6 @@ li:hover {
     padding-top: 8px;
 }
 
-
-/*.datos label:hover {
-    background-color: #008849;
-}*/
-
 .info_puntosT {
     width: 100%;
     height: 45px;
@@ -296,7 +291,6 @@ ul {
     }
     nav ul li,
     .ul-second li {
-        /*display: block;*/
         margin: 0;
         line-height: 30px;
         width: 100%;
