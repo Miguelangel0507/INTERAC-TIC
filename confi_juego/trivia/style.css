@@ -17,13 +17,6 @@ body {
     width: 60%;
 }
 
-.h4_nivelsopa {
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
-    margin-bottom: 12px;
-}
-
 .hr_tablasopa {
     width: 90%;
     align-items: center;
@@ -33,6 +26,16 @@ body {
 .nav-item1 {
     display: inline-block;
     text-align: center;
+}
+
+.div_titulo {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0px;
+}
+
+.h4_titulo {
+    width: 90%;
 }
 
 .navbar1 {
@@ -140,6 +143,28 @@ td {
 #check {
     display: none;
 }
+
+
+/*NUEVA PAGINACION*/
+
+.pagination_juegos {
+    text-align: center;
+}
+
+.pagination_juegos .page-item {
+    width: 20%;
+}
+
+.pagination_niveles {
+    text-align: center;
+}
+
+.pagination_niveles .page-item {
+    width: 9%;
+}
+
+
+/*NUEVA PAGINACION*/
 
 @media (max-width:946px) {
     .page-link {

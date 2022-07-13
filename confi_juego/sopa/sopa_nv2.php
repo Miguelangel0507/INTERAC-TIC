@@ -24,7 +24,7 @@ include("../../php/validacion.php") ?>
   <nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
     <div class="collapse1 navbar-collapse1" id="navbarNav">
       <!--logo-->
-      <p class="title_sopa pa"> <b><span style="color: white;">Sopa de letras Nivel 1.</span> </b></p>
+      <p class="title_sopa pa"> <b><span style="color: white;">Sopa de letras Nivel 2.</span> </b></p>
       <!--checkbox-->
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
@@ -64,14 +64,14 @@ include("../../php/validacion.php") ?>
 
   <!--Paginacion Niveles-->
   <ul class="pagination pagination_niveles">
-    <li class="page-item active">
-      <div>
-        <a class="page-link" href="#">Nivel 1</a>
-      </div>
-    </li>
     <li class="page-item">
       <div>
-        <a class="page-link" href="sopa_nv2.php">Nivel 2</a>
+        <a class="page-link" href="index.php">Nivel 1</a>
+      </div>
+    </li>
+    <li class="page-item active">
+      <div>
+        <a class="page-link" href="#">Nivel 2</a>
       </div>
     </li>
     <li class="page-item">
@@ -83,9 +83,9 @@ include("../../php/validacion.php") ?>
 
   <!--Cuerpo-->
 
-  <!--Tabla Nivel 1-->
+  <!--Tabla nivel 2-->
   <div class="div_titulo">
-    <h4 class="h4_titulo">Palabras de la sopa de letras, categoria Tecnologias Tic.</h4>
+    <h4 class="h4_titulo">Palabras de la sopa de letras, categoria sitios turisticos.</h4>
   </div>
   <div class="tabla clearfix">
     <div class="contenedor_tabla">
@@ -105,52 +105,53 @@ include("../../php/validacion.php") ?>
           </thead>
           <tbody>
             <?php
-            include("php/consul_sopan1.php");
+            include("php/consul_sopan2.php");
             $cuenta = 0;
             for ($i = 1; $i <= $total_palabras; $i = $i + 4) { ?>
               <tr>
                 <?php if ($cuenta < $total_palabras) { ?>
-                  <td><?php echo ($nivel1[$cuenta][1]); ?></td>
-                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0]; ?>">Actualizar</button> </td>
-                  <?php include("tecno.php");
-                  $cuenta++;  ?>
+                  <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("turis.php");
+                  $cuenta++; ?>
                 <?php } else { ?>
                   <td></td>
                   <td></td>
                 <?php }  ?>
 
                 <?php if ($cuenta < $total_palabras) { ?>
-                  <td><?php echo ($nivel1[$cuenta][1]); ?></td>
-                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0]; ?>">Actualizar</button> </td>
-                  <?php include("tecno.php");
-                  $cuenta++;  ?>
+                  <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("turis.php");
+                  $cuenta++; ?>
                 <?php } else { ?>
                   <td></td>
                   <td></td>
                 <?php }  ?>
 
                 <?php if ($cuenta < $total_palabras) { ?>
-                  <td><?php echo ($nivel1[$cuenta][1]); ?></td>
-                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0]; ?>">Actualizar</button> </td>
-                  <?php include("tecno.php");
-                  $cuenta++;  ?>
+                  <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("turis.php");
+                  $cuenta++; ?>
                 <?php } else { ?>
                   <td></td>
                   <td></td>
                 <?php }  ?>
 
                 <?php if ($cuenta < $total_palabras) { ?>
-                  <td><?php echo ($nivel1[$cuenta][1]); ?></td>
-                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tecnologia<?php echo $nivel1[$cuenta][0]; ?>">Actualizar</button> </td>
-                  <?php include("tecno.php");
-                  $cuenta++;  ?>
+                  <td><?php echo ($nivel2[$cuenta][1]); ?></td>
+                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turismo<?php echo $nivel2[$cuenta][0]; ?>">Actualizar</button> </td>
+                  <?php include("turis.php");
+                  $cuenta++; ?>
                 <?php } else { ?>
                   <td></td>
                   <td></td>
                 <?php }  ?>
+              <?php } ?>
 
               </tr>
-            <?php } ?>
+
           </tbody>
         </table>
       </div>

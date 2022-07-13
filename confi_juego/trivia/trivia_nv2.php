@@ -23,7 +23,7 @@ include("../../php/validacion.php") ?>
     <nav class="navbar1 navbar-expand-lg1 navbar-light1 bg-light1">
         <div class="collapse1 navbar-collapse1" id="navbarNav">
             <!--Logo-->
-            <p class="pa"> <b><span style="color: white;">Trivia nivel 2</span> </b></p>
+            <p class="pa"> <b><span style="color: white;">Trivia-TIC Nivel 2</span> </b></p>
             <!--checkbox-->
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
@@ -48,24 +48,28 @@ include("../../php/validacion.php") ?>
     </nav>
 
     <!--Paginacion-->
+    <ul class="pagination pagination_juegos">
+        <li class="page-item">
+            <div>
+                <a class="page-link" href="../sopa/index.php">Sopa de letras</a>
+            </div>
+        </li>
+        <li class="page-item active">
+            <div>
+                <a class="page-link" href="#">Trivia</a>
+            </div>
+        </li>
+    </ul>
+
+
     <div class="div_pagination">
         <ul class="ul_paginacion pagination">
-            <li class="page-item">
-                <a class="anterior page-link" href="trivia.php" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="../sopa/index.php">
-                    <div class="a-pagination">Sopa de letras</div>
-                </a>
-            </li>
             <li class="page-item">
                 <a class="page-link" href="trivia.php">
                     <div class="a-pagination">Trivia nivel 1</div>
                 </a>
             </li>
-            <li class="page-item">
+            <li class="page-item active">
                 <a class="page-link" href="#">
                     <div class="a-pagination">Trivia nivel 2</div>
                 </a>
@@ -75,15 +79,14 @@ include("../../php/validacion.php") ?>
                     <div class="a-pagination">Trivia nivel 3</div>
                 </a>
             </li>
-            <li class="page-item">
-                <a class="anterior page-link" href="trivia_nv3.php" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
         </ul>
     </div>
 
     <!--Cuerpo-->
+    <div class="div_titulo">
+        <h4 class="h4_titulo">Preguntas y respuestas del nivel 2, categoria sitios emblematicos de Colombia.</h4>
+    </div>
+    
     <div class="tabla clearfix">
         <div class="contenedor_tabla">
             <div class="table-responsive" style="align-items: center;">

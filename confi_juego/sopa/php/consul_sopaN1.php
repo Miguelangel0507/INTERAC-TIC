@@ -7,5 +7,6 @@ $query->execute();
 $palabras = array();
 
 $nivel1 = $query->fetchAll();
+$total_palabras = count($nivel1);
 
 
