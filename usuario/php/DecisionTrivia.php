@@ -8,6 +8,19 @@ if($_POST){
         $query = $pdo->prepare("SELECT * FROM $decision");//se hace la consulta a la base de datos y se traen los preguntas con las respuestas
         $query->execute();
         $palabras = array();
+         //Lo nuevo
+    $x = 0;
+    $total[$x] =  rand(0, 31);
+    for ($x = 1; $x <10; $x++) {
+
+        $total[$x] = rand(0, );
+        for ($j = 0; $j < $x; $j++) {
+            if ($total[$x] == $total[$j]) {
+                $x--;
+            }
+        }
+        for($l=0;$l<$x;$l++){}
+    }
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
             $palabras["cuestionario"][] = $row;
         }

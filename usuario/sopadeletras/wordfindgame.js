@@ -100,14 +100,27 @@
             selectedSquares.push(this);
             curWord = $(this).text();
         };
+        // Prueba Alfa
+        var touchMove = function(e) {
+          
+          e.preventDefault();
+         var xPos = e.originalEvent.touches[0] .pageX;
+            var yPos = e.originalEvent.touches[0]
+            .pageY;
+            var targetElement = document.elementFromPoint(xPos, yPos);
+            select(targetElement)
+          };
 
+          var mouseMove = function() { 
+            select(this);
+          };
         /**
          * Event that handles mouse over on a new square. Ensures that the new square
          * is adjacent to the previous square and the new square is along the path
          * of an actual word.
          *
          */
-        var select = function() {
+        var select = function (target){
 
             // if the user hasn't started a word yet, just return
             if (!startSquare) {
@@ -116,7 +129,7 @@
 
             // if the new square is actually the previous square, just return
             var lastSquare = selectedSquares[selectedSquares.length - 1];
-            if (lastSquare == this) {
+            if (lastSquare == target) {
                 return;
             }
 
@@ -124,7 +137,7 @@
             // they did
             var backTo;
             for (var i = 0, len = selectedSquares.length; i < len; i++) {
-                if (selectedSquares[i] == this) {
+                if (selectedSquares[i] == target) {
                     //alert(selectedSquares)
                     backTo = i + 1;
                     break;
@@ -144,10 +157,9 @@
             // this is needed to make selecting diagonal words easier
             var newOrientation = calcOrientation(
                 $(startSquare).attr('x') - 0,
-
                 $(startSquare).attr('y') - 0,
-                $(this).attr('x') - 0,
-                $(this).attr('y') - 0
+                $(target).attr('x') - 0,
+                $(target).attr('y') - 0
 
             );
             // console.log("startSquare \t"+startSquare);
@@ -166,8 +178,8 @@
             var orientation = calcOrientation(
                 $(lastSquare).attr('x') - 0,
                 $(lastSquare).attr('y') - 0,
-                $(this).attr('x') - 0,
-                $(this).attr('y') - 0
+                $(target).attr('x') - 0,
+                $(target).attr('y') - 0
             );
 
             // if the new square isn't along a valid orientation, just ignore it.
@@ -180,7 +192,7 @@
             // the same orientation as the last move then play the move
             if (!curOrientation || curOrientation === orientation) {
                 curOrientation = orientation;
-                playTurn(this);
+                playTurn(target);
             }
 
         };
@@ -230,7 +242,7 @@
             for (var i = 0, len = wordList.length; i < len; i++) {
 
                 if (wordList[i] === curWord) {
-
+//alert("dentro");
                     console.log("palabra: \t" + curWord)
                     console.log("todas las pa: \t" + wordList)
                         //setTimeout (aleatorio(),1000)
@@ -318,6 +330,10 @@
                     $('.puzzleSquare').mousedown(startTurn);
                     $('.puzzleSquare').mouseenter(select);
                     $('.puzzleSquare').mouseup(endTurn);
+                    //Mas Prueba Alfa
+                    $('.puzzleSquare').on("touchstart", startTurn);
+                    $('.puzzleSquare').on("touchmove", touchMove);
+                    $('.puzzleSquare').on("touchend", endTurn);
                 }
 
                 return puzzle;
