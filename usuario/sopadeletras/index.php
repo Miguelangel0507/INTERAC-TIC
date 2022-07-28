@@ -28,9 +28,9 @@ include("../../php/validacion.php");
                     <div class="tiempo">
                         <h2>Tiempo:</h2>
                         <h2 align="center" id="cuenta">000</h2>
-                    </div> 
+                    </div>
                     <div id="salir">
-                        <a href="../index.php"><input type="button" class="btn btn-danger" value="Salir"></a> 
+                        <a href="../index.php"><input type="button" class="btn btn-danger" value="Salir"></a>
                     </div>
                 </div>
             </div>
