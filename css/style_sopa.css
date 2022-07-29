@@ -75,7 +75,6 @@ body {
 }
 
 .row {
-    background: white;
     display: flex;
     justify-content: center;
     width: 76%;
