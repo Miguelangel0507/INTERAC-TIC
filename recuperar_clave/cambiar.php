@@ -86,11 +86,7 @@
                 <label class="mensaje">Por favor rellena el formulario correctamente.</label>
             </div>
         </form>
-    </diV>
-    <!--</div>
-            </div>
-        </div>
-    </div>-->
+    </div>
     <script src="correo.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

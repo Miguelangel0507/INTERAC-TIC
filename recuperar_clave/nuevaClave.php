@@ -2,7 +2,6 @@
 echo true;
  require('../php/conexion.php');
  $id= $_POST['id_usuario'];
- //$fecha = $_POST['id_fecha'];
  $pass = $_POST['password2'];
  $contra_fuerte = password_hash($pass,  PASSWORD_BCRYPT,["COST"=>11]);
  
@@ -17,9 +16,4 @@ echo true;
     echo false;
 }
 
-
-/*echo "<script type='text/javascript'>
-        window.location='../index.php';
-    </script>";
-*/
 ?> 

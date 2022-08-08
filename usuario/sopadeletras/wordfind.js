@@ -390,8 +390,6 @@ var cont_puntos = 0;
                 });
 
                 // initialize the options (tamaño)
-
-                //////////Prueba 1 alert(deci)
                 var deci = document.getElementById("deci");
 
                 var tama = () => {
@@ -528,8 +526,6 @@ var cont_puntos = 0;
     root.wordfind = WordFind();
 }.call(this));
 
-// Prube tiempo segun nivel
-
 var tiempo = () => {
     if (deci.value == "tecnologias_tic") {
         return 61;
@@ -543,12 +539,7 @@ var tiempo = () => {
 }
 contar = tiempo();
 
-//tiempo del juego
-//valor inicial.var contar = 10; 
-
 window.onload = function() {
-    //document.getElementById("puzzle").style.visibility = "hidden"; //ocultar imagen
-    //document.getElementById("words").style.visibility = "hidden";
     cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuenta atrás
 };
 

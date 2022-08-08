@@ -31,8 +31,7 @@ if ($datos) {
     $titulo = "Recuperar clave";
     $micorreo = "From: tictrivia993@gmail.com";
     $mensaje = ".$men1+ .$men2";
-    
-
+  
     // Para enviar un correo HTML, debe establecerse la cabecera Content-type
     $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
     $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";

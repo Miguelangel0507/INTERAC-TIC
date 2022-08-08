@@ -14,7 +14,6 @@
         <form method="POST" action="eliminar.php">
           <input type="hidden" id="id" name="id" value="<?php echo $dataCliente['id_datos_usuario']; ?>">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <!--button type="button" class="btn btn-danger btnBorrar" id="btnBorrar"  data-dismiss="modal">Borrar</button-->
           <button class="btn btn-danger btnBorrar">Eliminar</button>
         </form>
       </div>

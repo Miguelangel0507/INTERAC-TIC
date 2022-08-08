@@ -195,7 +195,6 @@ formulario__btn.addEventListener("click", (e) => {
                 })
                 MostrarDatos();
                 $('#padre').modal('hide')
-                    // setTimeout(location.href="perfil_admin.php", 3000);
             } else {
                 Swal.fire({ //alerta de datos incompletos
                     icon: 'warning',
