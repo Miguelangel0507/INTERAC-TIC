@@ -107,7 +107,7 @@ include("../../php/validacion.php") ?>
             <?php
             include("php/consul_sopan3.php");
             $cuenta = 0;
-            for ($i = 1; $i <= 14; $i = $i + 4) { ?>
+            for ($i = 1; $i <= $total_palabras; $i = $i + 4) { ?>
               <tr>
                 <?php if ($cuenta < $total_palabras) { ?>
                   <td><?php echo ($nivel3[$cuenta][1]); ?></td>

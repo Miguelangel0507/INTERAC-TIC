@@ -398,7 +398,7 @@ var cont_puntos = 0;
                     } else if (deci.value == "sitios_turisticos") {
 
                         return 15;
-                    } else if (deci.value == "municipios_risaralda") {
+                    } else if (deci.value == "departamentos") {
 
                         return 18;
                     }
@@ -532,7 +532,7 @@ var tiempo = () => {
     } else if (deci.value == "sitios_turisticos") {
 
         return 121;
-    } else if (deci.value == "municipios_risaralda") {
+    } else if (deci.value == "departamentos") {
 
         return 181;
     }
@@ -596,7 +596,7 @@ function registrar() {
                     Swal.fire({
                         icon: "error",
                         title: "¡Perdiste!",
-                        text: "Debes sacar mas de 80 puntos",
+                        text: "Debes sacar mas de "+ response +" puntos",
                         confirmButtonText: "Salir.",
                         timer: 5000,
                         timerProgressBar: true,

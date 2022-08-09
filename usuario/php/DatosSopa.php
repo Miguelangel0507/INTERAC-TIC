@@ -13,7 +13,7 @@ if ($_POST) {
     } else {
         $nivel = "sopa_nivel3";
         $total_palabras = 14;
-        $_SESSION['minimo_puntaje'] = 110;
+        $_SESSION['minimo_puntaje'] = 120;
     }
     require("../../php/conexion.php");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

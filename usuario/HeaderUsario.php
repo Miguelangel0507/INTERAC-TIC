@@ -63,7 +63,7 @@
                                     <canvas id="nivel_trivia3"></canvas>
                                 </div>
                             </div>
-                        </li>
+                        </li> 
                     </div>
                 </ul>
             </li>

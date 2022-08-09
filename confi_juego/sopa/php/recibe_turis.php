@@ -11,7 +11,7 @@ $update->execute();
 $result_update =$update->fetch(PDO::FETCH_ASSOC);
 
 echo "<script type='text/javascript'>
-        window.location='../index.php';
+        window.location='../sopa_nv2.php';
     </script>";
 
 ?>

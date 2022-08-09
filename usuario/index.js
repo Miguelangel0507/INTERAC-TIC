@@ -66,7 +66,7 @@ botonSopa2.addEventListener("click", () => {
 });
 
 botonSopa3.addEventListener("click", () => {
-    mostrar_sopa("municipios_risaralda");
+    mostrar_sopa("departamentos");
 });
 
 //funcion que toma la decision del jugador y lo redirecciona a la sopa de letras

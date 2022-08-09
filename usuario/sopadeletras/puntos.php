@@ -10,7 +10,7 @@ if($id != "invitado"){
     }else if($_SESSION['decision'] == "sitios_turisticos"){
         $nivel = 'puntos_nivel2';
         $puntaje_minimo = 90;
-    }else if($_SESSION['decision'] == "municipios_risaralda"){
+    }else if($_SESSION['decision'] == "departamentos"){
         $nivel = 'puntos_nivel3';
         $puntaje_minimo = 120;
     }
@@ -32,14 +32,14 @@ if($id != "invitado"){
     }else if($_SESSION['decision'] == "sitios_turisticos"){
         $_SESSION['puntos_sopa2']  = $puntos;
         $puntaje_minimo = 90;
-    }else if($_SESSION['decision'] == "municipios_risaralda"){
+    }else if($_SESSION['decision'] == "departamentos"){
         $_SESSION['puntos_sopa3']  = $puntos;
         $puntaje_minimo = 120;
     }
 }
 
 if($puntos < $puntaje_minimo){
-    echo "perdio";
+    echo $puntaje_minimo;
 }else{
     echo "gano";
 }
