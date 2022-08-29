@@ -17,7 +17,12 @@
         <!--<div class="padre2">-->
         <div class="row">
             <div class="logo">
-                <img src="img/descarga.png" alt="logo " />
+                <div class="logos Logo_interactic">
+                    <img class="img_logo_interactic" src="img/Logo-InteracTic.png" alt="logo " />
+                </div>
+                <div class="logos logo_gobernacion">
+                    <img class="img_logo_gobernacion" src="img/LOGO 02.png" alt="logo " />
+                </div>
             </div>
             <div class="formulario">
                 <form method="post" id="form_login">

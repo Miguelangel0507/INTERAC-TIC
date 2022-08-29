@@ -16,14 +16,14 @@ body {
 
 .navbar1 {
     position: relative;
-    background-color: #24252a;
+    background-color: #000000;
     list-style: none;
     padding: 0;
     margin: auto;
 }
 
 .nav-link1:hover {
-    background: #008849;
+    background: #008eca;
 }
 
 .navbar-nav1 {

@@ -40,7 +40,7 @@ body {
 
 .navbar1 {
     position: relative;
-    background-color: #424949;
+    background-color: #000000;
     list-style: none;
     padding: 0;
     margin: auto;
@@ -52,7 +52,7 @@ body {
 }
 
 .nav-link1:hover {
-    background: #008849;
+    background: #008eca;
 }
 
 .navbar-nav1 {

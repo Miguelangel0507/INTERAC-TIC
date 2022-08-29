@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" style="color: #fff; text-align: center;font-size: 22px;">
+        <h6 class="modal-title" style=" text-align: center;font-size: 22px;">
           Actualizar Información
         </h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

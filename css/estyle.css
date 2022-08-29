@@ -1,5 +1,5 @@
 table tr th {
-    background: rgba(0, 0, 0, .6);
+    background: #777777;
     color: azure;
 }
 
@@ -8,7 +8,6 @@ tbody tr {
 }
 
 h3 {
-    color: crimson;
     margin-top: 100px;
 }
 
@@ -38,3 +37,17 @@ b {
     justify-content: center;
     margin: 16px 0;
 }
+
+.btn-primary,
+.btn_detalles{
+    background-color: #008eca;
+    border-color: #008eca;
+}
+
+.btn-primary:hover,
+.btn_detalles:hover {
+    color: #fff;
+    background-color: #0069b4;
+    border-color: #0069b4;
+}
+

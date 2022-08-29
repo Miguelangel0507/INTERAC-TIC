@@ -103,16 +103,13 @@
     display: flex;
 }
 
-.close {
-    color: white;
-}
+
 
 hr {
     width: 80%;
 }
 
 .modal-header {
-    background-color: #563d7c !important;
     display: flex;
 }
 

@@ -161,11 +161,11 @@ button::-moz-focus-inner {
 /* indicates when a square has been selected */
 
 #puzzle .selected {
-    background-color: orange;
+    background-color: #fdc500;
 }
 
 #puzzle .selected1:disabled {
-    background-color: orange;
+    background-color: #fdc500;
 }
 
 

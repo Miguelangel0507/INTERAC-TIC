@@ -22,6 +22,20 @@ h1 {
     border-radius: 15px;
 }
 
+#formulario__btn{
+    background-color: #0069b4;
+}
+
+.div_log_interactic{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.img_logo_interactic{
+    width: 50%;
+}
+
 .cambio-contra {
     width: 50%;
 }
@@ -37,6 +51,11 @@ h1 {
 .formulario {
     display: flex;
     justify-content: space-evenly;
+}
+
+#regresar{
+    background-color: #fdc500;
+    border-color: #fdc500;
 }
 
 .datos {
@@ -60,6 +79,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 55%;
 }
 
 

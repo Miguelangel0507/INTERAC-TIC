@@ -2,8 +2,8 @@
 <div class="modal fade" id="Childresn<?php echo $dataCliente['id_datos_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content" style="height: auto;">
-      <div class="modal-header" style="background-color: #563d7c !important;height: 63px;">
-        <h6 class="modal-title" style="color: #fff; text-align: center;font-size: 22px; width:95%;">
+      <div class="modal-header" style="height: 63px;">
+        <h6 class="modal-title" style="text-align: center;font-size: 22px; width:95%;">
           Información del usuario jugador
         </h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

@@ -1,8 +1,8 @@
 <div class="modal fade padre" id="padre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog formulario">
         <div class="modal-content datos">
-            <div class="modal-header" style="background-color: #563d7c !important;">
-                <h6 class="modal-title" style="color: #fff; text-align: center;">
+            <div class="modal-header" >
+                <h6 class="modal-title">
                     Actualizar Información
                 </h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

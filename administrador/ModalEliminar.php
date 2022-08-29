@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" style="color: #fff; text-align: center;font-size: 22px;">
+        <h6 class="modal-title" style=" text-align: center;font-size: 22px;">
           Eliminar jugador
         </h6>
       </div>

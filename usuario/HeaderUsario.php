@@ -2,7 +2,8 @@
     <script src="https://kit.fontawesome.com/8bac99961f.js" crossorigin="anonymous"></script>
     <nav>
         <!--logo-->
-        <p class="logo">INTERAC-TIC</p>
+        <img class="img_menu_logo_interactic" src="../img/Logo-InteracTic.png" alt="logo " />
+        <!--<p class="logo">INTERAC-TIC</p>-->
         <!--checkbox-->
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
