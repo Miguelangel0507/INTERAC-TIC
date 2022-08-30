@@ -1,3 +1,12 @@
+@font-face{
+    font-family: Montseerat-Regular;
+    src: url(Montserrat-Regular.ttf);
+}
+
+body{
+    font-family: Montseerat-Regular;
+}
+
 .form-control {
     text-align: center;
 }

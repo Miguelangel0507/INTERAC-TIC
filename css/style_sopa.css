@@ -1,8 +1,14 @@
+@font-face{
+    font-family: Montseerat-Regular;
+    src: url(Montserrat-Regular.ttf);
+}
+
 h1 {
     color: black;
 }
 
 body {
+    font-family: Montseerat-Regular;
     background-color: black;
 }
 
@@ -144,7 +150,7 @@ ol b {
     text-transform: uppercase;
     background-color: white;
     border: 0;
-    font: 1em sans-serif;
+    font: 1em;
     border-bottom: 1px #eee solid;
     border-right: 1px #eee solid;
 }
@@ -253,7 +259,7 @@ button::-moz-focus-inner {
 
 #words li {
     padding: 3px 0;
-    font: 1em sans-serif;
+    font: 1em ;
 }
 
 

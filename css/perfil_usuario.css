@@ -1,13 +1,20 @@
+@font-face{
+    font-family: Montseerat-Regular;
+    src: url(Montserrat-Regular.ttf);
+}
+
+body {
+    font-family: Montseerat-Regular !important;
+    height: 100vh;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    height: 100vh;
-}
+
 
 #alerta {
     display: flex;

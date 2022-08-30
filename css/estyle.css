@@ -1,3 +1,12 @@
+@font-face{
+    font-family: Montseerat-Regular;
+    src: url(Montserrat-Regular.ttf);
+}
+
+body{
+    font-family: Montseerat-Regular;
+}
+
 table tr th {
     background: #777777;
     color: azure;

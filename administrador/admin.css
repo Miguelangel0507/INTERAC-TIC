@@ -1,3 +1,12 @@
+@font-face{
+    font-family: Montseerat-Regular;
+    src: url(Montserrat-Regular.ttf);
+}
+
+body{
+    font-family: Montseerat-Regular;
+}
+
 .nombres {
     display: flex;
     flex-direction: column;
@@ -13,7 +22,7 @@
 }
 
 .col-form-label {
-    font-family: cursive;
+    
     font-size: 20px;
 }
 
@@ -55,9 +64,6 @@
     border-radius: 0 0.25rem 0.25rem 0;
 }
 
-.btns_info_usuarios {
-    width: 280px;
-}
 
 .contenedor_tabla {
     width: 85%;

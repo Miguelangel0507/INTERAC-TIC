@@ -1,4 +1,10 @@
+@font-face{
+    font-family: Montseerat-Regular;
+    src: url(Montserrat-Regular.ttf);
+}
+
 body {
+    font-family: Montseerat-Regular;
     background-image: url("../img/fondo.jpg");
     background-attachment: fixed;
 }
